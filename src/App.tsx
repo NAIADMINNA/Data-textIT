@@ -14,9 +14,15 @@ import {
   X,
   Database,
   BarChart3,
-  ArrowUpRight,
   Calendar,
-  MessageSquareText
+  MessageSquareText,
+  Code2,
+  Copy,
+  Check,
+  Settings,
+  Plus,
+  Trash2,
+  RotateCcw
 } from 'lucide-react';
 
 // Live Google Apps Script URL
@@ -38,7 +44,7 @@ export interface CaseRecord {
   lastUpdate: string;
 }
 
-const STAFF_LIST = [
+const DEFAULT_STAFF_LIST = [
   'นายศุภกิตติ์ บุญแก้ว',
   'นางสาวจีรนันท์ เอกวรรณัง',
   'นางสาวสุภารักษ์ สุทธิ',
@@ -47,7 +53,7 @@ const STAFF_LIST = [
   'นางสุมาลี รักไทย',
 ];
 
-const PROBLEM_TYPES = [
+const DEFAULT_PROBLEM_TYPES = [
   'ข้อมูลแก้ไขข้อมูล',
   'ระบบ eworkpermit',
   'ขอคืนสถานะ',
@@ -55,7 +61,7 @@ const PROBLEM_TYPES = [
   'อื่น ๆ',
 ];
 
-const STATUS_OPTIONS = [
+const DEFAULT_STATUS_OPTIONS = [
   'อยู่ระหว่างตรวจสอบข้อมูล',
   'อยู่ระหว่างประสานงานผู้แจ้ง',
   'อยู่ระหว่างประสานงาน OS',
@@ -79,6 +85,15 @@ const THAI_MONTHS = [
   'พฤศจิกายน',
   'ธันวาคม',
 ];
+
+// Helper to sort records by staffName (Thai alphabetical order) automatically
+function sortRecordsByStaffName(records: CaseRecord[]): CaseRecord[] {
+  return [...records].sort((a, b) => {
+    const cmp = (a.staffName || '').localeCompare(b.staffName || '', 'th');
+    if (cmp !== 0) return cmp;
+    return (a.rowIndex || 0) - (b.rowIndex || 0);
+  });
+}
 
 // RFC-4180 compliant CSV parser supporting multiline quoted fields
 function parseCsvText(csvText: string): string[][] {
@@ -204,6 +219,180 @@ function getProblemTypeBarColorClass(type: string): string {
   return colors[type] || 'bg-gradient-to-r from-emerald-500 to-teal-600';
 }
 
+const GAS_AUTO_SORT_SCRIPT = `function doGet(e) {
+  var callback = e.parameter.callback;
+  var action = e.parameter.action;
+  var result;
+  
+  try {
+    if (action === 'create') {
+      result = createRecord(e.parameter);
+    } else if (action === 'search') {
+      result = searchRecord(e.parameter.docNumber);
+    } else if (action === 'update') {
+      result = updateRecord(e.parameter);
+    } else if (action === 'list') {
+      result = listRecords();
+    } else {
+      result = { success: false, error: 'Invalid action' };
+    }
+  } catch (error) {
+    result = { success: false, error: error.toString() };
+  }
+  
+  var jsonStr = JSON.stringify(result);
+  var jsonpResponse = callback ? callback + '(' + jsonStr + ')' : jsonStr;
+  return ContentService.createTextOutput(jsonpResponse)
+    .setMimeType(ContentService.MimeType.JAVASCRIPT);
+}
+
+function createRecord(params) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName('Case Data');
+  
+  if (!sheet) throw new Error("ไม่พบชีตชื่อ 'Case Data'");
+
+  // สร้างหัวตารางถ้าชีตว่างเปล่า
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow([
+      'เลขหนังสือ', 'วันที่รับ', 'ผู้รับผิดชอบ', 'ประเภทปัญหา', 
+      'ปัญหาที่พบ', 'สถานะ', 'หมายเหตุ', 'วันเวลาแจ้งสถานะล่าสุด'
+    ]);
+  }
+  
+  sheet.appendRow([
+    params.docNumber || '',
+    params.receiveDate || '',
+    params.staffName || '',
+    params.problemType || '',
+    params.problemDetail || '',
+    params.status || '',
+    params.remark || '',
+    getCurrentThaiDateTime()
+  ]);
+  
+  // เรียกฟังก์ชันเรียงข้อมูลหลังจากเพิ่มเสร็จ (เรียงตามคอลัมน์ 3: ผู้รับผิดชอบ)
+  autoSort(sheet);
+  
+  return { success: true, message: 'บันทึกและเรียงข้อมูลสำเร็จ' };
+}
+
+function searchRecord(docNumber) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Case Data');
+  if (!sheet) return { success: false, error: "ไม่พบชีตชื่อ 'Case Data'" };
+
+  var data = sheet.getDataRange().getValues();
+  var searchDocNumber = (docNumber || '').toString().toUpperCase().trim();
+  var matches = [];
+  
+  for (var i = 1; i < data.length; i++) {
+    if (data[i][0].toString().toUpperCase().trim() === searchDocNumber) {
+      matches.push({
+        rowIndex: i + 1,
+        docNumber: data[i][0],
+        receiveDate: data[i][1],
+        staffName: data[i][2],
+        problemType: data[i][3],
+        problemDetail: data[i][4],
+        status: data[i][5],
+        remark: data[i][6],
+        lastUpdate: data[i][7]
+      });
+    }
+  }
+
+  if (matches.length > 0) {
+    return {
+      success: true,
+      data: matches[0],
+      matches: matches,
+      rowNumber: matches[0].rowIndex
+    };
+  }
+  return { success: false, error: 'ไม่พบข้อมูลเลขหนังสือนี้' };
+}
+
+function updateRecord(params) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Case Data');
+  if (!sheet) return { success: false, error: "ไม่พบชีตชื่อ 'Case Data'" };
+
+  var data = sheet.getDataRange().getValues();
+  var searchDocNumber = (params.docNumber || '').toString().toUpperCase().trim();
+  
+  for (var i = 1; i < data.length; i++) {
+    if (data[i][0].toString().toUpperCase().trim() === searchDocNumber) {
+      // อัปเดตสถานะ (คอลัมน์ 6)
+      if (typeof params.status !== 'undefined' && params.status !== '') {
+        sheet.getRange(i + 1, 6).setValue(params.status);
+      }
+      // อัปเดตหมายเหตุเพิ่มเติม (คอลัมน์ 7)
+      if (typeof params.remark !== 'undefined') {
+        sheet.getRange(i + 1, 7).setValue(params.remark);
+      }
+      // อัปเดตวันเวลาแจ้งสถานะล่าสุด (คอลัมน์ 8)
+      sheet.getRange(i + 1, 8).setValue(getCurrentThaiDateTime());
+      
+      // เรียงข้อมูลตามชื่อผู้รับผิดชอบ (คอลัมน์ 3) ให้เป็นระเบียบเสมอ
+      autoSort(sheet);
+      
+      return { success: true, message: 'อัปเดตสถานะและหมายเหตุสำเร็จ' };
+    }
+  }
+  return { success: false, error: 'ไม่พบข้อมูลที่ต้องการอัปเดต' };
+}
+
+function listRecords() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Case Data');
+  if (!sheet) return { success: false, error: "ไม่พบชีตชื่อ 'Case Data'" };
+
+  var data = sheet.getDataRange().getValues();
+  var records = [];
+  for (var i = 1; i < data.length; i++) {
+    if (data[i][0] !== '' || data[i][2] !== '') {
+      records.push({
+        rowIndex: i + 1,
+        docNumber: data[i][0],
+        receiveDate: data[i][1],
+        staffName: data[i][2],
+        problemType: data[i][3],
+        problemDetail: data[i][4],
+        status: data[i][5],
+        remark: data[i][6],
+        lastUpdate: data[i][7]
+      });
+    }
+  }
+  return { success: true, records: records };
+}
+
+// --- ฟังก์ชันเรียงข้อมูลอัตโนมัติ ---
+function autoSort(sheet) {
+  SpreadsheetApp.flush(); // บังคับให้เขียนข้อมูลลง Sheet ให้เสร็จก่อน
+  var lastRow = sheet.getLastRow();
+  var lastCol = Math.max(sheet.getLastColumn(), 8);
+  if (lastRow > 2) {
+    // เรียงคอลัมน์ที่ 3 (ผู้รับผิดชอบ) จาก ก-ฮ และเรียงคอลัมน์ที่ 1 (เลขหนังสือ) เป็นลำดับรอง
+    var range = sheet.getRange(2, 1, lastRow - 1, lastCol);
+    range.sort([
+      { column: 3, ascending: true },
+      { column: 1, ascending: true }
+    ]);
+  }
+}
+
+function getCurrentThaiDateTime() {
+  var now = new Date();
+  var thaiMonths = ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 
+                    'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม'];
+  var day = now.getDate();
+  var month = thaiMonths[now.getMonth()];
+  var year = now.getFullYear() + 543;
+  var hours = ('0' + now.getHours()).slice(-2);
+  var minutes = ('0' + now.getMinutes()).slice(-2);
+  var seconds = ('0' + now.getSeconds()).slice(-2);
+  return day + ' ' + month + ' ' + year + ' เวลา ' + hours + ':' + minutes + ':' + seconds + ' น.';
+}`;
+
 let jsonpCounter = 0;
 
 function sendJsonp<T = any>(url: string, data: Record<string, string>): Promise<T> {
@@ -242,11 +431,63 @@ function sendJsonp<T = any>(url: string, data: Record<string, string>): Promise<
 }
 
 const STORAGE_KEY = 'korphai_recent_doc_numbers_v1';
+const SETTINGS_STORAGE_KEY = 'korphai_custom_options_v1';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'add' | 'search'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'add' | 'search' | 'settings'>('dashboard');
 
-  // Preloaded records from the attached CSV database (818 records)
+  // Configurable lists (Staff, Problem Types, Status Options) persisted in localStorage
+  const [staffList, setStaffList] = useState<string[]>(() => {
+    try {
+      const raw = localStorage.getItem(SETTINGS_STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed.staffList) && parsed.staffList.length > 0) {
+          return parsed.staffList;
+        }
+      }
+    } catch {
+      // ignore storage errors
+    }
+    return DEFAULT_STAFF_LIST;
+  });
+
+  const [problemTypes, setProblemTypes] = useState<string[]>(() => {
+    try {
+      const raw = localStorage.getItem(SETTINGS_STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed.problemTypes) && parsed.problemTypes.length > 0) {
+          return parsed.problemTypes;
+        }
+      }
+    } catch {
+      // ignore storage errors
+    }
+    return DEFAULT_PROBLEM_TYPES;
+  });
+
+  const [statusOptions, setStatusOptions] = useState<string[]>(() => {
+    try {
+      const raw = localStorage.getItem(SETTINGS_STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed.statusOptions) && parsed.statusOptions.length > 0) {
+          return parsed.statusOptions;
+        }
+      }
+    } catch {
+      // ignore storage errors
+    }
+    return DEFAULT_STATUS_OPTIONS;
+  });
+
+  // Inputs for Settings tab
+  const [newStaffInput, setNewStaffInput] = useState('');
+  const [newProblemTypeInput, setNewProblemTypeInput] = useState('');
+  const [newStatusInput, setNewStatusInput] = useState('');
+
+  // Preloaded records from the attached CSV database (818 records) — automatically sorted by staffName
   const [dbRecords, setDbRecords] = useState<CaseRecord[]>([]);
   const [isLoadingCsv, setIsLoadingCsv] = useState(true);
 
@@ -254,7 +495,10 @@ export default function App() {
   const [dashStaffFilter, setDashStaffFilter] = useState<string>('ALL');
   const [dashStatusFilter, setDashStatusFilter] = useState<string>('ALL');
   const [dashTypeFilter, setDashTypeFilter] = useState<string>('ALL');
-  const [dashTableLimit, setDashTableLimit] = useState<number>(15);
+
+  // Modal for Google Sheets Auto-Sort Script instructions
+  const [showScriptModal, setShowScriptModal] = useState(false);
+  const [copiedScript, setCopiedScript] = useState(false);
 
   // Form states for adding a new record
   const todayIso = new Date().toISOString().split('T')[0];
@@ -296,7 +540,7 @@ export default function App() {
     docNum?: string;
   } | null>(null);
 
-  // Load the attached 818-row CSV database on mount
+  // Load the attached 818-row CSV database on mount and sync with live Google Sheet if action=list is enabled
   useEffect(() => {
     let mounted = true;
     fetch(CSV_DB_PATH)
@@ -316,7 +560,7 @@ export default function App() {
             remark: cols[6] || '',
             lastUpdate: cols[7] || '-',
           }));
-          setDbRecords(parsed);
+          setDbRecords(sortRecordsByStaffName(parsed));
         }
       })
       .catch(() => {
@@ -325,6 +569,30 @@ export default function App() {
       .finally(() => {
         if (mounted) setIsLoadingCsv(false);
       });
+
+    // Also try fetching live records via action=list from Google Apps Script
+    sendJsonp<{ success: boolean; records?: any[] }>(SCRIPT_URL, { action: 'list' })
+      .then((res) => {
+        if (!mounted || !res?.success || !Array.isArray(res.records) || res.records.length === 0) {
+          return;
+        }
+        const liveParsed: CaseRecord[] = res.records.map((item, idx) => ({
+          rowIndex: item.rowIndex || idx + 2,
+          docNumber: String(item.docNumber || ''),
+          receiveDate: formatThaiDate(String(item.receiveDate || '-')),
+          staffName: String(item.staffName || '-'),
+          problemType: String(item.problemType || '-'),
+          problemDetail: String(item.problemDetail || '-'),
+          status: String(item.status || 'อยู่ระหว่างตรวจสอบข้อมูล'),
+          remark: String(item.remark || ''),
+          lastUpdate: String(item.lastUpdate || '-'),
+        }));
+        setDbRecords(sortRecordsByStaffName(liveParsed));
+      })
+      .catch(() => {
+        // Ignore if user hasn't redeployed action=list yet
+      });
+
     return () => {
       mounted = false;
     };
@@ -338,14 +606,31 @@ export default function App() {
     }
   }, [recentDocNumbers]);
 
-  // Dashboard Computed Analytics
+  useEffect(() => {
+    try {
+      localStorage.setItem(
+        SETTINGS_STORAGE_KEY,
+        JSON.stringify({
+          staffList,
+          problemTypes,
+          statusOptions,
+        })
+      );
+    } catch {
+      // ignore storage errors
+    }
+  }, [staffList, problemTypes, statusOptions]);
+
+  // Dashboard Computed Analytics (Sorted automatically by staffName by default)
   const filteredDashboardRecords = useMemo(() => {
-    return dbRecords.filter((r) => {
+    const filtered = dbRecords.filter((r) => {
       if (dashStaffFilter !== 'ALL' && r.staffName !== dashStaffFilter) return false;
       if (dashStatusFilter !== 'ALL' && r.status !== dashStatusFilter) return false;
       if (dashTypeFilter !== 'ALL' && r.problemType !== dashTypeFilter) return false;
       return true;
     });
+
+    return sortRecordsByStaffName(filtered);
   }, [dbRecords, dashStaffFilter, dashStatusFilter, dashTypeFilter]);
 
   const dashboardMetrics = useMemo(() => {
@@ -363,7 +648,7 @@ export default function App() {
 
     // Status breakdown
     const statusMap = new Map<string, number>();
-    STATUS_OPTIONS.forEach((st) => statusMap.set(st, 0));
+    statusOptions.forEach((st) => statusMap.set(st, 0));
     filteredDashboardRecords.forEach((r) => {
       statusMap.set(r.status, (statusMap.get(r.status) || 0) + 1);
     });
@@ -377,14 +662,14 @@ export default function App() {
 
     // Problem type breakdown
     const typeMap = new Map<string, number>();
-    PROBLEM_TYPES.forEach((pt) => typeMap.set(pt, 0));
+    problemTypes.forEach((pt) => typeMap.set(pt, 0));
     filteredDashboardRecords.forEach((r) => {
       if (r.problemType) {
         typeMap.set(r.problemType, (typeMap.get(r.problemType) || 0) + 1);
       }
     });
     const byType = Array.from(typeMap.entries())
-      .filter(([name, count]) => count > 0 || PROBLEM_TYPES.includes(name))
+      .filter(([name, count]) => count > 0 || problemTypes.includes(name))
       .map(([name, count]) => ({
         name,
         count,
@@ -392,12 +677,12 @@ export default function App() {
       }))
       .sort((a, b) => b.count - a.count);
 
-    // Staff workload matrix
+    // Staff workload matrix (sorted alphabetically by Thai name)
     const staffStatsMap = new Map<
       string,
       { total: number; completed: number; pending: number }
     >();
-    STAFF_LIST.forEach((s) => staffStatsMap.set(s, { total: 0, completed: 0, pending: 0 }));
+    staffList.forEach((s) => staffStatsMap.set(s, { total: 0, completed: 0, pending: 0 }));
 
     dbRecords.forEach((r) => {
       if (dashStatusFilter !== 'ALL' && r.status !== dashStatusFilter) return;
@@ -420,11 +705,11 @@ export default function App() {
       .map(([name, stat]) => ({
         name,
         ...stat,
-        isCurrentTeam: STAFF_LIST.includes(name),
+        isCurrentTeam: staffList.includes(name),
         rateNum: stat.total > 0 ? (stat.completed / stat.total) * 100 : 0,
         rate: stat.total > 0 ? ((stat.completed / stat.total) * 100).toFixed(1) : '0.0',
       }))
-      .sort((a, b) => b.total - a.total);
+      .sort((a, b) => a.name.localeCompare(b.name, 'th'));
 
     return {
       total,
@@ -436,23 +721,23 @@ export default function App() {
       byType,
       byStaff,
     };
-  }, [filteredDashboardRecords, dbRecords, dashStatusFilter, dashTypeFilter]);
+  }, [filteredDashboardRecords, dbRecords, dashStatusFilter, dashTypeFilter, staffList, problemTypes, statusOptions]);
 
   const allDistinctStaff = useMemo(() => {
-    const set = new Set<string>(STAFF_LIST);
+    const set = new Set<string>(staffList);
     dbRecords.forEach((r) => {
       if (r.staffName && r.staffName !== '-') set.add(r.staffName);
     });
-    return Array.from(set);
-  }, [dbRecords]);
+    return Array.from(set).sort((a, b) => a.localeCompare(b, 'th'));
+  }, [dbRecords, staffList]);
 
   const allDistinctTypes = useMemo(() => {
-    const set = new Set<string>(PROBLEM_TYPES);
+    const set = new Set<string>(problemTypes);
     dbRecords.forEach((r) => {
       if (r.problemType && r.problemType !== '-') set.add(r.problemType);
     });
     return Array.from(set);
-  }, [dbRecords]);
+  }, [dbRecords, problemTypes]);
 
   // Detect if the user is typing a docNumber in the Add form that already exists in DB
   const existingDocWarning = useMemo(() => {
@@ -476,20 +761,6 @@ export default function App() {
     setProblemDetail('');
     setStatus('');
     setRemark('');
-  };
-
-  const handleOpenRecordInSearch = (record: CaseRecord) => {
-    setSearchDocNumber(record.docNumber);
-    setSearchResult(record);
-    setEditStatus(record.status);
-    setEditRemark(record.remark === '-' ? '' : record.remark);
-    const sameDocMatches = dbRecords.filter((r) => r.docNumber === record.docNumber);
-    setMatchedList(sameDocMatches.length > 1 ? sameDocMatches : []);
-    setNoResultFound(false);
-    setNotification(null);
-    rememberDocNumber(record.docNumber);
-    setActiveTab('search');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleCreateSubmit = async (e: React.FormEvent) => {
@@ -519,6 +790,7 @@ export default function App() {
       problemDetail: problemDetail.trim(),
       status,
       remark: remark.trim(),
+      sortBy: 'staffName',
     };
 
     try {
@@ -526,15 +798,22 @@ export default function App() {
       if (response && response.success) {
         const newRecord: CaseRecord = {
           rowIndex: dbRecords.length + 2,
-          ...formData,
+          docNumber: trimmedDoc,
+          receiveDate: thaiDate,
+          staffName,
+          problemType,
+          problemDetail: problemDetail.trim(),
+          status,
+          remark: remark.trim(),
           lastUpdate: nowTime,
         };
-        setDbRecords((prev) => [newRecord, ...prev]);
+        // Automatically insert and re-sort by staffName (ก-ฮ)
+        setDbRecords((prev) => sortRecordsByStaffName([...prev, newRecord]));
         rememberDocNumber(trimmedDoc);
         setNotification({
           type: 'success',
-          title: 'บันทึกสำเร็จ!',
-          message: `ข้อมูลเลขหนังสือ "${trimmedDoc}" ถูกบันทึกลง Google Sheets เรียบร้อยแล้ว`,
+          title: 'บันทึกและจัดเรียงตามชื่อผู้รับผิดชอบสำเร็จ!',
+          message: `ข้อมูลเลขหนังสือ "${trimmedDoc}" ถูกบันทึกและจัดเรียงเข้ากลุ่มของ "${staffName}" โดยอัตโนมัติแล้ว`,
           docNum: trimmedDoc,
         });
         resetForm();
@@ -671,6 +950,7 @@ export default function App() {
         status: editStatus,
         remark: cleanedRemark,
         lastUpdate: updatedTime,
+        sortBy: 'staffName',
       });
 
       if (response && response.success) {
@@ -682,7 +962,9 @@ export default function App() {
         };
         setSearchResult(updated);
         setDbRecords((prev) =>
-          prev.map((r) => (r.docNumber === updated.docNumber ? updated : r))
+          sortRecordsByStaffName(
+            prev.map((r) => (r.docNumber === updated.docNumber ? updated : r))
+          )
         );
         setNotification({
           type: 'success',
@@ -701,6 +983,12 @@ export default function App() {
     } finally {
       setIsUpdating(false);
     }
+  };
+
+  const handleCopyGasScript = () => {
+    navigator.clipboard.writeText(GAS_AUTO_SORT_SCRIPT);
+    setCopiedScript(true);
+    window.setTimeout(() => setCopiedScript(false), 2500);
   };
 
   const hasActiveDashFilters =
@@ -766,6 +1054,20 @@ export default function App() {
             >
               ค้นหาและแก้ไขสถานะ
             </button>
+            <button
+              type="button"
+              onClick={() => {
+                setActiveTab('settings');
+                setNotification(null);
+              }}
+              className={`py-1 transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+                activeTab === 'settings'
+                  ? 'text-emerald-700 font-bold underline underline-offset-8 decoration-2 decoration-emerald-600'
+                  : 'hover:text-emerald-900'
+              }`}
+            >
+              ตั้งค่าระบบ
+            </button>
           </nav>
 
           <div className="flex items-center shrink-0">
@@ -802,7 +1104,6 @@ export default function App() {
       <main className="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 py-7 space-y-6">
         {/* Atmospheric Emerald & Bamboo Hero Banner */}
         <section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-900 text-white p-6 sm:p-8 shadow-sm">
-          {/* Subtle decorative organic bamboo/geometric SVG background */}
           <svg
             className="absolute right-0 top-0 h-full w-1/2 opacity-10 pointer-events-none"
             viewBox="0 0 400 200"
@@ -820,7 +1121,7 @@ export default function App() {
               <div className="flex flex-wrap items-center gap-2 text-xs text-emerald-200/90 font-medium">
                 <span>สำนักบริหารแรงงานต่างด้าว (สบต.)</span>
                 <span aria-hidden="true">·</span>
-                <span>กรมการจัดหางาน</span>
+                <span>เรียงตามชื่อ-นามสกุลผู้รับผิดชอบอัตโนมัติ</span>
                 <span aria-hidden="true">·</span>
                 <span className="font-mono tabular-nums text-amber-300">
                   {isLoadingCsv
@@ -833,19 +1134,23 @@ export default function App() {
                   ? 'แดชบอร์ดสรุปสถิติและติดตามผลการดำเนินงาน'
                   : activeTab === 'add'
                   ? 'บันทึกข้อมูลปัญหาใหม่เข้าสู่ฐานข้อมูล'
-                  : 'ค้นหาและแก้ไขสถานะการดำเนินการ'}
+                  : activeTab === 'search'
+                  ? 'ค้นหาและแก้ไขสถานะการดำเนินการ'
+                  : 'ตั้งค่ารายชื่อ ประเภทปัญหา และสถานะการดำเนินการ'}
               </h1>
               <p className="text-xs sm:text-sm text-emerald-100/80 max-w-2xl">
                 {activeTab === 'dashboard'
-                  ? 'ภาพรวมสถิติการรับเรื่องและสถานะการแก้ไขปัญหาของสำนักบริหารแรงงานต่างด้าว เชื่อมโยงข้อมูลกับ Google Sheets แบบเรียลไทม์'
+                  ? 'ข้อมูลทั้งหมดถูกจัดเรียงตามชื่อ-นามสกุลผู้รับผิดชอบ (ก–ฮ) โดยอัตโนมัติไม่ว่าจะบันทึกเวลาใด พร้อมสรุปสถิติแบบเรียลไทม์'
                   : activeTab === 'add'
-                  ? 'กรอกข้อมูลหนังสือรับและรายละเอียดปัญหาเพื่อบันทึกลงใน Google Sheets พร้อมระบบตรวจสอบเลขหนังสือซ้ำอัตโนมัติ'
-                  : 'ค้นหาด้วยเลขหนังสือ สบต. หรือคำสำคัญ เพื่อตรวจสอบรายละเอียด อัปเดตสถานะการดำเนินการ และบันทึกหมายเหตุเพิ่มเติม'}
+                  ? 'เมื่อกดบันทึกข้อมูลใหม่ ระบบจะนำข้อมูลไปจัดเรียงเข้ากลุ่มตามชื่อ-นามสกุลผู้รับผิดชอบในฐานข้อมูลให้อัตโนมัติ'
+                  : activeTab === 'search'
+                  ? 'ค้นหาด้วยเลขหนังสือ สบต. หรือคำสำคัญ เพื่อตรวจสอบรายละเอียด อัปเดตสถานะการดำเนินการ และบันทึกหมายเหตุเพิ่มเติม'
+                  : 'เพิ่มหรือลบรายชื่อผู้รับผิดชอบ ประเภทของปัญหา และสถานะการดำเนินการ เพื่อใช้เป็นตัวเลือกในระบบได้ทันที'}
               </p>
             </div>
 
-            {/* 3-Tab Segmented Switcher on Hero */}
-            <div className="grid grid-cols-3 sm:flex items-center gap-1.5 p-1.5 bg-emerald-950/60 backdrop-blur-md border border-white/15 rounded-xl shrink-0 self-start lg:self-center">
+            {/* 4-Tab Segmented Switcher on Hero */}
+            <div className="grid grid-cols-2 sm:flex items-center gap-1.5 p-1.5 bg-emerald-950/60 backdrop-blur-md border border-white/15 rounded-xl shrink-0 self-start lg:self-center">
               <button
                 type="button"
                 onClick={() => {
@@ -890,6 +1195,21 @@ export default function App() {
               >
                 <Search className="w-4 h-4 text-emerald-600" />
                 ค้นหา / แก้ไข
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setActiveTab('settings');
+                  setNotification(null);
+                }}
+                className={`px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg transition-all flex items-center justify-center gap-2 whitespace-nowrap shrink-0 cursor-pointer ${
+                  activeTab === 'settings'
+                    ? 'bg-white text-emerald-950 shadow-xs'
+                    : 'text-emerald-100 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                <Settings className="w-4 h-4 text-emerald-600" />
+                ตั้งค่า
               </button>
             </div>
           </div>
@@ -963,8 +1283,8 @@ export default function App() {
                       className="w-full px-3.5 py-2 bg-slate-50/70 hover:bg-white border border-slate-300 rounded-lg text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-600 transition-colors"
                     >
                       <option value="ALL">ผู้รับผิดชอบทั้งหมด ({allDistinctStaff.length} ท่าน)</option>
-                      <optgroup label="ผู้รับผิดชอบปัจจุบัน (6 ท่าน)">
-                        {STAFF_LIST.map((s) => (
+                      <optgroup label={`ผู้รับผิดชอบปัจจุบัน (${staffList.length} ท่าน)`}>
+                        {staffList.map((s) => (
                           <option key={s} value={s}>
                             {s}
                           </option>
@@ -972,7 +1292,7 @@ export default function App() {
                       </optgroup>
                       <optgroup label="ผู้รับผิดชอบเดิมในฐานข้อมูล">
                         {allDistinctStaff
-                          .filter((s) => !STAFF_LIST.includes(s))
+                          .filter((s) => !staffList.includes(s))
                           .map((s) => (
                             <option key={s} value={s}>
                               {s}
@@ -1017,8 +1337,8 @@ export default function App() {
                       onChange={(e) => setDashStatusFilter(e.target.value)}
                       className="w-full px-3.5 py-2 bg-slate-50/70 hover:bg-white border border-slate-300 rounded-lg text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-600 transition-colors"
                     >
-                      <option value="ALL">สถานะทั้งหมด (7 สถานะ)</option>
-                      {STATUS_OPTIONS.map((st) => (
+                      <option value="ALL">สถานะทั้งหมด ({statusOptions.length} สถานะ)</option>
+                      {statusOptions.map((st) => (
                         <option key={st} value={st}>
                           {st}
                         </option>
@@ -1242,10 +1562,10 @@ export default function App() {
               <div className="px-6 py-4 bg-gradient-to-r from-emerald-50/70 via-slate-50 to-transparent border-b border-slate-200/80 flex flex-wrap items-center justify-between gap-2">
                 <div>
                   <h2 className="font-bold text-slate-900 text-base">
-                    สรุปปริมาณงานแยกตามผู้รับผิดชอบ
+                    สรุปปริมาณงานแยกตามผู้รับผิดชอบ (เรียงตามตัวอักษร ก–ฮ)
                   </h2>
                   <p className="text-xs text-slate-500">
-                    คลิกชื่อผู้รับผิดชอบเพื่อกรองดูรายการเคสของเจ้าหน้าที่ท่านนั้น
+                    คลิกชื่อผู้รับผิดชอบเพื่อกรองดูสถิติของเจ้าหน้าที่ท่านนั้น
                   </p>
                 </div>
                 {dashStaffFilter !== 'ALL' && (
@@ -1320,112 +1640,19 @@ export default function App() {
                 </table>
               </div>
             </section>
-
-            {/* Filtered Case List Explorer */}
-            <section className="bg-white border border-emerald-900/10 rounded-xl overflow-hidden shadow-xs">
-              <div className="px-6 py-4 bg-gradient-to-r from-emerald-50/70 via-slate-50 to-transparent border-b border-slate-200/80 flex flex-wrap items-center justify-between gap-4">
-                <div>
-                  <h2 className="font-bold text-slate-900 text-base">
-                    รายการหนังสือในระบบ ({filteredDashboardRecords.length.toLocaleString()} รายการ)
-                  </h2>
-                  <p className="text-xs text-slate-500">
-                    คลิกปุ่ม "แก้ไข / ดูรายละเอียด" ท้ายแถวเพื่อเปิดแก้ไขสถานะหรือหมายเหตุได้ทันที
-                  </p>
-                </div>
-              </div>
-
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse text-sm">
-                  <thead>
-                    <tr className="border-b border-slate-200 text-xs text-slate-500 bg-slate-50/60">
-                      <th className="py-3 px-6 font-semibold whitespace-nowrap">เลขหนังสือ</th>
-                      <th className="py-3 px-4 font-semibold whitespace-nowrap">วันที่รับ</th>
-                      <th className="py-3 px-4 font-semibold whitespace-nowrap">ผู้รับผิดชอบ</th>
-                      <th className="py-3 px-4 font-semibold whitespace-nowrap">ประเภทปัญหา</th>
-                      <th className="py-3 px-4 font-semibold">ปัญหาที่พบ / หมายเหตุ</th>
-                      <th className="py-3 px-4 font-semibold whitespace-nowrap">สถานะ</th>
-                      <th className="py-3 px-6 font-semibold text-right whitespace-nowrap">
-                        การจัดการ
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-100">
-                    {filteredDashboardRecords.slice(0, dashTableLimit).map((item, idx) => (
-                      <tr
-                        key={`${item.docNumber}-${idx}`}
-                        className="hover:bg-emerald-50/30 transition-colors"
-                      >
-                        <td className="py-3 px-6 font-mono font-bold text-emerald-950 tabular-nums whitespace-nowrap">
-                          {item.docNumber}
-                        </td>
-                        <td className="py-3 px-4 text-xs text-slate-600 whitespace-nowrap">
-                          {item.receiveDate}
-                        </td>
-                        <td className="py-3 px-4 text-xs font-medium text-slate-800 whitespace-nowrap">
-                          {item.staffName}
-                        </td>
-                        <td className="py-3 px-4 text-xs text-slate-700 whitespace-nowrap">
-                          {item.problemType}
-                        </td>
-                        <td className="py-3 px-4 text-xs text-slate-700 max-w-xs">
-                          <p className="line-clamp-1 font-medium text-slate-900">
-                            {item.problemDetail}
-                          </p>
-                          {item.remark && item.remark !== '-' && (
-                            <p className="line-clamp-1 text-slate-500 mt-0.5">
-                              หมายเหตุ: {item.remark}
-                            </p>
-                          )}
-                        </td>
-                        <td
-                          className={`py-3 px-4 text-xs font-semibold whitespace-nowrap ${getStatusColorClass(
-                            item.status
-                          )}`}
-                        >
-                          {item.status}
-                        </td>
-                        <td className="py-3 px-6 text-right whitespace-nowrap">
-                          <button
-                            type="button"
-                            onClick={() => handleOpenRecordInSearch(item)}
-                            className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-700 hover:text-emerald-900 underline cursor-pointer"
-                          >
-                            แก้ไข / ดูรายละเอียด
-                            <ArrowUpRight className="w-3.5 h-3.5" />
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              {filteredDashboardRecords.length > dashTableLimit && (
-                <div className="px-6 py-4 bg-slate-50/60 border-t border-slate-200 text-center">
-                  <button
-                    type="button"
-                    onClick={() => setDashTableLimit((prev) => prev + 25)}
-                    className="px-5 py-2 text-xs font-semibold text-emerald-900 bg-white border border-emerald-200 hover:bg-emerald-50 rounded-lg transition-colors cursor-pointer shadow-2xs"
-                  >
-                    แสดงเพิ่มอีก 25 รายการ (แสดงอยู่ {dashTableLimit} จาก{' '}
-                    {filteredDashboardRecords.length.toLocaleString()} รายการ)
-                  </button>
-                </div>
-              )}
-            </section>
           </div>
         )}
 
         {/* SECTION 1: ADD NEW CASE */}
         {activeTab === 'add' && (
           <section className="bg-white border border-emerald-900/10 rounded-xl overflow-hidden shadow-xs">
-            <div className="px-6 py-4 bg-gradient-to-r from-emerald-50/90 via-teal-50/50 to-transparent border-b border-slate-200/80 flex items-center justify-between">
+            <div className="px-6 py-4 bg-gradient-to-r from-emerald-50/90 via-teal-50/50 to-transparent border-b border-slate-200/80 flex flex-wrap items-center justify-between gap-2">
               <div className="flex items-center gap-2.5">
                 <FileText className="w-5 h-5 text-emerald-600" />
                 <h2 className="font-bold text-slate-900">แบบฟอร์มบันทึกข้อมูลปัญหาใหม่</h2>
               </div>
-              <span className="text-xs text-slate-500">
-                ช่องที่มีเครื่องหมาย <span className="text-red-600 font-bold">*</span> จำเป็นต้องกรอก
+              <span className="text-xs text-emerald-800 font-medium">
+                ระบบจะจัดเรียงข้อมูลตามชื่อ-นามสกุลผู้รับผิดชอบให้อัตโนมัติหลังกดบันทึก
               </span>
             </div>
 
@@ -1516,7 +1743,7 @@ export default function App() {
                     className="w-full px-4 py-2.5 bg-slate-50/60 focus:bg-white border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-4 focus:ring-emerald-500/15 focus:border-emerald-600 transition-all"
                   >
                     <option value="">-- เลือกผู้รับผิดชอบ --</option>
-                    {STAFF_LIST.map((person) => (
+                    {staffList.map((person) => (
                       <option key={person} value={person}>
                         {person}
                       </option>
@@ -1541,7 +1768,7 @@ export default function App() {
                     className="w-full px-4 py-2.5 bg-slate-50/60 focus:bg-white border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-4 focus:ring-emerald-500/15 focus:border-emerald-600 transition-all"
                   >
                     <option value="">-- เลือกประเภทปัญหา --</option>
-                    {PROBLEM_TYPES.map((type) => (
+                    {problemTypes.map((type) => (
                       <option key={type} value={type}>
                         {type}
                       </option>
@@ -1595,7 +1822,7 @@ export default function App() {
                     className="w-full px-4 py-2.5 bg-slate-50/60 focus:bg-white border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-4 focus:ring-emerald-500/15 focus:border-emerald-600 transition-all"
                   >
                     <option value="">-- เลือกสถานะการดำเนินการ --</option>
-                    {STATUS_OPTIONS.map((st) => (
+                    {statusOptions.map((st) => (
                       <option key={st} value={st}>
                         {st}
                       </option>
@@ -1937,7 +2164,7 @@ export default function App() {
                           onChange={(e) => setEditStatus(e.target.value)}
                           className="w-full px-4 py-2.5 bg-slate-50/60 focus:bg-white border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-4 focus:ring-emerald-500/15 focus:border-emerald-600 transition-all"
                         >
-                          {STATUS_OPTIONS.map((st) => (
+                          {Array.from(new Set([...statusOptions, ...(searchResult.status ? [searchResult.status] : [])])).map((st) => (
                             <option key={st} value={st}>
                               {st}
                             </option>
@@ -2006,7 +2233,404 @@ export default function App() {
             )}
           </div>
         )}
+
+        {/* SECTION 3: SETTINGS (Manage Staff, Problem Types, and Statuses) */}
+        {activeTab === 'settings' && (
+          <div className="space-y-6">
+            {/* Top summary & Reset bar */}
+            <section className="bg-white border border-emerald-900/10 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs">
+              <div>
+                <h2 className="text-base font-bold text-slate-900">
+                  จัดการข้อมูลตัวเลือกของระบบ (บันทึกอัตโนมัติ)
+                </h2>
+                <p className="text-xs text-slate-500 mt-0.5">
+                  ข้อมูลที่เพิ่มหรือลบจะถูกนำไปใช้ในหน้า "เพิ่มข้อมูลใหม่", "ค้นหา / แก้ไข", และ "แดชบอร์ด" ทันที
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setStaffList(DEFAULT_STAFF_LIST);
+                  setProblemTypes(DEFAULT_PROBLEM_TYPES);
+                  setStatusOptions(DEFAULT_STATUS_OPTIONS);
+                  setNotification({
+                    type: 'success',
+                    title: 'คืนค่าเริ่มต้นสำเร็จ',
+                    message: 'รีเซ็ตรายชื่อผู้รับผิดชอบ ประเภทปัญหา และสถานะการดำเนินการกลับเป็นค่าเริ่มต้นเรียบร้อยแล้ว',
+                  });
+                }}
+                className="px-4 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer self-start sm:self-auto"
+              >
+                <RotateCcw className="w-3.5 h-3.5" />
+                คืนค่าเริ่มต้นทั้งหมด
+              </button>
+            </section>
+
+            {/* 3-Column Management Grid */}
+            <div className="grid lg:grid-cols-3 gap-6">
+              {/* Column 1: Staff List */}
+              <section className="bg-white border border-emerald-900/10 rounded-xl overflow-hidden shadow-xs flex flex-col">
+                <div className="px-5 py-4 bg-gradient-to-r from-emerald-50/90 via-teal-50/40 to-transparent border-b border-slate-200/80 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <User className="w-4 h-4 text-emerald-700" />
+                    <h3 className="font-bold text-slate-900 text-sm">
+                      ชื่อ-นามสกุล ผู้รับผิดชอบ
+                    </h3>
+                  </div>
+                  <span className="text-xs font-mono font-bold text-emerald-800 tabular-nums">
+                    {staffList.length} รายชื่อ
+                  </span>
+                </div>
+
+                <div className="p-5 space-y-4 flex-1 flex flex-col">
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      const val = newStaffInput.trim();
+                      if (!val) return;
+                      if (staffList.includes(val)) {
+                        setNotification({
+                          type: 'error',
+                          title: 'รายชื่อซ้ำ',
+                          message: `มีชื่อ "${val}" อยู่ในระบบแล้ว`,
+                        });
+                        return;
+                      }
+                      setStaffList((prev) => [...prev, val]);
+                      setNewStaffInput('');
+                      setNotification({
+                        type: 'success',
+                        title: 'เพิ่มผู้รับผิดชอบสำเร็จ',
+                        message: `เพิ่ม "${val}" เข้าสู่รายการผู้รับผิดชอบเรียบร้อยแล้ว`,
+                      });
+                    }}
+                    className="flex gap-2"
+                  >
+                    <input
+                      type="text"
+                      value={newStaffInput}
+                      onChange={(e) => setNewStaffInput(e.target.value)}
+                      placeholder="พิมพ์ชื่อ-นามสกุลใหม่..."
+                      className="flex-1 min-w-0 px-3 py-2 bg-slate-50/70 focus:bg-white border border-slate-300 rounded-lg text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                    />
+                    <button
+                      type="submit"
+                      className="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-lg transition-colors flex items-center gap-1 whitespace-nowrap shrink-0 cursor-pointer"
+                    >
+                      <Plus className="w-3.5 h-3.5" />
+                      เพิ่ม
+                    </button>
+                  </form>
+
+                  <div className="divide-y divide-slate-100 border border-slate-200/80 rounded-lg overflow-hidden">
+                    {staffList.length === 0 ? (
+                      <p className="p-4 text-xs text-slate-400 text-center">
+                        ยังไม่มีรายชื่อผู้รับผิดชอบ
+                      </p>
+                    ) : (
+                      staffList.map((person, idx) => (
+                        <div
+                          key={person}
+                          className="px-3.5 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80 transition-colors text-xs sm:text-sm"
+                        >
+                          <div className="flex items-center gap-2 min-w-0">
+                            <span className="text-xs font-mono text-slate-400 tabular-nums w-5 shrink-0">
+                              {idx + 1}.
+                            </span>
+                            <span className="font-medium text-slate-800 truncate">
+                              {person}
+                            </span>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setStaffList((prev) => prev.filter((item) => item !== person));
+                              if (staffName === person) setStaffName('');
+                              if (dashStaffFilter === person) setDashStaffFilter('ALL');
+                              setNotification({
+                                type: 'success',
+                                title: 'ลบรายชื่อผู้รับผิดชอบแล้ว',
+                                message: `นำ "${person}" ออกจากตัวเลือกผู้รับผิดชอบเรียบร้อยแล้ว`,
+                              });
+                            }}
+                            className="p-1.5 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-md transition-colors shrink-0 cursor-pointer"
+                            title={`ลบ ${person}`}
+                            aria-label={`ลบ ${person}`}
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
+              </section>
+
+              {/* Column 2: Problem Types */}
+              <section className="bg-white border border-emerald-900/10 rounded-xl overflow-hidden shadow-xs flex flex-col">
+                <div className="px-5 py-4 bg-gradient-to-r from-teal-50/90 via-sky-50/40 to-transparent border-b border-slate-200/80 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <FolderKanban className="w-4 h-4 text-teal-700" />
+                    <h3 className="font-bold text-slate-900 text-sm">
+                      ประเภทของปัญหา
+                    </h3>
+                  </div>
+                  <span className="text-xs font-mono font-bold text-teal-800 tabular-nums">
+                    {problemTypes.length} ประเภท
+                  </span>
+                </div>
+
+                <div className="p-5 space-y-4 flex-1 flex flex-col">
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      const val = newProblemTypeInput.trim();
+                      if (!val) return;
+                      if (problemTypes.includes(val)) {
+                        setNotification({
+                          type: 'error',
+                          title: 'ประเภทปัญหาซ้ำ',
+                          message: `มีหัวข้อ "${val}" อยู่ในระบบแล้ว`,
+                        });
+                        return;
+                      }
+                      setProblemTypes((prev) => [...prev, val]);
+                      setNewProblemTypeInput('');
+                      setNotification({
+                        type: 'success',
+                        title: 'เพิ่มประเภทของปัญหาสำเร็จ',
+                        message: `เพิ่ม "${val}" เข้าสู่รายการประเภทปัญหาเรียบร้อยแล้ว`,
+                      });
+                    }}
+                    className="flex gap-2"
+                  >
+                    <input
+                      type="text"
+                      value={newProblemTypeInput}
+                      onChange={(e) => setNewProblemTypeInput(e.target.value)}
+                      placeholder="พิมพ์ประเภทปัญหาใหม่..."
+                      className="flex-1 min-w-0 px-3 py-2 bg-slate-50/70 focus:bg-white border border-slate-300 rounded-lg text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                    />
+                    <button
+                      type="submit"
+                      className="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-lg transition-colors flex items-center gap-1 whitespace-nowrap shrink-0 cursor-pointer"
+                    >
+                      <Plus className="w-3.5 h-3.5" />
+                      เพิ่ม
+                    </button>
+                  </form>
+
+                  <div className="divide-y divide-slate-100 border border-slate-200/80 rounded-lg overflow-hidden">
+                    {problemTypes.length === 0 ? (
+                      <p className="p-4 text-xs text-slate-400 text-center">
+                        ยังไม่มีรายการประเภทปัญหา
+                      </p>
+                    ) : (
+                      problemTypes.map((type, idx) => (
+                        <div
+                          key={type}
+                          className="px-3.5 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80 transition-colors text-xs sm:text-sm"
+                        >
+                          <div className="flex items-center gap-2 min-w-0">
+                            <span className="text-xs font-mono text-slate-400 tabular-nums w-5 shrink-0">
+                              {idx + 1}.
+                            </span>
+                            <span className="font-medium text-slate-800 truncate">
+                              {type}
+                            </span>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setProblemTypes((prev) => prev.filter((item) => item !== type));
+                              if (problemType === type) setProblemType('');
+                              if (dashTypeFilter === type) setDashTypeFilter('ALL');
+                              setNotification({
+                                type: 'success',
+                                title: 'ลบประเภทของปัญหาแล้ว',
+                                message: `นำ "${type}" ออกจากตัวเลือกประเภทปัญหาเรียบร้อยแล้ว`,
+                              });
+                            }}
+                            className="p-1.5 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-md transition-colors shrink-0 cursor-pointer"
+                            title={`ลบ ${type}`}
+                            aria-label={`ลบ ${type}`}
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
+              </section>
+
+              {/* Column 3: Status Options */}
+              <section className="bg-white border border-emerald-900/10 rounded-xl overflow-hidden shadow-xs flex flex-col">
+                <div className="px-5 py-4 bg-gradient-to-r from-emerald-50/90 via-amber-50/30 to-transparent border-b border-slate-200/80 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+                    <h3 className="font-bold text-slate-900 text-sm">
+                      สถานะการดำเนินการ
+                    </h3>
+                  </div>
+                  <span className="text-xs font-mono font-bold text-emerald-800 tabular-nums">
+                    {statusOptions.length} สถานะ
+                  </span>
+                </div>
+
+                <div className="p-5 space-y-4 flex-1 flex flex-col">
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      const val = newStatusInput.trim();
+                      if (!val) return;
+                      if (statusOptions.includes(val)) {
+                        setNotification({
+                          type: 'error',
+                          title: 'สถานะการดำเนินการซ้ำ',
+                          message: `มีสถานะ "${val}" อยู่ในระบบแล้ว`,
+                        });
+                        return;
+                      }
+                      setStatusOptions((prev) => [...prev, val]);
+                      setNewStatusInput('');
+                      setNotification({
+                        type: 'success',
+                        title: 'เพิ่มสถานะการดำเนินการสำเร็จ',
+                        message: `เพิ่ม "${val}" เข้าสู่รายการสถานะเรียบร้อยแล้ว`,
+                      });
+                    }}
+                    className="flex gap-2"
+                  >
+                    <input
+                      type="text"
+                      value={newStatusInput}
+                      onChange={(e) => setNewStatusInput(e.target.value)}
+                      placeholder="พิมพ์สถานะการดำเนินการใหม่..."
+                      className="flex-1 min-w-0 px-3 py-2 bg-slate-50/70 focus:bg-white border border-slate-300 rounded-lg text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                    />
+                    <button
+                      type="submit"
+                      className="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-lg transition-colors flex items-center gap-1 whitespace-nowrap shrink-0 cursor-pointer"
+                    >
+                      <Plus className="w-3.5 h-3.5" />
+                      เพิ่ม
+                    </button>
+                  </form>
+
+                  <div className="divide-y divide-slate-100 border border-slate-200/80 rounded-lg overflow-hidden">
+                    {statusOptions.length === 0 ? (
+                      <p className="p-4 text-xs text-slate-400 text-center">
+                        ยังไม่มีรายการสถานะการดำเนินการ
+                      </p>
+                    ) : (
+                      statusOptions.map((st, idx) => (
+                        <div
+                          key={st}
+                          className="px-3.5 py-2.5 flex items-center justify-between gap-2 hover:bg-slate-50/80 transition-colors text-xs sm:text-sm"
+                        >
+                          <div className="flex items-center gap-2 min-w-0">
+                            <span className="text-xs font-mono text-slate-400 tabular-nums w-5 shrink-0">
+                              {idx + 1}.
+                            </span>
+                            <span className={`font-semibold truncate ${getStatusColorClass(st)}`}>
+                              {st}
+                            </span>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setStatusOptions((prev) => prev.filter((item) => item !== st));
+                              if (status === st) setStatus('');
+                              if (dashStatusFilter === st) setDashStatusFilter('ALL');
+                              setNotification({
+                                type: 'success',
+                                title: 'ลบสถานะการดำเนินการแล้ว',
+                                message: `นำ "${st}" ออกจากตัวเลือกสถานะเรียบร้อยแล้ว`,
+                              });
+                            }}
+                            className="p-1.5 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-md transition-colors shrink-0 cursor-pointer"
+                            title={`ลบ ${st}`}
+                            aria-label={`ลบ ${st}`}
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        )}
       </main>
+
+      {/* Modal for Google Apps Script Auto-Sort Setup */}
+      {showScriptModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="script-modal-title"
+        >
+          <div className="bg-white border border-slate-200 rounded-xl max-w-2xl w-full p-6 space-y-4 shadow-lg max-h-[90vh] flex flex-col">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h3 id="script-modal-title" className="text-lg font-bold text-slate-900">
+                  โค้ดจัดเรียงข้อมูลตาม "ชื่อ-นามสกุลผู้รับผิดชอบ" อัตโนมัติใน Google Sheet
+                </h3>
+                <p className="text-xs text-slate-600 mt-1">
+                  ในหน้าเว็บระบบได้จัดเรียงตามชื่อผู้รับผิดชอบให้อัตโนมัติแล้ว ส่วนในไฟล์ Google Sheet หากต้องการให้แถวเรียงตามคอลัมน์ C (ผู้รับผิดชอบ) อัตโนมัติทุกครั้งที่กดบันทึก สามารถนำคำสั่ง <code className="font-mono text-emerald-700">.sort(&#123; column: 3, ascending: true &#125;)</code> นี้ไปใส่ในเมนู <strong>ส่วนขยาย (Extensions) &gt; Apps Script</strong> ได้เลยครับ
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowScriptModal(false)}
+                className="p-1 text-slate-400 hover:text-slate-700 rounded-lg cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="bg-slate-900 text-slate-100 rounded-lg p-4 overflow-y-auto flex-1 font-mono text-xs leading-relaxed">
+              <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-800 text-emerald-400">
+                <span>Code.gs (รองรับเรียงตามผู้รับผิดชอบอัตโนมัติ + บันทึกหมายเหตุ)</span>
+                <button
+                  type="button"
+                  onClick={handleCopyGasScript}
+                  className="px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded text-xs font-sans font-semibold flex items-center gap-1.5 cursor-pointer"
+                >
+                  {copiedScript ? (
+                    <>
+                      <Check className="w-3.5 h-3.5" />
+                      คัดลอกโค้ดแล้ว
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-3.5 h-3.5" />
+                      คัดลอกโค้ดทั้งหมด
+                    </>
+                  )}
+                </button>
+              </div>
+              <pre className="whitespace-pre-wrap break-words text-slate-200">
+                <code>{GAS_AUTO_SORT_SCRIPT}</code>
+              </pre>
+            </div>
+
+            <div className="flex items-center justify-end gap-3 pt-2">
+              <button
+                type="button"
+                onClick={() => setShowScriptModal(false)}
+                className="px-5 py-2 text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
+              >
+                ปิดหน้าต่าง
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Confirmation Modal for Updating Status & Remark */}
       {showConfirmModal && searchResult && (
@@ -2073,7 +2697,17 @@ export default function App() {
       <footer className="bg-white border-t border-emerald-900/10 py-5 px-6 mt-auto">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500">
           <p>© ระบบจัดเก็บสถิติและปัญหากอไผ่ — สำนักบริหารแรงงานต่างด้าว (สบต.)</p>
-          <p>ฐานข้อมูลออนไลน์ Google Sheets ({dbRecords.length.toLocaleString()} รายการ)</p>
+          <div className="flex flex-wrap items-center gap-3">
+            <span>ฐานข้อมูลจัดเรียงตามชื่อ-นามสกุลผู้รับผิดชอบอัตโนมัติ ({dbRecords.length.toLocaleString()} รายการ)</span>
+            <button
+              type="button"
+              onClick={() => setShowScriptModal(true)}
+              className="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-900 font-semibold underline cursor-pointer"
+            >
+              <Code2 className="w-3.5 h-3.5" />
+              โค้ด Apps Script
+            </button>
+          </div>
         </div>
       </footer>
     </div>
