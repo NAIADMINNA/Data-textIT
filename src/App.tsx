@@ -22,9 +22,13 @@ import {
   Settings,
   Plus,
   Trash2,
-  RotateCcw
+  RotateCcw,
+  Lock,
+  KeyRound
 } from 'lucide-react';
 import { INITIAL_DB_RECORDS } from './initialDatabase';
+
+const SETTINGS_PASSCODE = '123456';
 
 // Default Live Google Apps Script URL
 const DEFAULT_SCRIPT_URL =
@@ -84,70 +88,12 @@ const THAI_MONTHS = [
   'ธันวาคม',
 ];
 
-// Helper to sort records by staffName (Thai alphabetical order) automatically
 function sortRecordsByStaffName(records: CaseRecord[]): CaseRecord[] {
   return [...records].sort((a, b) => {
     const cmp = (a.staffName || '').localeCompare(b.staffName || '', 'th');
     if (cmp !== 0) return cmp;
     return (a.rowIndex || 0) - (b.rowIndex || 0);
   });
-}
-
-// RFC-4180 compliant CSV parser supporting multiline quoted fields
-function parseCsvText(csvText: string): string[][] {
-  const rows: string[][] = [];
-  let currentRow: string[] = [];
-  let currentField = '';
-  let inQuotes = false;
-
-  for (let i = 0; i < csvText.length; i++) {
-    const char = csvText[i];
-    const nextChar = csvText[i + 1];
-
-    if (inQuotes) {
-      if (char === '"' && nextChar === '"') {
-        currentField += '"';
-        i++;
-      } else if (char === '"') {
-        inQuotes = false;
-      } else {
-        currentField += char;
-      }
-    } else {
-      if (char === '"') {
-        inQuotes = true;
-      } else if (char === ',') {
-        currentRow.push(currentField.trim());
-        currentField = '';
-      } else if (char === '\r' && nextChar === '\n') {
-        currentRow.push(currentField.trim());
-        if (currentRow.some((cell) => cell !== '')) {
-          rows.push(currentRow);
-        }
-        currentRow = [];
-        currentField = '';
-        i++;
-      } else if (char === '\n') {
-        currentRow.push(currentField.trim());
-        if (currentRow.some((cell) => cell !== '')) {
-          rows.push(currentRow);
-        }
-        currentRow = [];
-        currentField = '';
-      } else {
-        currentField += char;
-      }
-    }
-  }
-
-  if (currentField.length > 0 || currentRow.length > 0) {
-    currentRow.push(currentField.trim());
-    if (currentRow.some((cell) => cell !== '')) {
-      rows.push(currentRow);
-    }
-  }
-
-  return rows;
 }
 
 export function formatThaiDate(dateStr: string): string {
@@ -550,7 +496,10 @@ export default function App() {
     return DEFAULT_STATUS_OPTIONS;
   });
 
-  // Inputs for Settings tab
+  // Inputs for Settings tab & Passcode lock (123456)
+  const [isSettingsUnlocked, setIsSettingsUnlocked] = useState(false);
+  const [settingsPasscodeInput, setSettingsPasscodeInput] = useState('');
+  const [settingsPasscodeError, setSettingsPasscodeError] = useState('');
   const [newStaffInput, setNewStaffInput] = useState('');
   const [newProblemTypeInput, setNewProblemTypeInput] = useState('');
   const [newStatusInput, setNewStatusInput] = useState('');
@@ -696,6 +645,14 @@ export default function App() {
       mounted = false;
     };
   }, [scriptUrl]);
+
+  useEffect(() => {
+    if (activeTab !== 'settings') {
+      setIsSettingsUnlocked(false);
+      setSettingsPasscodeInput('');
+      setSettingsPasscodeError('');
+    }
+  }, [activeTab]);
 
   useEffect(() => {
     try {
@@ -2372,8 +2329,86 @@ export default function App() {
           </div>
         )}
 
-        {/* SECTION 3: SETTINGS (Manage Staff, Problem Types, and Statuses) */}
+        {/* SECTION 3: SETTINGS (Protected by Passcode 123456) */}
         {activeTab === 'settings' && (
+          !isSettingsUnlocked ? (
+            <section className="max-w-md mx-auto bg-white border border-emerald-900/10 rounded-2xl p-6 sm:p-8 shadow-xs space-y-6 my-4">
+              <div className="flex flex-col items-center text-center space-y-2">
+                <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-700">
+                  <Lock className="w-6 h-6" />
+                </div>
+                <h2 className="text-lg font-bold text-slate-900">
+                  ยืนยันรหัสผ่านเข้าสู่เมนูตั้งค่าระบบ
+                </h2>
+                <p className="text-xs text-slate-500">
+                  กรุณากรอกรหัสผ่าน 6 หลัก เพื่อเข้าจัดการรายชื่อผู้รับผิดชอบ ประเภทปัญหา และสถานะการดำเนินการ
+                </p>
+              </div>
+
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (settingsPasscodeInput.trim() === SETTINGS_PASSCODE) {
+                    setIsSettingsUnlocked(true);
+                    setSettingsPasscodeInput('');
+                    setSettingsPasscodeError('');
+                    setNotification(null);
+                  } else {
+                    setSettingsPasscodeError('รหัสผ่านไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง');
+                  }
+                }}
+                className="space-y-4"
+              >
+                <div>
+                  <label htmlFor="settings-passcode" className="block text-xs font-semibold text-slate-700 mb-1.5">
+                    รหัสผ่านเข้าใช้งาน (Passcode)
+                  </label>
+                  <div className="relative">
+                    <KeyRound className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <input
+                      id="settings-passcode"
+                      type="password"
+                      inputMode="numeric"
+                      autoFocus
+                      value={settingsPasscodeInput}
+                      onChange={(e) => {
+                        setSettingsPasscodeInput(e.target.value);
+                        if (settingsPasscodeError) setSettingsPasscodeError('');
+                      }}
+                      placeholder="กรอกรหัสผ่าน 6 หลัก..."
+                      className="w-full pl-10 pr-4 py-2.5 bg-slate-50/70 focus:bg-white border border-slate-300 rounded-lg text-sm font-mono tracking-widest text-slate-900 placeholder:font-sans placeholder:tracking-normal placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                    />
+                  </div>
+                  {settingsPasscodeError && (
+                    <p className="mt-1.5 text-xs font-semibold text-red-600 flex items-center gap-1">
+                      <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                      {settingsPasscodeError}
+                    </p>
+                  )}
+                </div>
+
+                <div className="flex items-center gap-2.5 pt-1">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setActiveTab('dashboard');
+                      setNotification(null);
+                    }}
+                    className="flex-1 py-2.5 px-4 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors cursor-pointer"
+                  >
+                    ยกเลิก
+                  </button>
+                  <button
+                    type="submit"
+                    className="flex-1 py-2.5 px-4 text-xs font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 rounded-lg shadow-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                  >
+                    <Lock className="w-3.5 h-3.5" />
+                    เข้าสู่ตั้งค่าระบบ
+                  </button>
+                </div>
+              </form>
+            </section>
+          ) : (
           <div className="space-y-6">
             {/* Top summary & Reset bar */}
             <section className="bg-white border border-emerald-900/10 rounded-xl p-5 space-y-4 shadow-xs">
@@ -2386,27 +2421,42 @@ export default function App() {
                     ข้อมูลที่เพิ่มหรือลบจะถูกนำไปใช้ในหน้า "เพิ่มข้อมูลใหม่", "ค้นหา / แก้ไข", และ "แดชบอร์ด" ทันที
                   </p>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setStaffList(DEFAULT_STAFF_LIST);
-                    setProblemTypes(DEFAULT_PROBLEM_TYPES);
-                    setStatusOptions(DEFAULT_STATUS_OPTIONS);
-                    setScriptUrl(DEFAULT_SCRIPT_URL);
-                    setScriptUrlInput(DEFAULT_SCRIPT_URL);
-                    localStorage.removeItem(RECORDS_STORAGE_KEY);
-                    setDbRecords(getInitialMergedRecords());
-                    setNotification({
-                      type: 'success',
-                      title: 'คืนค่าเริ่มต้นสำเร็จ',
-                      message: 'รีเซ็ตรายชื่อผู้รับผิดชอบ ประเภทปัญหา สถานะการดำเนินการ และข้อมูลฐานข้อมูลกลับเป็นค่าเริ่มต้นเรียบร้อยแล้ว',
-                    });
-                  }}
-                  className="px-4 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer self-start sm:self-auto"
-                >
-                  <RotateCcw className="w-3.5 h-3.5" />
-                  คืนค่าเริ่มต้นทั้งหมด
-                </button>
+                <div className="flex flex-wrap items-center gap-2 self-start sm:self-auto">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsSettingsUnlocked(false);
+                      setSettingsPasscodeInput('');
+                      setSettingsPasscodeError('');
+                      setNotification(null);
+                    }}
+                    className="px-3.5 py-2 text-xs font-semibold text-emerald-900 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/80 rounded-lg transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer"
+                  >
+                    <Lock className="w-3.5 h-3.5 text-emerald-700" />
+                    ล็อกหน้าตั้งค่า
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setStaffList(DEFAULT_STAFF_LIST);
+                      setProblemTypes(DEFAULT_PROBLEM_TYPES);
+                      setStatusOptions(DEFAULT_STATUS_OPTIONS);
+                      setScriptUrl(DEFAULT_SCRIPT_URL);
+                      setScriptUrlInput(DEFAULT_SCRIPT_URL);
+                      localStorage.removeItem(RECORDS_STORAGE_KEY);
+                      setDbRecords(getInitialMergedRecords());
+                      setNotification({
+                        type: 'success',
+                        title: 'คืนค่าเริ่มต้นสำเร็จ',
+                        message: 'รีเซ็ตรายชื่อผู้รับผิดชอบ ประเภทปัญหา สถานะการดำเนินการ และข้อมูลฐานข้อมูลกลับเป็นค่าเริ่มต้นเรียบร้อยแล้ว',
+                      });
+                    }}
+                    className="px-4 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5" />
+                    คืนค่าเริ่มต้นทั้งหมด
+                  </button>
+                </div>
               </div>
 
               {/* Google Apps Script URL Configuration (in case New Deployment created a new URL) */}
@@ -2760,6 +2810,7 @@ export default function App() {
               </section>
             </div>
           </div>
+          )
         )}
       </main>
 
