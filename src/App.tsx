@@ -154,9 +154,26 @@ function parseCsvText(csvText: string): string[][] {
 
 export function formatThaiDate(dateStr: string): string {
   if (!dateStr || typeof dateStr !== 'string') return '-';
-  if (THAI_MONTHS.some((m) => dateStr.includes(m))) return dateStr;
+  const trimmed = dateStr.trim();
+  if (!trimmed || trimmed === '-') return '-';
+  if (THAI_MONTHS.some((m) => trimmed.includes(m))) return trimmed;
 
-  const match = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  // Handle ISO UTC strings returned by Google Sheets getValues(), e.g. "2569-03-11T17:00:00.000Z"
+  if (trimmed.includes('T') && trimmed.endsWith('Z')) {
+    const parsedDate = new Date(trimmed);
+    if (!isNaN(parsedDate.getTime())) {
+      // Shift to Thailand Time (UTC+7)
+      const thaiTime = new Date(parsedDate.getTime() + 7 * 60 * 60 * 1000);
+      const year = thaiTime.getUTCFullYear();
+      const month = thaiTime.getUTCMonth() + 1;
+      const day = thaiTime.getUTCDate();
+      const thaiMonth = THAI_MONTHS[month - 1];
+      const thaiYear = year > 2400 ? year : year + 543;
+      return `${day} ${thaiMonth} ${thaiYear}`;
+    }
+  }
+
+  const match = trimmed.match(/^(\d{4})-(\d{2})-(\d{2})/);
   if (match) {
     const year = parseInt(match[1], 10);
     const month = parseInt(match[2], 10);
@@ -168,7 +185,7 @@ export function formatThaiDate(dateStr: string): string {
       return `${day} ${thaiMonth} ${thaiYear}`;
     }
   }
-  return dateStr;
+  return trimmed;
 }
 
 export function getCurrentThaiDateTime(): string {
@@ -281,7 +298,8 @@ function searchRecord(docNumber) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Case Data');
   if (!sheet) return { success: false, error: "ไม่พบชีตชื่อ 'Case Data'" };
 
-  var data = sheet.getDataRange().getValues();
+  // ใช้ getDisplayValues() เพื่อดึงข้อความทุกคอลัมน์ตรงตามที่แสดงในชีต 100% (ป้องกันวันที่เพี้ยนเป็น UTC)
+  var data = sheet.getDataRange().getDisplayValues();
   var searchDocNumber = (docNumber || '').toString().toUpperCase().trim();
   var matches = [];
   
@@ -316,11 +334,14 @@ function updateRecord(params) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Case Data');
   if (!sheet) return { success: false, error: "ไม่พบชีตชื่อ 'Case Data'" };
 
-  var data = sheet.getDataRange().getValues();
+  var data = sheet.getDataRange().getDisplayValues();
   var searchDocNumber = (params.docNumber || '').toString().toUpperCase().trim();
+  var targetRow = params.rowIndex ? parseInt(params.rowIndex, 10) : null;
   
   for (var i = 1; i < data.length; i++) {
-    if (data[i][0].toString().toUpperCase().trim() === searchDocNumber) {
+    var isDocMatch = data[i][0].toString().toUpperCase().trim() === searchDocNumber;
+    var isRowMatch = !targetRow || (i + 1) === targetRow;
+    if (isDocMatch && isRowMatch) {
       // อัปเดตสถานะ (คอลัมน์ 6)
       if (typeof params.status !== 'undefined' && params.status !== '') {
         sheet.getRange(i + 1, 6).setValue(params.status);
@@ -345,24 +366,27 @@ function listRecords() {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Case Data');
   if (!sheet) return { success: false, error: "ไม่พบชีตชื่อ 'Case Data'" };
 
-  var data = sheet.getDataRange().getValues();
+  // ใช้ getDisplayValues() เพื่อดึงข้อมูลทุกแถวและทุกคอลัมน์มาแสดงครบถ้วนตรงตามชีต
+  var data = sheet.getDataRange().getDisplayValues();
   var records = [];
   for (var i = 1; i < data.length; i++) {
-    if (data[i][0] !== '' || data[i][2] !== '') {
+    var row = data[i];
+    var hasContent = row.some(function(cell) { return cell && cell.toString().trim() !== ''; });
+    if (hasContent) {
       records.push({
         rowIndex: i + 1,
-        docNumber: data[i][0],
-        receiveDate: data[i][1],
-        staffName: data[i][2],
-        problemType: data[i][3],
-        problemDetail: data[i][4],
-        status: data[i][5],
-        remark: data[i][6],
-        lastUpdate: data[i][7]
+        docNumber: row[0] || '',
+        receiveDate: row[1] || '-',
+        staffName: row[2] || '-',
+        problemType: row[3] || '-',
+        problemDetail: row[4] || '-',
+        status: row[5] || 'อยู่ระหว่างตรวจสอบข้อมูล',
+        remark: row[6] || '',
+        lastUpdate: row[7] || '-'
       });
     }
   }
-  return { success: true, records: records };
+  return { success: true, records: records, total: records.length };
 }
 
 // --- ฟังก์ชันเรียงข้อมูลอัตโนมัติ ---
@@ -490,6 +514,8 @@ export default function App() {
   // Preloaded records from the attached CSV database (818 records) — automatically sorted by staffName
   const [dbRecords, setDbRecords] = useState<CaseRecord[]>([]);
   const [isLoadingCsv, setIsLoadingCsv] = useState(true);
+  const [isSyncingLive, setIsSyncingLive] = useState(false);
+  const [liveSyncSource, setLiveSyncSource] = useState<'csv' | 'live'>('csv');
 
   // Dashboard filter states
   const [dashStaffFilter, setDashStaffFilter] = useState<string>('ALL');
@@ -540,6 +566,56 @@ export default function App() {
     docNum?: string;
   } | null>(null);
 
+  const handleManualSyncFromSheet = async (showNotice = true) => {
+    setIsSyncingLive(true);
+    if (showNotice) setNotification(null);
+    try {
+      const res = await sendJsonp<{ success: boolean; records?: any[]; error?: string }>(
+        SCRIPT_URL,
+        { action: 'list' }
+      );
+      if (res && res.success && Array.isArray(res.records) && res.records.length > 0) {
+        const liveParsed: CaseRecord[] = res.records.map((item, idx) => ({
+          rowIndex: item.rowIndex || idx + 2,
+          docNumber: String(item.docNumber || '').trim(),
+          receiveDate: formatThaiDate(String(item.receiveDate || '-')),
+          staffName: String(item.staffName || '-').trim(),
+          problemType: String(item.problemType || '-').trim(),
+          problemDetail: String(item.problemDetail || '-').trim(),
+          status: String(item.status || 'อยู่ระหว่างตรวจสอบข้อมูล').trim(),
+          remark: String(item.remark || '').trim(),
+          lastUpdate: formatThaiDate(String(item.lastUpdate || '-')),
+        }));
+        setDbRecords(sortRecordsByStaffName(liveParsed));
+        setLiveSyncSource('live');
+        if (showNotice) {
+          setNotification({
+            type: 'success',
+            title: 'ซิงค์ข้อมูลสดจาก Google Sheet สำเร็จ!',
+            message: `ดึงข้อมูลจากชีต 'Case Data' ครบถ้วนทั้งหมด ${liveParsed.length.toLocaleString()} รายการแล้ว`,
+          });
+        }
+      } else if (showNotice) {
+        setNotification({
+          type: 'error',
+          title: 'Google Apps Script ยังไม่ได้อัปเดตเป็นเวอร์ชันใหม่ (New Deployment)',
+          message:
+            'ขณะนี้ลิงก์ Apps Script ยังรันโค้ดเดิมที่ไม่มีคำสั่งดึงข้อมูลทั้งหมด (action=list) กรุณากดปุ่ม "โค้ด Apps Script" เพื่อคัดลอกโค้ดใหม่ไปวาง แล้วกด Deploy > Manage deployments > Edit > เลือก New version ครับ',
+        });
+      }
+    } catch {
+      if (showNotice) {
+        setNotification({
+          type: 'error',
+          title: 'ไม่สามารถเชื่อมต่อเพื่อดึงข้อมูลทั้งหมดได้',
+          message: 'กรุณาตรวจสอบการตั้งค่า Deploy ใน Google Apps Script ให้เป็น Anyone (ทุกคนเข้าถึงได้)',
+        });
+      }
+    } finally {
+      setIsSyncingLive(false);
+    }
+  };
+
   // Load the attached 818-row CSV database on mount and sync with live Google Sheet if action=list is enabled
   useEffect(() => {
     let mounted = true;
@@ -560,7 +636,7 @@ export default function App() {
             remark: cols[6] || '',
             lastUpdate: cols[7] || '-',
           }));
-          setDbRecords(sortRecordsByStaffName(parsed));
+          setDbRecords((prev) => (prev.length > parsed.length ? prev : sortRecordsByStaffName(parsed)));
         }
       })
       .catch(() => {
@@ -578,16 +654,17 @@ export default function App() {
         }
         const liveParsed: CaseRecord[] = res.records.map((item, idx) => ({
           rowIndex: item.rowIndex || idx + 2,
-          docNumber: String(item.docNumber || ''),
+          docNumber: String(item.docNumber || '').trim(),
           receiveDate: formatThaiDate(String(item.receiveDate || '-')),
-          staffName: String(item.staffName || '-'),
-          problemType: String(item.problemType || '-'),
-          problemDetail: String(item.problemDetail || '-'),
-          status: String(item.status || 'อยู่ระหว่างตรวจสอบข้อมูล'),
-          remark: String(item.remark || ''),
-          lastUpdate: String(item.lastUpdate || '-'),
+          staffName: String(item.staffName || '-').trim(),
+          problemType: String(item.problemType || '-').trim(),
+          problemDetail: String(item.problemDetail || '-').trim(),
+          status: String(item.status || 'อยู่ระหว่างตรวจสอบข้อมูล').trim(),
+          remark: String(item.remark || '').trim(),
+          lastUpdate: formatThaiDate(String(item.lastUpdate || '-')),
         }));
         setDbRecords(sortRecordsByStaffName(liveParsed));
+        setLiveSyncSource('live');
       })
       .catch(() => {
         // Ignore if user hasn't redeployed action=list yet
@@ -861,33 +938,48 @@ export default function App() {
         : [];
 
     try {
-      const response = await sendJsonp<{ success: boolean; data?: any; error?: string }>(
-        SCRIPT_URL,
-        {
-          action: 'search',
-          docNumber: trimmed,
-        }
-      );
+      const response = await sendJsonp<{
+        success: boolean;
+        data?: any;
+        matches?: any[];
+        rowNumber?: number;
+        error?: string;
+      }>(SCRIPT_URL, {
+        action: 'search',
+        docNumber: trimmed,
+      });
 
       if (response && response.success && response.data) {
-        const liveRecord: CaseRecord = {
-          docNumber: String(response.data.docNumber || trimmed),
-          receiveDate: formatThaiDate(String(response.data.receiveDate || '-')),
-          staffName: String(response.data.staffName || '-'),
-          problemType: String(response.data.problemType || '-'),
-          problemDetail: String(response.data.problemDetail || '-'),
-          status: String(response.data.status || 'อยู่ระหว่างตรวจสอบข้อมูล'),
-          remark: String(response.data.remark || '-'),
-          lastUpdate: String(response.data.lastUpdate || getCurrentThaiDateTime()),
-        };
-        setSearchResult(liveRecord);
-        setEditStatus(liveRecord.status);
-        setEditRemark(liveRecord.remark === '-' ? '' : liveRecord.remark);
-        if (exactMatches.length > 1) {
-          setMatchedList(exactMatches);
+        const formatItem = (raw: any, fallbackRow?: number): CaseRecord => ({
+          rowIndex: raw.rowIndex || fallbackRow,
+          docNumber: String(raw.docNumber || trimmed).trim(),
+          receiveDate: formatThaiDate(String(raw.receiveDate || '-')),
+          staffName: String(raw.staffName || '-').trim(),
+          problemType: String(raw.problemType || '-').trim(),
+          problemDetail: String(raw.problemDetail || '-').trim(),
+          status: String(raw.status || 'อยู่ระหว่างตรวจสอบข้อมูล').trim(),
+          remark: String(raw.remark || '-').trim() || '-',
+          lastUpdate: formatThaiDate(String(raw.lastUpdate || getCurrentThaiDateTime())),
+        });
+
+        const primaryLive = formatItem(response.data, response.rowNumber);
+
+        // If Apps Script returned multiple matches (new script), use them; otherwise combine with local exactMatches
+        let allMatches: CaseRecord[] = [];
+        if (Array.isArray(response.matches) && response.matches.length > 0) {
+          allMatches = response.matches.map((m, i) => formatItem(m, m.rowIndex || i + 2));
+        } else if (exactMatches.length > 1) {
+          allMatches = exactMatches.map((m, idx) => (idx === 0 ? primaryLive : m));
+        } else {
+          allMatches = [primaryLive];
         }
+
+        setSearchResult(allMatches[0]);
+        setEditStatus(allMatches[0].status);
+        setEditRemark(allMatches[0].remark === '-' ? '' : allMatches[0].remark);
+        setMatchedList(allMatches.length > 1 ? allMatches : []);
         setNoResultFound(false);
-        rememberDocNumber(liveRecord.docNumber);
+        rememberDocNumber(allMatches[0].docNumber);
       } else if (exactMatches.length > 0) {
         setSearchResult(exactMatches[0]);
         setEditStatus(exactMatches[0].status);
@@ -1347,20 +1439,35 @@ export default function App() {
                   </div>
                 </div>
 
-                {hasActiveDashFilters && (
+                <div className="flex flex-wrap items-center gap-2 self-start lg:self-auto shrink-0">
+                  {hasActiveDashFilters && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setDashStaffFilter('ALL');
+                        setDashStatusFilter('ALL');
+                        setDashTypeFilter('ALL');
+                      }}
+                      className="px-3.5 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer"
+                    >
+                      <X className="w-3.5 h-3.5" />
+                      ล้างตัวกรอง
+                    </button>
+                  )}
                   <button
                     type="button"
-                    onClick={() => {
-                      setDashStaffFilter('ALL');
-                      setDashStatusFilter('ALL');
-                      setDashTypeFilter('ALL');
-                    }}
-                    className="px-4 py-2 text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 rounded-lg transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer self-start lg:self-auto"
+                    disabled={isSyncingLive}
+                    onClick={() => handleManualSyncFromSheet(true)}
+                    className="px-4 py-2 text-xs font-semibold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/80 disabled:opacity-60 rounded-lg transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer"
                   >
-                    <RefreshCw className="w-3.5 h-3.5" />
-                    ล้างตัวกรองทั้งหมด
+                    <RefreshCw className={`w-3.5 h-3.5 ${isSyncingLive ? 'animate-spin' : ''}`} />
+                    {isSyncingLive
+                      ? 'กำลังซิงค์ข้อมูล...'
+                      : liveSyncSource === 'live'
+                      ? 'ซิงค์ข้อมูลสดแล้ว'
+                      : 'ดึงข้อมูลล่าสุดจาก Google Sheet'}
                   </button>
-                )}
+                </div>
               </div>
             </section>
 
