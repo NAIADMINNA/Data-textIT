@@ -1,0 +1,6 @@
+{
+  "name": "Korphai Audit & Case Management Console",
+  "description": "รายงานวิเคราะห์เชิงลึกระบบจัดเก็บสถิติและปัญหากอไผ่ (สำนักบริหารแรงงานต่างด้าว) พร้อมระบบต้นแบบรุ่นปรับปรุงด้านความปลอดภัยและ UX/UI",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
