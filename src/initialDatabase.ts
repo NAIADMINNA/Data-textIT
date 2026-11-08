@@ -1,4 +1,4 @@
-// Auto-generated from Case Data CSV (818 records)
+// Auto-generated from Case Data CSV (1026 records)
 export const INITIAL_DB_RECORDS = [
   {
     "rowIndex": 2,
@@ -1274,7 +1274,7 @@ export const INITIAL_DB_RECORDS = [
     "problemDetail": "ขอความอนุเคราะห์แก้ไขภาพถ่ายคนต่างด้าว 24 ก.ย. 67 และ 8 ก.ค. 68 นายจ้างเดียวกัน 2 รายสลับกัน",
     "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
     "remark": "",
-    "lastUpdate": "22 มิถุนายน 2569 เวลา 09:15:03 น."
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 09:53:05 น."
   },
   {
     "rowIndex": 118,
@@ -1989,7 +1989,7 @@ export const INITIAL_DB_RECORDS = [
     "problemDetail": "ขอแก้ไขรูปถ่ายคนต่างด้าว มติ 2 สลับกัน",
     "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
     "remark": "",
-    "lastUpdate": "13 สิงหาคม 2569 เวลา 09:42:39 น."
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 09:54:32 น."
   },
   {
     "rowIndex": 183,
@@ -2044,7 +2044,7 @@ export const INITIAL_DB_RECORDS = [
     "problemDetail": "ขอแก้ไขรูปคนต่างด้าวมติ 2 จำนวน 3 ราย",
     "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
     "remark": "",
-    "lastUpdate": "19 สิงหาคม 2569 เวลา 16:12:07 น."
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 09:53:50 น."
   },
   {
     "rowIndex": 188,
@@ -2064,9 +2064,9 @@ export const INITIAL_DB_RECORDS = [
     "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
     "problemType": "ข้อมูลแก้ไขข้อมูล",
     "problemDetail": "ระบบนายจ้างขึ้นใบอนุญาตทำงานหมดอายุ",
-    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
     "remark": "",
-    "lastUpdate": "20 สิงหาคม 2569 เวลา 17:18:10 น."
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 09:52:12 น."
   },
   {
     "rowIndex": 190,
@@ -2361,9 +2361,9 @@ export const INITIAL_DB_RECORDS = [
     "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
     "problemType": "ข้อมูลแก้ไขข้อมูล",
     "problemDetail": "ขอแก้ไขรูปถ่่ายคนต่างด้าวมติ 2 ธ.ค. 68 แนบสลับกัน 2 ราย",
-    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
     "remark": "",
-    "lastUpdate": "1 ตุลาคม 2569 เวลา 08:57:43 น."
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 09:49:53 น."
   },
   {
     "rowIndex": 217,
@@ -2477,6 +2477,787 @@ export const INITIAL_DB_RECORDS = [
   },
   {
     "rowIndex": 227,
+    "docNumber": "18516",
+    "receiveDate": "2 ตุลาคม 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ขอคืนสถานะ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 13:28:36 น."
+  },
+  {
+    "rowIndex": 228,
+    "docNumber": "19379",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสาเหตุการออกจากงาน แรงงานต่างด้าวในระบบ",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 13:49:19 น."
+  },
+  {
+    "rowIndex": 229,
+    "docNumber": "19502",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ตรวจสอบระบบนัดหมายถ่ายใบอนุญาตทำงาน",
+    "status": "อยู่ระหว่างเสนอหนังสือพิจารณา/อนุมัติ",
+    "remark": "",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 09:24:08 น."
+  },
+  {
+    "rowIndex": 230,
+    "docNumber": "18877",
+    "receiveDate": "8 ตุลาคม 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "อื่น ๆ",
+    "problemDetail": "ขอคืนค่าธรรมเนียม",
+    "status": "ส่งต่อกลุ่มงานอื่นๆ ที่เกี่ยวข้อง",
+    "remark": "นำเรื่องส่งบริหาร 29/10/69",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 09:59:07 น."
+  },
+  {
+    "rowIndex": 231,
+    "docNumber": "18962",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ย้ัอนสถานะชำระเงิน ชำระค่าธรรมเนียม บต. 25 ไม่ทัน กลุ่ม mou",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "ย้อนแล้ว 29/10/69",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 10:32:38 น."
+  },
+  {
+    "rowIndex": 232,
+    "docNumber": "18963",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ย้ัอนสถานะชำระเงิน ชำระค่าธรรมเนียม บต. 25 ไม่ทัน กลุ่ม mou",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 10:32:57 น."
+  },
+  {
+    "rowIndex": 233,
+    "docNumber": "18964",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ย้ัอนสถานะชำระเงิน ชำระค่าธรรมเนียม บต. 25 ไม่ทัน กลุ่ม mou",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 10:33:18 น."
+  },
+  {
+    "rowIndex": 234,
+    "docNumber": "18965",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ย้ัอนสถานะชำระเงิน ชำระค่าธรรมเนียม บต. 25 ไม่ทัน กลุ่ม mou",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 10:33:36 น."
+  },
+  {
+    "rowIndex": 235,
+    "docNumber": "18966",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ย้ัอนสถานะชำระเงิน ชำระค่าธรรมเนียม บต. 25 ไม่ทัน กลุ่ม mou",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 10:33:58 น."
+  },
+  {
+    "rowIndex": 236,
+    "docNumber": "18968",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ย้ัอนสถานะชำระเงิน ชำระค่าธรรมเนียม บต. 25 ไม่ทัน กลุ่ม mou",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 10:34:25 น."
+  },
+  {
+    "rowIndex": 237,
+    "docNumber": "19147",
+    "receiveDate": "12 ตุลาคม 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ย้ัอนสถานะชำระเงิน   กลุ่ม mou",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 10:54:18 น."
+  },
+  {
+    "rowIndex": 238,
+    "docNumber": "19104",
+    "receiveDate": "12 ตุลาคม 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ย้อนสถานะชำระเงินกลุ่ม mou",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 11:28:34 น."
+  },
+  {
+    "rowIndex": 239,
+    "docNumber": "19207",
+    "receiveDate": "14 ตุลาคม 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "อื่น ๆ",
+    "problemDetail": "ขอติดตามสถานะคำขอ เปลี่ยนแปลงนายจ้าง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "ตรวจสอบ และรายงานผลไปทางอีเมลแล้ว 29/10/69",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 14:13:37 น."
+  },
+  {
+    "rowIndex": 240,
+    "docNumber": "19480",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "อื่น ๆ",
+    "problemDetail": "ติดตามความคืบหน้าพิจารณาคำขอเปลี่ยนนายจ้าง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "ตอบกลับเมลแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 16:52:19 น."
+  },
+  {
+    "rowIndex": 241,
+    "docNumber": "19325",
+    "receiveDate": "15 พฤศจิกายน 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ติดตามความคืบหน้าคำขอเปลี่ยนแปลงรายการในใบอนุญาตทำงานฯ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "ตรวจสบและส่งเมลตอบกลับไปแล้ว 2/11/69",
+    "lastUpdate": "2 พฤศจิกายน 2569 เวลา 10:26:20 น."
+  },
+  {
+    "rowIndex": 242,
+    "docNumber": "19482",
+    "receiveDate": "19 พฤศจิกายน 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "สอบถามเกี่ยวกับการต่ออายุใบอนุญาตทำงานผ่านระบบ e-Workpermit",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "ตอบเมลกลับแล้ว 2/11/69",
+    "lastUpdate": "2 พฤศจิกายน 2569 เวลา 11:19:04 น."
+  },
+  {
+    "rowIndex": 243,
+    "docNumber": "8046",
+    "receiveDate": "2 พฤศจิกายน 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "อื่น ๆ",
+    "problemDetail": "ขอความร่วมมือตรวจสอบข้อเท็จจริงเกี่ยวกับการยื่นคำขอ",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "ลงเลขกลุ่มไปไม่ใช่เลขสบต. (กลุ่มพิจารณาอุทธรณ์ขอข้อมูล)",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 17:08:30 น."
+  },
+  {
+    "rowIndex": 244,
+    "docNumber": "20630",
+    "receiveDate": "2 พฤศจิกายน 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "อื่น ๆ",
+    "problemDetail": "ขอสอบถามเรื่องนัดรับใบอนุญาตทำงานฯ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "ตอบอีเมลกลับแล้ว 2/11/69",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 14:15:31 น."
+  },
+  {
+    "rowIndex": 245,
+    "docNumber": "20639",
+    "receiveDate": "2 พฤศจิกายน 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "อื่น ๆ",
+    "problemDetail": "ขอส่งเอกสารแจ้งความประสงค์เป็นโรงพยาบาลเอกชนเพื่อให้บริการตรวจสุขภาพแรงงานต่างด้าว",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "บริษัท โรงพยาบาลพะวอ จำกัด (โรงพยาบาลแม่สอด ราม)",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 14:20:02 น."
+  },
+  {
+    "rowIndex": 246,
+    "docNumber": "8107",
+    "receiveDate": "4 พฤศจิกายน 2569",
+    "staffName": "นางสาวจีรนันท์ เอกวรรณัง",
+    "problemType": "อื่น ๆ",
+    "problemDetail": "เพิ่มรายชื่อแพทย์ของโรงพยาบาลเมดพลัส  (ข้อมูลไม่ถูกต้องแนบแพทย์ของรพ.อื่นมา)",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "ลงเลขกลุ่ม    (รง 0316.4/59 จากพิ 2)  (JVFSO6910041-LT)",
+    "lastUpdate": "6 พฤศจิกายน 2569 เวลา 15:53:35 น."
+  },
+  {
+    "rowIndex": 247,
+    "docNumber": "18949",
+    "receiveDate": "10 กันยายน 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ไม่พบข้อมูลในระบบ eworkpermit ทำให้ไม่สามารถเปลื่ยนนายจ้างได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 16:57:18 น."
+  },
+  {
+    "rowIndex": 248,
+    "docNumber": "19175",
+    "receiveDate": "15 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขประเภทนายจ้างจากนายจ้างต่างชาติเป็นนายจ้างคนไทย",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 16:59:59 น."
+  },
+  {
+    "rowIndex": 249,
+    "docNumber": "14850",
+    "receiveDate": "31 กรกฎาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "เปลืิ่ยนแปลงชื่อนายจ้าง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:01:22 น."
+  },
+  {
+    "rowIndex": 250,
+    "docNumber": "14823",
+    "receiveDate": "27 กรกฎาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "อื่น ๆ",
+    "problemDetail": "ขอค่าธรรมเนียมการยื่นเปลื่ยนนายจ้างคืน",
+    "status": "อยู่ระหว่างประสานงานผู้แจ้ง",
+    "remark": "รอ",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:07:32 น."
+  },
+  {
+    "rowIndex": 251,
+    "docNumber": "17655",
+    "receiveDate": "16 กันยายน 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขที่อยู่สถานที่ทำงานในระบบ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:09:34 น."
+  },
+  {
+    "rowIndex": 252,
+    "docNumber": "18961",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ไม่มีข้อมูลคนงานต่างด้าวในระบบ",
+    "status": "อยู่ระหว่างประสานงาน OS",
+    "remark": "ติดตามงานทาง JV แล้ว",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:12:37 น."
+  },
+  {
+    "rowIndex": 253,
+    "docNumber": "18967",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ไม่พบข้อมูลแรงงานต่างด้าวในระบบ",
+    "status": "อยู่ระหว่างประสานงาน OS",
+    "remark": "ได้แจ้งติดตามงาน JV แล้ว",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:14:28 น."
+  },
+  {
+    "rowIndex": 254,
+    "docNumber": "19618",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "เปลื่ยนแปลงผู้ถือหุ้นและหุ้นส่วนผู้จัดการ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:15:33 น."
+  },
+  {
+    "rowIndex": 255,
+    "docNumber": "19619",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "เปลื่ยนแปลงชื่อผู้อำนวยการโรงเรียน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:16:54 น."
+  },
+  {
+    "rowIndex": 256,
+    "docNumber": "19444",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่ายเนื่องจากมีการแนบรูปถ่ายสลับกัน",
+    "status": "อยู่ระหว่างเสนอหนังสือพิจารณา/อนุมัติ",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:26:13 น."
+  },
+  {
+    "rowIndex": 257,
+    "docNumber": "19387",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่ายเนื่องจากแนบรูปผิด",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 18:17:25 น."
+  },
+  {
+    "rowIndex": 258,
+    "docNumber": "18992",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่ายเนื่องจากแนบสลับกัน",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:28:32 น."
+  },
+  {
+    "rowIndex": 259,
+    "docNumber": "19656",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่ายเนื่องจากแนบผิด บต.25",
+    "status": "อยู่ระหว่างประสานงาน OS",
+    "remark": "",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 18:11:09 น."
+  },
+  {
+    "rowIndex": 260,
+    "docNumber": "19455",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่ายเนื่องจากแนบสลับ",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:31:15 น."
+  },
+  {
+    "rowIndex": 261,
+    "docNumber": "19320",
+    "receiveDate": "15 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่ายเนื่องแจกแนบสลับ",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:32:52 น."
+  },
+  {
+    "rowIndex": 262,
+    "docNumber": "19390",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่าย",
+    "status": "อยู่ระหว่างเสนอหนังสือพิจารณา/อนุมัติ",
+    "remark": "",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 18:10:23 น."
+  },
+  {
+    "rowIndex": 263,
+    "docNumber": "19388",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่าย",
+    "status": "อยู่ระหว่างเสนอหนังสือพิจารณา/อนุมัติ",
+    "remark": "",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 18:10:39 น."
+  },
+  {
+    "rowIndex": 264,
+    "docNumber": "19389",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่าย",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:36:43 น."
+  },
+  {
+    "rowIndex": 265,
+    "docNumber": "19197",
+    "receiveDate": "14 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่ายเนื่องจากแนบผิด",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:39:47 น."
+  },
+  {
+    "rowIndex": 266,
+    "docNumber": "18954",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแกก้ไขรูปถ่ายใหม่ให้พื้นหลังเป็นสีขาว",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:40:34 น."
+  },
+  {
+    "rowIndex": 267,
+    "docNumber": "19556",
+    "receiveDate": "20 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสัญชาติ",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:41:18 น."
+  },
+  {
+    "rowIndex": 268,
+    "docNumber": "19196",
+    "receiveDate": "14 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่ายเนื่องจากแนบสลับ",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:41:55 น."
+  },
+  {
+    "rowIndex": 269,
+    "docNumber": "19243",
+    "receiveDate": "14 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่ายเนื่องจากแนบสลับ",
+    "status": "อยู่ระหว่างเสนอหนังสือพิจารณา/อนุมัติ",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 09:55:56 น."
+  },
+  {
+    "rowIndex": 270,
+    "docNumber": "18671",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่ายเนื่องจากแนบสลับ",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:43:21 น."
+  },
+  {
+    "rowIndex": 271,
+    "docNumber": "18998",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่ายเนื่องจากแนบสลับ",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:44:26 น."
+  },
+  {
+    "rowIndex": 272,
+    "docNumber": "19346",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่ายเนื่องจากแนบสลับ",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:45:02 น."
+  },
+  {
+    "rowIndex": 273,
+    "docNumber": "19492",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่ายเนื่องจากแนบผิด",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:45:36 น."
+  },
+  {
+    "rowIndex": 274,
+    "docNumber": "19553",
+    "receiveDate": "20 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่ายเนื่องจากแนบผิด",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:47:06 น."
+  },
+  {
+    "rowIndex": 275,
+    "docNumber": "19581",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขรูปถ่าย",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:48:25 น."
+  },
+  {
+    "rowIndex": 276,
+    "docNumber": "19589",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่าย",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:49:04 น."
+  },
+  {
+    "rowIndex": 277,
+    "docNumber": "19358",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่าย",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:49:31 น."
+  },
+  {
+    "rowIndex": 278,
+    "docNumber": "19368",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่าย",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:50:02 น."
+  },
+  {
+    "rowIndex": 279,
+    "docNumber": "19360",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่าย",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:50:33 น."
+  },
+  {
+    "rowIndex": 280,
+    "docNumber": "19026",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่าย",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:51:11 น."
+  },
+  {
+    "rowIndex": 281,
+    "docNumber": "19495",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่าย",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:51:47 น."
+  },
+  {
+    "rowIndex": 282,
+    "docNumber": "19027",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่าย",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:52:14 น."
+  },
+  {
+    "rowIndex": 283,
+    "docNumber": "19784",
+    "receiveDate": "2005-10-26",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่าย",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:52:42 น."
+  },
+  {
+    "rowIndex": 284,
+    "docNumber": "19656",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแแก้ไขรูปถ่าย บต.25",
+    "status": "อยู่ระหว่างเสนอหนังสือพิจารณา/อนุมัติ",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 10:51:43 น."
+  },
+  {
+    "rowIndex": 285,
+    "docNumber": "19619",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "เปลื่ยนแปลงชื่อผู้อำนวยการโรงเรียน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 10:55:06 น."
+  },
+  {
+    "rowIndex": 286,
+    "docNumber": "19618",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอเปลื่ยนแปลงรายการผู้ถือหุ้นและหุ้นส่วนผู้จัดการของห้างหุ้นส่วน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 10:56:36 น."
+  },
+  {
+    "rowIndex": 287,
+    "docNumber": "17655",
+    "receiveDate": "16 กันยายน 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขที่อยู่ของแรงงานเนื่องจากไม่ตรงกับสถานที่ทำงานจริง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 10:57:29 น."
+  },
+  {
+    "rowIndex": 288,
+    "docNumber": "18093",
+    "receiveDate": "23 กันยายน 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ยื่นคำขอแก้ไขกระทบหน้าบัตร",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 10:58:58 น."
+  },
+  {
+    "rowIndex": 289,
+    "docNumber": "18092",
+    "receiveDate": "23 กันยายน 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขเปลื่ยนแปลงรายการกระทบหน้าบัตร",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 11:00:02 น."
+  },
+  {
+    "rowIndex": 290,
+    "docNumber": "14850",
+    "receiveDate": "31 กรกฎาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอเปลื่้ยนแปลงชื่อนายจ้าง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 11:00:32 น."
+  },
+  {
+    "rowIndex": 291,
+    "docNumber": "19175",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "เปลื่ยนแปลงนายจ้างจากคนต่างชาติเป็นคนไทย",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 11:01:24 น."
+  },
+  {
+    "rowIndex": 292,
+    "docNumber": "18949",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ไม่พบข้อมูลต่างด้าวในระบบ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 11:01:56 น."
+  },
+  {
+    "rowIndex": 293,
+    "docNumber": "19319",
+    "receiveDate": "15 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่าย",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 17:42:27 น."
+  },
+  {
+    "rowIndex": 294,
+    "docNumber": "19274",
+    "receiveDate": "15 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่าย",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 17:42:53 น."
+  },
+  {
+    "rowIndex": 295,
+    "docNumber": "20492",
+    "receiveDate": "29 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่ายเนื่องจากแนบสลับกัน",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 09:46:33 น."
+  },
+  {
+    "rowIndex": 296,
+    "docNumber": "20459",
+    "receiveDate": "29 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขรูปถ่ายเนื่องจากแนบผิด",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 09:47:05 น."
+  },
+  {
+    "rowIndex": 297,
+    "docNumber": "19445",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสาวภาณุมาศ สาลีนาค",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขรูปถ่ายเนื่องจากแนบรูปสลับกัน",
+    "status": "อยู่ระหว่างเสนอหนังสือพิจารณา/อนุมัติ",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 09:57:10 น."
+  },
+  {
+    "rowIndex": 298,
     "docNumber": "3956",
     "receiveDate": "6 กุมภาพันธ์ 2569",
     "staffName": "นางสาวราตรี ชำนาญพงศ์",
@@ -2487,7 +3268,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 มีนาคม 2569 เวลา 18:28:49 น."
   },
   {
-    "rowIndex": 228,
+    "rowIndex": 299,
     "docNumber": "4012",
     "receiveDate": "9 มีนาคม 2569",
     "staffName": "นางสาวราตรี ชำนาญพงศ์",
@@ -2498,7 +3279,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 มีนาคม 2569 เวลา 18:28:15 น."
   },
   {
-    "rowIndex": 229,
+    "rowIndex": 300,
     "docNumber": "4087",
     "receiveDate": "9 มีนาคม 2569",
     "staffName": "นางสาวราตรี ชำนาญพงศ์",
@@ -2509,7 +3290,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "12 มีนาคม 2569 เวลา 17:35:24 น."
   },
   {
-    "rowIndex": 230,
+    "rowIndex": 301,
     "docNumber": "4081",
     "receiveDate": "9 มีนาคม 2569",
     "staffName": "นางสาวราตรี ชำนาญพงศ์",
@@ -2520,7 +3301,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 15:25:10 น."
   },
   {
-    "rowIndex": 231,
+    "rowIndex": 302,
     "docNumber": "4268",
     "receiveDate": "11 มีนาคม 2569",
     "staffName": "นางสาวราตรี ชำนาญพงศ์",
@@ -2531,7 +3312,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 15:29:16 น."
   },
   {
-    "rowIndex": 232,
+    "rowIndex": 303,
     "docNumber": "4131",
     "receiveDate": "9 มีนาคม 2569",
     "staffName": "นางสาวราตรี ชำนาญพงศ์",
@@ -2542,7 +3323,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 15:33:31 น."
   },
   {
-    "rowIndex": 233,
+    "rowIndex": 304,
     "docNumber": "4129",
     "receiveDate": "9 มีนาคม 2569",
     "staffName": "นางสาวราตรี ชำนาญพงศ์",
@@ -2553,7 +3334,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 15:36:47 น."
   },
   {
-    "rowIndex": 234,
+    "rowIndex": 305,
     "docNumber": "4130",
     "receiveDate": "9 มีนาคม 2569",
     "staffName": "นางสาวราตรี ชำนาญพงศ์",
@@ -2564,7 +3345,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 15:38:55 น."
   },
   {
-    "rowIndex": 235,
+    "rowIndex": 306,
     "docNumber": "3984",
     "receiveDate": "6 มีนาคม 2569",
     "staffName": "นางสาวราตรี ชำนาญพงศ์",
@@ -2575,7 +3356,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 15:45:04 น."
   },
   {
-    "rowIndex": 236,
+    "rowIndex": 307,
     "docNumber": "4217",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นางสาวราตรี ชำนาญพงศ์",
@@ -2586,7 +3367,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 15:57:29 น."
   },
   {
-    "rowIndex": 237,
+    "rowIndex": 308,
     "docNumber": "4215",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นางสาวราตรี ชำนาญพงศ์",
@@ -2597,7 +3378,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 15:58:39 น."
   },
   {
-    "rowIndex": 238,
+    "rowIndex": 309,
     "docNumber": "4216",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นางสาวราตรี ชำนาญพงศ์",
@@ -2608,7 +3389,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 16:01:39 น."
   },
   {
-    "rowIndex": 239,
+    "rowIndex": 310,
     "docNumber": "4183",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นางสาวราตรี ชำนาญพงศ์",
@@ -2619,7 +3400,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 พฤษภาคม 2569 เวลา 17:00:23 น."
   },
   {
-    "rowIndex": 240,
+    "rowIndex": 311,
     "docNumber": "4033",
     "receiveDate": "9 มีนาคม 2569",
     "staffName": "นางสาวราตรี ชำนาญพงศ์",
@@ -2630,7 +3411,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 16:12:20 น."
   },
   {
-    "rowIndex": 241,
+    "rowIndex": 312,
     "docNumber": "4128",
     "receiveDate": "9 มีนาคม 2569",
     "staffName": "นางสาวราตรี ชำนาญพงศ์",
@@ -2641,7 +3422,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 16:18:18 น."
   },
   {
-    "rowIndex": 242,
+    "rowIndex": 313,
     "docNumber": "1675",
     "receiveDate": "27 มกราคม 2569",
     "staffName": "นางสาวศิริรัตน์ หยกรัศมีโรจน์",
@@ -2652,7 +3433,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 10:17:45 น."
   },
   {
-    "rowIndex": 243,
+    "rowIndex": 314,
     "docNumber": "3358",
     "receiveDate": "24 กุมภาพันธ์ 2569",
     "staffName": "นางสาวศิริรัตน์ หยกรัศมีโรจน์",
@@ -2663,7 +3444,898 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 10:18:07 น."
   },
   {
-    "rowIndex": 244,
+    "rowIndex": 315,
+    "docNumber": "18948",
+    "receiveDate": "10 กันยายน 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "อื่น ๆ",
+    "problemDetail": "ไม่พบข้อมูลในระบบ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 15:45:36 น."
+  },
+  {
+    "rowIndex": 316,
+    "docNumber": "18861",
+    "receiveDate": "10 สิงหาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "สถานะในระบบขึ้นยกเลิกนัดหมาย แรงงานยังไม่เคยเลื่อนนัดหมายมาก่อน",
+    "status": "อยู่ระหว่างประสานงานผู้แจ้ง",
+    "remark": "",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 15:39:05 น."
+  },
+  {
+    "rowIndex": 317,
+    "docNumber": "18857",
+    "receiveDate": "10 สิงหาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "จองคิวในระบบถูกยกเลิกจึงไม่สามารถต่ออายุใบอนุญาตทำงานได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "6 พฤศจิกายน 2569 เวลา 11:40:45 น."
+  },
+  {
+    "rowIndex": 318,
+    "docNumber": "18860",
+    "receiveDate": "10 สิงหาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "เปลี่ยนสถานะจากกะเหรี่ยงเป็นบุคคลที่ไม่มีสถานะทางทะเบียน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 15:41:36 น."
+  },
+  {
+    "rowIndex": 319,
+    "docNumber": "18975",
+    "receiveDate": "10 กันยายน 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ไม่พบข้อมูลแรงงานในระบบ os ฐานข้อมูลนายจ้าง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "6 พฤศจิกายน 2569 เวลา 14:50:25 น."
+  },
+  {
+    "rowIndex": 320,
+    "docNumber": "18908",
+    "receiveDate": "10 สิงหาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "เกิดข้อผิดพลาดในการยื่นต่อใบอนุญาตทำงาน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 08:58:11 น."
+  },
+  {
+    "rowIndex": 321,
+    "docNumber": "18917",
+    "receiveDate": "10 สิงหาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ไม่สามารถกดจ่ายใบอนุญาตทำงานในระบบ os ได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 08:59:12 น."
+  },
+  {
+    "rowIndex": 322,
+    "docNumber": "18918",
+    "receiveDate": "10 สิงหาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ไม่สามารถกดจ่าบใบอนุญาตทำงานในระบบ os ได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 08:59:54 น."
+  },
+  {
+    "rowIndex": 323,
+    "docNumber": "18919",
+    "receiveDate": "10 สิงหาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ไม่สมารถกดจ่ายใบอนุญาตทำงานในระบบ os ได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 09:00:22 น."
+  },
+  {
+    "rowIndex": 324,
+    "docNumber": "19059",
+    "receiveDate": "10 ธันวาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขข้อมูลนายจ้างและแรงงานต่างด้าว",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 09:01:14 น."
+  },
+  {
+    "rowIndex": 325,
+    "docNumber": "16423",
+    "receiveDate": "26 สิงหาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "แก้ไขปัญหาความขัดข้องในระบบ",
+    "status": "อยู่ระหว่างประสานงานผู้แจ้ง",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 09:06:42 น."
+  },
+  {
+    "rowIndex": 326,
+    "docNumber": "16423",
+    "receiveDate": "26 สิงหาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "แก้ไขปัญหาความขัดข้องของระบบ os",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:08:05 น."
+  },
+  {
+    "rowIndex": 327,
+    "docNumber": "16138",
+    "receiveDate": "19 สิงหาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "การตรวจสอบคำขอเปลี่ยนรายการ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:13:10 น."
+  },
+  {
+    "rowIndex": 328,
+    "docNumber": "17656",
+    "receiveDate": "16 กันยายน 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสถานที่ทำงาน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 09:12:38 น."
+  },
+  {
+    "rowIndex": 329,
+    "docNumber": "19219",
+    "receiveDate": "14 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "อื่น ๆ",
+    "problemDetail": "ขอสอบถามการอนุมัติคำขอ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "6 พฤศจิกายน 2569 เวลา 09:49:12 น."
+  },
+  {
+    "rowIndex": 330,
+    "docNumber": "19478",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "อื่น ๆ",
+    "problemDetail": "เร่งยืนยันอนุมัติคำขอ 69113200009841",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 09:14:18 น."
+  },
+  {
+    "rowIndex": 331,
+    "docNumber": "19211",
+    "receiveDate": "14 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ขอลบบัญชีผู้ใช้งานในระบบอิเล็กทรอนิกส์",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 11:25:48 น."
+  },
+  {
+    "rowIndex": 332,
+    "docNumber": "19364",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ขอเปลี่ยนแปลงผู้ดำเนินการในระบบอิเล็กทรอนิกส์",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 11:26:14 น."
+  },
+  {
+    "rowIndex": 333,
+    "docNumber": "19365",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ขอเปลี่ยนแปลงผู้ดำเนินการในระบบอิเล็กทรอนิกส์",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 11:54:52 น."
+  },
+  {
+    "rowIndex": 334,
+    "docNumber": "19446",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอความอนุเคราะห์แก้ไขชื่อสถานที่ทำงานและเลขที่ใบอนุญาตทำงานของคนต่างด้าว",
+    "status": "อยู่ระหว่างประสานงาน OS",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 09:32:27 น."
+  },
+  {
+    "rowIndex": 335,
+    "docNumber": "18971",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "นายจ้างเดิมแจ้งออกในยังคงมีรายชื่อแรงงานต่างด้าวในระบบนายจ้าง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 14:00:24 น."
+  },
+  {
+    "rowIndex": 336,
+    "docNumber": "18974",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "เปลี่ยนแปลงสถานที่ทำงานของแรงงานต่างด้าวทั้งหมด",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 14:00:51 น."
+  },
+  {
+    "rowIndex": 337,
+    "docNumber": "18976",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ไม่พบข้อมูลแรงงานในระบบ os ฐานข้อมูลนายจ้าง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:50:01 น."
+  },
+  {
+    "rowIndex": 338,
+    "docNumber": "18986",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ข้อมูลต่างด้าวไม่ขึ้นในระบบ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:53:49 น."
+  },
+  {
+    "rowIndex": 339,
+    "docNumber": "19035",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสาเหตุการออกจากงานของแรงงานต่างด้าวในแบบ บต.53",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:56:03 น."
+  },
+  {
+    "rowIndex": 340,
+    "docNumber": "18651",
+    "receiveDate": "6 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "เปลี่ยนแปลงชื่อบริษัทในระบบ e-WorkPermit",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 17:57:38 น."
+  },
+  {
+    "rowIndex": 341,
+    "docNumber": "18652",
+    "receiveDate": "6 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ขอคืนสถานะการนัดหมายถ่ายบัตร",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 09:42:36 น."
+  },
+  {
+    "rowIndex": 342,
+    "docNumber": "18655",
+    "receiveDate": "6 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขข้อมูลนายจ้างผิด",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 14:59:43 น."
+  },
+  {
+    "rowIndex": 343,
+    "docNumber": "18672",
+    "receiveDate": "6 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ขอต่อใบอนุญาตทำงาน",
+    "status": "อยู่ระหว่างประสานงานผู้แจ้ง",
+    "remark": "",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 09:49:14 น."
+  },
+  {
+    "rowIndex": 344,
+    "docNumber": "18697",
+    "receiveDate": "6 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขชื่อในระบบให้ตรงกับหนังสือเดินทาง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 18:05:33 น."
+  },
+  {
+    "rowIndex": 345,
+    "docNumber": "18718",
+    "receiveDate": "6 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ขอคืนสถานะนัดหมายในระบบ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 18:06:24 น."
+  },
+  {
+    "rowIndex": 346,
+    "docNumber": "18723",
+    "receiveDate": "6 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ร้องเรียน/เสนอแนะ",
+    "problemDetail": "ติดต่อนายหน้าไม่ได้ ขอคิวนัดทำใบอนุญาตทำงาน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 18:07:54 น."
+  },
+  {
+    "rowIndex": 347,
+    "docNumber": "19038",
+    "receiveDate": "9 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ไม่สามารถแจ้งออกแรงงานต่างด้าวได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 18:09:07 น."
+  },
+  {
+    "rowIndex": 348,
+    "docNumber": "19567",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ขอความอนุเคราะห์ยกเลิกคำขอ 69165300563753",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 18:10:33 น."
+  },
+  {
+    "rowIndex": 349,
+    "docNumber": "19614",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "แจ้งยื่นอุทธรณ์สิทธิ์",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 18:11:49 น."
+  },
+  {
+    "rowIndex": 350,
+    "docNumber": "19271",
+    "receiveDate": "15 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ไม่สามารถกดยืนยัน namelist เพื่อชำระเงินได้",
+    "status": "อยู่ระหว่างประสานงาน OS",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 18:15:01 น."
+  },
+  {
+    "rowIndex": 351,
+    "docNumber": "19311",
+    "receiveDate": "15 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "นายจ้างเก่าไม่แจ้งออกแรงงานต่างด้าว",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 18:16:03 น."
+  },
+  {
+    "rowIndex": 352,
+    "docNumber": "19164",
+    "receiveDate": "12 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขประเภทงาน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "6 พฤศจิกายน 2569 เวลา 14:44:29 น."
+  },
+  {
+    "rowIndex": 353,
+    "docNumber": "19190",
+    "receiveDate": "14 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ยกเลิกคำขอแจ้งออก บต.53",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 18:17:21 น."
+  },
+  {
+    "rowIndex": 354,
+    "docNumber": "19386",
+    "receiveDate": "19 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "เลยกำหนดนัดหมาย ไม่สามารถจองคิวทำบัตรได้",
+    "status": "อยู่ระหว่างประสานงาน OS",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 18:18:52 น."
+  },
+  {
+    "rowIndex": 355,
+    "docNumber": "19775",
+    "receiveDate": "26 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "แรงงานต่างด้าวยังไม่ลงทะเบียน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 18:20:19 น."
+  },
+  {
+    "rowIndex": 356,
+    "docNumber": "19759",
+    "receiveDate": "26 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ไม่สามารถยื่นต่ออายุใบอนุญาตทำงานได้ เกินระยะเวลาที่กำหนด",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 11:49:12 น."
+  },
+  {
+    "rowIndex": 357,
+    "docNumber": "19795",
+    "receiveDate": "26 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ขอคืนสถานะ ชำระเงินไม่ได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 09:57:07 น."
+  },
+  {
+    "rowIndex": 358,
+    "docNumber": "19530",
+    "receiveDate": "20 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขสถานที่ทำงาน",
+    "status": "อยู่ระหว่างประสานงาน OS",
+    "remark": "",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 08:41:40 น."
+  },
+  {
+    "rowIndex": 359,
+    "docNumber": "19571",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ข้อมูลไม่อัปเดต",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 08:43:55 น."
+  },
+  {
+    "rowIndex": 360,
+    "docNumber": "19572",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ใบอนุญาตทำงานถูกยกเลิก โดยถึงขั้นตอนนัดหมายแล้ว",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 08:45:58 น."
+  },
+  {
+    "rowIndex": 361,
+    "docNumber": "19587",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ลงทะเบียนนนายจ้างผิด",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 08:49:35 น."
+  },
+  {
+    "rowIndex": 362,
+    "docNumber": "19591",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "เปลี่ยนแปลงสถานที่ตั้งของบริษัท",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 08:50:34 น."
+  },
+  {
+    "rowIndex": 363,
+    "docNumber": "19646",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "แก้ไขสถานะจากแจ้งออกเป็นแจ้งเข้าแล้ว",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 09:17:07 น."
+  },
+  {
+    "rowIndex": 364,
+    "docNumber": "19647",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ย้อนคืนสถานะชำระค่าธรรมเนียม",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 09:34:29 น."
+  },
+  {
+    "rowIndex": 365,
+    "docNumber": "19648",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ย้อนคืนสถานะชำระค่าธรรมเนียม",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 09:36:12 น."
+  },
+  {
+    "rowIndex": 366,
+    "docNumber": "19650",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ย้อนสถานะนัดหมายในระบบ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "6 พฤศจิกายน 2569 เวลา 15:15:39 น."
+  },
+  {
+    "rowIndex": 367,
+    "docNumber": "19651",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ขอยกเลิกคำขอในระบบเนื่องจากต่ออายุในระบบไม่ได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "7 พฤศจิกายน 2569 เวลา 09:02:31 น."
+  },
+  {
+    "rowIndex": 368,
+    "docNumber": "19652",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสัญชาติ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 10:32:07 น."
+  },
+  {
+    "rowIndex": 369,
+    "docNumber": "19654",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ขอยกเลิกคำขอแจ้งออกของนายจ้างเดิม",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 10:33:17 น."
+  },
+  {
+    "rowIndex": 370,
+    "docNumber": "19663",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ประกันสุขภาพแรงงานต่างด้าว (ย้อนสถานะไม่ได้ นายทะเบียนกดอนุมมัติแล้ว",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 10:45:56 น."
+  },
+  {
+    "rowIndex": 371,
+    "docNumber": "19649",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ย้อนสถานะนัดหมายในระบบ",
+    "status": "อยู่ระหว่างประสานงาน OS",
+    "remark": "",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 11:03:03 น."
+  },
+  {
+    "rowIndex": 372,
+    "docNumber": "20170",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสัญชาติของคนต่างด้าว",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 11:43:35 น."
+  },
+  {
+    "rowIndex": 373,
+    "docNumber": "20218",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสัญชาติ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 11:49:32 น."
+  },
+  {
+    "rowIndex": 374,
+    "docNumber": "19866",
+    "receiveDate": "27 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขที่อยู่นายจ้างในระบบในตรงตามหนังสือรับรอง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "2 พฤศจิกายน 2569 เวลา 14:22:49 น."
+  },
+  {
+    "rowIndex": 375,
+    "docNumber": "20181",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ขอคืนสถานะชำระเงิน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "ย้อนสถานะไม่ได้ไม่ใช่คำขอล่าสุด",
+    "lastUpdate": "2 พฤศจิกายน 2569 เวลา 14:23:57 น."
+  },
+  {
+    "rowIndex": 376,
+    "docNumber": "20195",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "อื่น ๆ",
+    "problemDetail": "นัดหมายทำบัตร",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "กลัวมาไม่ทัน เที่ยวบินล่าช้า",
+    "lastUpdate": "2 พฤศจิกายน 2569 เวลา 14:25:15 น."
+  },
+  {
+    "rowIndex": 377,
+    "docNumber": "20206",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "เลขพาสปอร์ตใน บต.52/55 ไม่ถูกต้องตามระบบ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "2 พฤศจิกายน 2569 เวลา 14:26:07 น."
+  },
+  {
+    "rowIndex": 378,
+    "docNumber": "20208",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขข้อมูลประเภทนายจ้่าง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "2 พฤศจิกายน 2569 เวลา 14:30:33 น."
+  },
+  {
+    "rowIndex": 379,
+    "docNumber": "20209",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขข้อมูลประเภทนายจ้าง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "2 พฤศจิกายน 2569 เวลา 14:31:08 น."
+  },
+  {
+    "rowIndex": 380,
+    "docNumber": "20211",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ไม่สามารถยื่นต่ออายุใบอนุญาตทำงานได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "2 พฤศจิกายน 2569 เวลา 14:31:58 น."
+  },
+  {
+    "rowIndex": 381,
+    "docNumber": "20212",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ไม่สามารถยื่นต่ออายุใบอนุญาตทำงานได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "2 พฤศจิกายน 2569 เวลา 14:32:47 น."
+  },
+  {
+    "rowIndex": 382,
+    "docNumber": "20244",
+    "receiveDate": "29 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ปรับสถานะใบอนุญาตทำงานของคนต่างด้าว",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "2 พฤศจิกายน 2569 เวลา 14:34:13 น."
+  },
+  {
+    "rowIndex": 383,
+    "docNumber": "20446",
+    "receiveDate": "29 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสัญชาติ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "2 พฤศจิกายน 2569 เวลา 14:38:15 น."
+  },
+  {
+    "rowIndex": 384,
+    "docNumber": "20466",
+    "receiveDate": "29 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสัญชาติ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 11:48:39 น."
+  },
+  {
+    "rowIndex": 385,
+    "docNumber": "20443",
+    "receiveDate": "29 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ยกเลิกคำขอที่เข้าไปกดผิด",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 08:59:51 น."
+  },
+  {
+    "rowIndex": 386,
+    "docNumber": "20202",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ข้อมูลหน้า visa และ work ไม่ตรงกัน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 10:03:48 น."
+  },
+  {
+    "rowIndex": 387,
+    "docNumber": "20203",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ชื่อใน บต. 52/55 ไม่ถูกต้องตามพาสปอร์ต",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 10:04:09 น."
+  },
+  {
+    "rowIndex": 388,
+    "docNumber": "20453",
+    "receiveDate": "29 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขที่อยู่บริษัทผิด",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 14:27:55 น."
+  },
+  {
+    "rowIndex": 389,
+    "docNumber": "20457",
+    "receiveDate": "29 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขลักษณะงานในข้อมูลใบอนุญาตทำงานและบต.25",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 10:10:44 น."
+  },
+  {
+    "rowIndex": 390,
+    "docNumber": "20461",
+    "receiveDate": "29 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขสัญชาติ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 10:43:02 น."
+  },
+  {
+    "rowIndex": 391,
+    "docNumber": "20486",
+    "receiveDate": "29 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ไม่สามารถเปลี่ยนนายจ้างได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "เอกสารไม่ครบ",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 14:08:08 น."
+  },
+  {
+    "rowIndex": 392,
+    "docNumber": "20487",
+    "receiveDate": "29 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ขอคืนสถานะชำระเงิน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "ย้อนสถานะไม่ได้ เพราะติดอีก 1 คำขอ",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 14:07:28 น."
+  },
+  {
+    "rowIndex": 393,
+    "docNumber": "20489",
+    "receiveDate": "29 ตุลาคม 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ขอต่อใบอนุญาตทำงาน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "ให้นายจ้างติดต่อจัดหางานพื้นที่",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 14:09:10 น."
+  },
+  {
+    "rowIndex": 394,
+    "docNumber": "20893",
+    "receiveDate": "3 พฤศจิกายน 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขเลขบัตรประจำตัวประชาชนนายจ้าง",
+    "status": "อยู่ระหว่างประสานงานผู้แจ้ง",
+    "remark": "น.ส.เรวดี ธรรมเนียม 2720700004394",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 11:00:14 น."
+  },
+  {
+    "rowIndex": 395,
+    "docNumber": "20613",
+    "receiveDate": "2 พฤศจิกายน 2569",
+    "staffName": "นางสุมาลี รักไทย",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "แจ้งเข้าแรงงานต่างด้าวไม่ได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "โทรประสานผู้แจ้งแล้ว แรงงานยังไม่ได้ลงทะเบียน",
+    "lastUpdate": "6 พฤศจิกายน 2569 เวลา 13:39:39 น."
+  },
+  {
+    "rowIndex": 396,
     "docNumber": "4361",
     "receiveDate": "12 มีนาคม 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2674,7 +4346,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 12:17:31 น."
   },
   {
-    "rowIndex": 245,
+    "rowIndex": 397,
     "docNumber": "3979",
     "receiveDate": "6 มีนาคม 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2685,7 +4357,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 09:54:31 น."
   },
   {
-    "rowIndex": 246,
+    "rowIndex": 398,
     "docNumber": "3155",
     "receiveDate": "19 กุมภาพันธ์ 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2696,7 +4368,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 09:55:02 น."
   },
   {
-    "rowIndex": 247,
+    "rowIndex": 399,
     "docNumber": "3604",
     "receiveDate": "27 กุมภาพันธ์ 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2707,7 +4379,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 09:55:43 น."
   },
   {
-    "rowIndex": 248,
+    "rowIndex": 400,
     "docNumber": "4477",
     "receiveDate": "13 มีนาคม 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2718,7 +4390,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 09:56:12 น."
   },
   {
-    "rowIndex": 249,
+    "rowIndex": 401,
     "docNumber": "4458",
     "receiveDate": "12 มีนาคม 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2729,7 +4401,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 09:57:11 น."
   },
   {
-    "rowIndex": 250,
+    "rowIndex": 402,
     "docNumber": "2246",
     "receiveDate": "5 กุมภาพันธ์ 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2740,7 +4412,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 10:11:05 น."
   },
   {
-    "rowIndex": 251,
+    "rowIndex": 403,
     "docNumber": "4717",
     "receiveDate": "18 มีนาคม 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2751,7 +4423,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 10:11:33 น."
   },
   {
-    "rowIndex": 252,
+    "rowIndex": 404,
     "docNumber": "4981",
     "receiveDate": "24 มีนาคม 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2762,7 +4434,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 10:11:57 น."
   },
   {
-    "rowIndex": 253,
+    "rowIndex": 405,
     "docNumber": "4729",
     "receiveDate": "18 มีนาคม 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2773,7 +4445,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 10:12:39 น."
   },
   {
-    "rowIndex": 254,
+    "rowIndex": 406,
     "docNumber": "4970",
     "receiveDate": "24 มีนาคม 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2784,7 +4456,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 10:13:03 น."
   },
   {
-    "rowIndex": 255,
+    "rowIndex": 407,
     "docNumber": "2211",
     "receiveDate": "5 กุมภาพันธ์ 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2795,7 +4467,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 10:13:28 น."
   },
   {
-    "rowIndex": 256,
+    "rowIndex": 408,
     "docNumber": "4785",
     "receiveDate": "19 มีนาคม 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2806,7 +4478,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 10:13:50 น."
   },
   {
-    "rowIndex": 257,
+    "rowIndex": 409,
     "docNumber": "930",
     "receiveDate": "15 มกราคม 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2817,7 +4489,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 10:14:14 น."
   },
   {
-    "rowIndex": 258,
+    "rowIndex": 410,
     "docNumber": "4184",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2828,7 +4500,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 10:14:37 น."
   },
   {
-    "rowIndex": 259,
+    "rowIndex": 411,
     "docNumber": "2208",
     "receiveDate": "5 กุมภาพันธ์ 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2839,7 +4511,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 10:15:02 น."
   },
   {
-    "rowIndex": 260,
+    "rowIndex": 412,
     "docNumber": "3233",
     "receiveDate": "20 กุมภาพันธ์ 2569",
     "staffName": "นายเทวินทร์ พิริยะวณิชย์",
@@ -2850,7 +4522,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 10:15:32 น."
   },
   {
-    "rowIndex": 261,
+    "rowIndex": 413,
     "docNumber": "3603",
     "receiveDate": "27 กุมภาพันธ์ 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -2861,7 +4533,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "23 มีนาคม 2569 เวลา 13:42:49 น."
   },
   {
-    "rowIndex": 262,
+    "rowIndex": 414,
     "docNumber": "3848",
     "receiveDate": "5 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -2872,7 +4544,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "16 มีนาคม 2569 เวลา 10:13:41 น."
   },
   {
-    "rowIndex": 263,
+    "rowIndex": 415,
     "docNumber": "4132",
     "receiveDate": "9 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -2883,7 +4555,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "12 มีนาคม 2569 เวลา 10:16:39 น."
   },
   {
-    "rowIndex": 264,
+    "rowIndex": 416,
     "docNumber": "4182",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -2894,7 +4566,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "18 มีนาคม 2569 เวลา 09:23:20 น."
   },
   {
-    "rowIndex": 265,
+    "rowIndex": 417,
     "docNumber": "4196",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -2905,7 +4577,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "12 มีนาคม 2569 เวลา 10:27:13 น."
   },
   {
-    "rowIndex": 266,
+    "rowIndex": 418,
     "docNumber": "4230",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -2916,7 +4588,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 14:08:53 น."
   },
   {
-    "rowIndex": 267,
+    "rowIndex": 419,
     "docNumber": "4160",
     "receiveDate": "9 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -2927,7 +4599,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "23 มีนาคม 2569 เวลา 13:44:53 น."
   },
   {
-    "rowIndex": 268,
+    "rowIndex": 420,
     "docNumber": "4161",
     "receiveDate": "9 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -2938,7 +4610,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "12 มีนาคม 2569 เวลา 14:07:00 น."
   },
   {
-    "rowIndex": 269,
+    "rowIndex": 421,
     "docNumber": "4082",
     "receiveDate": "9 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -2949,7 +4621,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 14:08:16 น."
   },
   {
-    "rowIndex": 270,
+    "rowIndex": 422,
     "docNumber": "4162",
     "receiveDate": "9 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -2960,7 +4632,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 14:08:35 น."
   },
   {
-    "rowIndex": 271,
+    "rowIndex": 423,
     "docNumber": "3544",
     "receiveDate": "27 กุมภาพันธ์ 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -2971,7 +4643,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กรกฎาคม 2569 เวลา 09:43:40 น."
   },
   {
-    "rowIndex": 272,
+    "rowIndex": 424,
     "docNumber": "4214",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -2982,7 +4654,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 13:31:20 น."
   },
   {
-    "rowIndex": 273,
+    "rowIndex": 425,
     "docNumber": "4218",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -2993,7 +4665,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "23 มีนาคม 2569 เวลา 13:32:11 น."
   },
   {
-    "rowIndex": 274,
+    "rowIndex": 426,
     "docNumber": "4220",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3004,7 +4676,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 13:54:00 น."
   },
   {
-    "rowIndex": 275,
+    "rowIndex": 427,
     "docNumber": "4221",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3015,7 +4687,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 14:00:17 น."
   },
   {
-    "rowIndex": 276,
+    "rowIndex": 428,
     "docNumber": "4219",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3026,7 +4698,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 14:13:53 น."
   },
   {
-    "rowIndex": 277,
+    "rowIndex": 429,
     "docNumber": "4326",
     "receiveDate": "11 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3037,7 +4709,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 14:32:33 น."
   },
   {
-    "rowIndex": 278,
+    "rowIndex": 430,
     "docNumber": "4226",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3048,7 +4720,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 14:33:46 น."
   },
   {
-    "rowIndex": 279,
+    "rowIndex": 431,
     "docNumber": "4225",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3059,7 +4731,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 14:34:31 น."
   },
   {
-    "rowIndex": 280,
+    "rowIndex": 432,
     "docNumber": "4224",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3070,7 +4742,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 14:35:14 น."
   },
   {
-    "rowIndex": 281,
+    "rowIndex": 433,
     "docNumber": "4286",
     "receiveDate": "11 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3081,7 +4753,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 14:36:05 น."
   },
   {
-    "rowIndex": 282,
+    "rowIndex": 434,
     "docNumber": "4222",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3092,7 +4764,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 14:38:01 น."
   },
   {
-    "rowIndex": 283,
+    "rowIndex": 435,
     "docNumber": "4223",
     "receiveDate": "10 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3103,7 +4775,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 14:49:01 น."
   },
   {
-    "rowIndex": 284,
+    "rowIndex": 436,
     "docNumber": "4352",
     "receiveDate": "11 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3114,7 +4786,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 14:10:53 น."
   },
   {
-    "rowIndex": 285,
+    "rowIndex": 437,
     "docNumber": "4412",
     "receiveDate": "12 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3125,7 +4797,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 มีนาคม 2569 เวลา 15:03:50 น."
   },
   {
-    "rowIndex": 286,
+    "rowIndex": 438,
     "docNumber": "4418",
     "receiveDate": "12 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3136,7 +4808,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "16 มีนาคม 2569 เวลา 10:58:48 น."
   },
   {
-    "rowIndex": 287,
+    "rowIndex": 439,
     "docNumber": "4444",
     "receiveDate": "12 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3147,7 +4819,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 มีนาคม 2569 เวลา 08:39:05 น."
   },
   {
-    "rowIndex": 288,
+    "rowIndex": 440,
     "docNumber": "4461",
     "receiveDate": "12 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3158,7 +4830,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 09:05:15 น."
   },
   {
-    "rowIndex": 289,
+    "rowIndex": 441,
     "docNumber": "4417",
     "receiveDate": "12 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3169,7 +4841,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "16 มีนาคม 2569 เวลา 13:12:18 น."
   },
   {
-    "rowIndex": 290,
+    "rowIndex": 442,
     "docNumber": "4547",
     "receiveDate": "13 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3180,7 +4852,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "23 มีนาคม 2569 เวลา 13:24:46 น."
   },
   {
-    "rowIndex": 291,
+    "rowIndex": 443,
     "docNumber": "4482",
     "receiveDate": "13 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3191,7 +4863,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "23 มีนาคม 2569 เวลา 13:31:55 น."
   },
   {
-    "rowIndex": 292,
+    "rowIndex": 444,
     "docNumber": "4493",
     "receiveDate": "13 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3202,7 +4874,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "16 มีนาคม 2569 เวลา 15:45:15 น."
   },
   {
-    "rowIndex": 293,
+    "rowIndex": 445,
     "docNumber": "4485",
     "receiveDate": "13 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3213,7 +4885,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "16 มีนาคม 2569 เวลา 15:50:53 น."
   },
   {
-    "rowIndex": 294,
+    "rowIndex": 446,
     "docNumber": "4484",
     "receiveDate": "13 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3224,7 +4896,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "16 มีนาคม 2569 เวลา 15:57:27 น."
   },
   {
-    "rowIndex": 295,
+    "rowIndex": 447,
     "docNumber": "4622",
     "receiveDate": "16 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3235,7 +4907,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 มีนาคม 2569 เวลา 14:19:23 น."
   },
   {
-    "rowIndex": 296,
+    "rowIndex": 448,
     "docNumber": "4596",
     "receiveDate": "16 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3246,7 +4918,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "18 มีนาคม 2569 เวลา 10:27:13 น."
   },
   {
-    "rowIndex": 297,
+    "rowIndex": 449,
     "docNumber": "4630",
     "receiveDate": "17 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3257,7 +4929,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "18 มีนาคม 2569 เวลา 10:53:55 น."
   },
   {
-    "rowIndex": 298,
+    "rowIndex": 450,
     "docNumber": "4593",
     "receiveDate": "16 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3268,7 +4940,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "23 มีนาคม 2569 เวลา 13:31:21 น."
   },
   {
-    "rowIndex": 299,
+    "rowIndex": 451,
     "docNumber": "4604",
     "receiveDate": "18 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3279,7 +4951,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 14:11:21 น."
   },
   {
-    "rowIndex": 300,
+    "rowIndex": 452,
     "docNumber": "4608",
     "receiveDate": "16 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3290,7 +4962,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 มีนาคม 2569 เวลา 08:38:50 น."
   },
   {
-    "rowIndex": 301,
+    "rowIndex": 453,
     "docNumber": "4612",
     "receiveDate": "16 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3301,7 +4973,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "23 มีนาคม 2569 เวลา 13:31:05 น."
   },
   {
-    "rowIndex": 302,
+    "rowIndex": 454,
     "docNumber": "4592",
     "receiveDate": "16 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3312,7 +4984,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "23 มีนาคม 2569 เวลา 13:31:38 น."
   },
   {
-    "rowIndex": 303,
+    "rowIndex": 455,
     "docNumber": "4659",
     "receiveDate": "17 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3323,7 +4995,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "23 มีนาคม 2569 เวลา 13:30:31 น."
   },
   {
-    "rowIndex": 304,
+    "rowIndex": 456,
     "docNumber": "4351",
     "receiveDate": "11 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3334,7 +5006,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "23 มีนาคม 2569 เวลา 15:17:00 น."
   },
   {
-    "rowIndex": 305,
+    "rowIndex": 457,
     "docNumber": "4829",
     "receiveDate": "19 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3345,7 +5017,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "24 มีนาคม 2569 เวลา 09:37:12 น."
   },
   {
-    "rowIndex": 306,
+    "rowIndex": 458,
     "docNumber": "4826",
     "receiveDate": "19 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3356,7 +5028,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 14:11:41 น."
   },
   {
-    "rowIndex": 307,
+    "rowIndex": 459,
     "docNumber": "4879",
     "receiveDate": "20 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3367,7 +5039,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 14:11:58 น."
   },
   {
-    "rowIndex": 308,
+    "rowIndex": 460,
     "docNumber": "4838",
     "receiveDate": "19 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3378,7 +5050,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:25:52 น."
   },
   {
-    "rowIndex": 309,
+    "rowIndex": 461,
     "docNumber": "4837",
     "receiveDate": "19 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3389,7 +5061,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "20 เมษายน 2569 เวลา 16:57:43 น."
   },
   {
-    "rowIndex": 310,
+    "rowIndex": 462,
     "docNumber": "4710",
     "receiveDate": "18 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3400,7 +5072,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 08:50:27 น."
   },
   {
-    "rowIndex": 311,
+    "rowIndex": 463,
     "docNumber": "4702",
     "receiveDate": "18 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3411,7 +5083,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 16:37:57 น."
   },
   {
-    "rowIndex": 312,
+    "rowIndex": 464,
     "docNumber": "4741",
     "receiveDate": "18 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3422,7 +5094,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 14:12:14 น."
   },
   {
-    "rowIndex": 313,
+    "rowIndex": 465,
     "docNumber": "4897",
     "receiveDate": "20 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3433,7 +5105,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 14:12:30 น."
   },
   {
-    "rowIndex": 314,
+    "rowIndex": 466,
     "docNumber": "4806",
     "receiveDate": "19 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3444,7 +5116,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 มีนาคม 2569 เวลา 15:08:56 น."
   },
   {
-    "rowIndex": 315,
+    "rowIndex": 467,
     "docNumber": "4978",
     "receiveDate": "24 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3455,7 +5127,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 มีนาคม 2569 เวลา 14:19:09 น."
   },
   {
-    "rowIndex": 316,
+    "rowIndex": 468,
     "docNumber": "4747",
     "receiveDate": "18 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3466,7 +5138,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 มีนาคม 2569 เวลา 15:25:50 น."
   },
   {
-    "rowIndex": 317,
+    "rowIndex": 469,
     "docNumber": "4749",
     "receiveDate": "18 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3477,7 +5149,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 มีนาคม 2569 เวลา 16:02:02 น."
   },
   {
-    "rowIndex": 318,
+    "rowIndex": 470,
     "docNumber": "4891",
     "receiveDate": "20 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3488,7 +5160,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 มีนาคม 2569 เวลา 14:18:52 น."
   },
   {
-    "rowIndex": 319,
+    "rowIndex": 471,
     "docNumber": "4878",
     "receiveDate": "20 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3499,7 +5171,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 08:50:07 น."
   },
   {
-    "rowIndex": 320,
+    "rowIndex": 472,
     "docNumber": "4983",
     "receiveDate": "24 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3510,7 +5182,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 มีนาคม 2569 เวลา 16:20:30 น."
   },
   {
-    "rowIndex": 321,
+    "rowIndex": 473,
     "docNumber": "4876",
     "receiveDate": "20 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3521,7 +5193,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 มีนาคม 2569 เวลา 14:18:33 น."
   },
   {
-    "rowIndex": 322,
+    "rowIndex": 474,
     "docNumber": "4890",
     "receiveDate": "20 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3532,7 +5204,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:13:59 น."
   },
   {
-    "rowIndex": 323,
+    "rowIndex": 475,
     "docNumber": "4889",
     "receiveDate": "20 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3543,7 +5215,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 มีนาคม 2569 เวลา 16:54:38 น."
   },
   {
-    "rowIndex": 324,
+    "rowIndex": 476,
     "docNumber": "5018",
     "receiveDate": "25 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3554,7 +5226,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 มีนาคม 2569 เวลา 14:17:55 น."
   },
   {
-    "rowIndex": 325,
+    "rowIndex": 477,
     "docNumber": "5019",
     "receiveDate": "25 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3565,7 +5237,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 16:31:12 น."
   },
   {
-    "rowIndex": 326,
+    "rowIndex": 478,
     "docNumber": "5020",
     "receiveDate": "25 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3576,7 +5248,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 มีนาคม 2569 เวลา 10:24:52 น."
   },
   {
-    "rowIndex": 327,
+    "rowIndex": 479,
     "docNumber": "4977",
     "receiveDate": "24 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3587,7 +5259,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 14:12:45 น."
   },
   {
-    "rowIndex": 328,
+    "rowIndex": 480,
     "docNumber": "5026",
     "receiveDate": "25 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3598,7 +5270,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 มีนาคม 2569 เวลา 13:35:23 น."
   },
   {
-    "rowIndex": 329,
+    "rowIndex": 481,
     "docNumber": "5025",
     "receiveDate": "25 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3609,7 +5281,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 14:12:59 น."
   },
   {
-    "rowIndex": 330,
+    "rowIndex": 482,
     "docNumber": "5031",
     "receiveDate": "25 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3620,7 +5292,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 14:13:16 น."
   },
   {
-    "rowIndex": 331,
+    "rowIndex": 483,
     "docNumber": "5030",
     "receiveDate": "25 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3631,7 +5303,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 14:13:30 น."
   },
   {
-    "rowIndex": 332,
+    "rowIndex": 484,
     "docNumber": "5029",
     "receiveDate": "25 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3642,7 +5314,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 16:38:18 น."
   },
   {
-    "rowIndex": 333,
+    "rowIndex": 485,
     "docNumber": "5044",
     "receiveDate": "25 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3653,7 +5325,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 มีนาคม 2569 เวลา 14:18:18 น."
   },
   {
-    "rowIndex": 334,
+    "rowIndex": 486,
     "docNumber": "5053",
     "receiveDate": "25 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3664,7 +5336,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 มีนาคม 2569 เวลา 15:21:20 น."
   },
   {
-    "rowIndex": 335,
+    "rowIndex": 487,
     "docNumber": "5050",
     "receiveDate": "25 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3675,7 +5347,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 มีนาคม 2569 เวลา 15:23:13 น."
   },
   {
-    "rowIndex": 336,
+    "rowIndex": 488,
     "docNumber": "5058",
     "receiveDate": "26 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3686,7 +5358,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 มีนาคม 2569 เวลา 10:07:58 น."
   },
   {
-    "rowIndex": 337,
+    "rowIndex": 489,
     "docNumber": "5068",
     "receiveDate": "26 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3697,7 +5369,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 มีนาคม 2569 เวลา 14:17:00 น."
   },
   {
-    "rowIndex": 338,
+    "rowIndex": 490,
     "docNumber": "5071",
     "receiveDate": "26 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3708,7 +5380,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 มีนาคม 2569 เวลา 10:45:35 น."
   },
   {
-    "rowIndex": 339,
+    "rowIndex": 491,
     "docNumber": "5069",
     "receiveDate": "26 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3719,7 +5391,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 มีนาคม 2569 เวลา 14:16:45 น."
   },
   {
-    "rowIndex": 340,
+    "rowIndex": 492,
     "docNumber": "5096",
     "receiveDate": "26 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3730,7 +5402,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 มีนาคม 2569 เวลา 11:15:46 น."
   },
   {
-    "rowIndex": 341,
+    "rowIndex": 493,
     "docNumber": "5097",
     "receiveDate": "26 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3741,7 +5413,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 มีนาคม 2569 เวลา 11:21:58 น."
   },
   {
-    "rowIndex": 342,
+    "rowIndex": 494,
     "docNumber": "5091",
     "receiveDate": "26 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3752,7 +5424,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "28 เมษายน 2569 เวลา 12:01:24 น."
   },
   {
-    "rowIndex": 343,
+    "rowIndex": 495,
     "docNumber": "5063",
     "receiveDate": "26 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3763,7 +5435,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 มีนาคม 2569 เวลา 14:17:51 น."
   },
   {
-    "rowIndex": 344,
+    "rowIndex": 496,
     "docNumber": "5064",
     "receiveDate": "26 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3774,7 +5446,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 มีนาคม 2569 เวลา 14:16:27 น."
   },
   {
-    "rowIndex": 345,
+    "rowIndex": 497,
     "docNumber": "5066",
     "receiveDate": "26 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3785,7 +5457,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 มีนาคม 2569 เวลา 14:16:11 น."
   },
   {
-    "rowIndex": 346,
+    "rowIndex": 498,
     "docNumber": "5067",
     "receiveDate": "26 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3796,7 +5468,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 มีนาคม 2569 เวลา 14:15:51 น."
   },
   {
-    "rowIndex": 347,
+    "rowIndex": 499,
     "docNumber": "5065",
     "receiveDate": "26 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3807,7 +5479,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 มีนาคม 2569 เวลา 14:15:31 น."
   },
   {
-    "rowIndex": 348,
+    "rowIndex": 500,
     "docNumber": "5152",
     "receiveDate": "27 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3818,7 +5490,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 11:08:11 น."
   },
   {
-    "rowIndex": 349,
+    "rowIndex": 501,
     "docNumber": "5151",
     "receiveDate": "27 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3829,7 +5501,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:17:23 น."
   },
   {
-    "rowIndex": 350,
+    "rowIndex": 502,
     "docNumber": "5134",
     "receiveDate": "27 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3840,7 +5512,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 11:35:26 น."
   },
   {
-    "rowIndex": 351,
+    "rowIndex": 503,
     "docNumber": "5142",
     "receiveDate": "27 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3851,7 +5523,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 16:28:35 น."
   },
   {
-    "rowIndex": 352,
+    "rowIndex": 504,
     "docNumber": "4991",
     "receiveDate": "24 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3862,7 +5534,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 16:39:07 น."
   },
   {
-    "rowIndex": 353,
+    "rowIndex": 505,
     "docNumber": "5114",
     "receiveDate": "27 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3873,7 +5545,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 16:43:32 น."
   },
   {
-    "rowIndex": 354,
+    "rowIndex": 506,
     "docNumber": "5109",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3884,7 +5556,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มีนาคม 2569 เวลา 17:16:24 น."
   },
   {
-    "rowIndex": 355,
+    "rowIndex": 507,
     "docNumber": "4298",
     "receiveDate": "11 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3895,7 +5567,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 14:10:33 น."
   },
   {
-    "rowIndex": 356,
+    "rowIndex": 508,
     "docNumber": "5225",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3906,7 +5578,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 16:40:05 น."
   },
   {
-    "rowIndex": 357,
+    "rowIndex": 509,
     "docNumber": "5253",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3917,7 +5589,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 14:28:09 น."
   },
   {
-    "rowIndex": 358,
+    "rowIndex": 510,
     "docNumber": "5272",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3928,7 +5600,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 14:37:22 น."
   },
   {
-    "rowIndex": 359,
+    "rowIndex": 511,
     "docNumber": "5255",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3939,7 +5611,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 16:27:29 น."
   },
   {
-    "rowIndex": 360,
+    "rowIndex": 512,
     "docNumber": "5257",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3950,7 +5622,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 16:29:16 น."
   },
   {
-    "rowIndex": 361,
+    "rowIndex": 513,
     "docNumber": "5256",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3961,7 +5633,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 16:34:19 น."
   },
   {
-    "rowIndex": 362,
+    "rowIndex": 514,
     "docNumber": "5267",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3972,7 +5644,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 17:32:43 น."
   },
   {
-    "rowIndex": 363,
+    "rowIndex": 515,
     "docNumber": "5265",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3983,7 +5655,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 17:38:28 น."
   },
   {
-    "rowIndex": 364,
+    "rowIndex": 516,
     "docNumber": "5262",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -3994,7 +5666,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 17:42:22 น."
   },
   {
-    "rowIndex": 365,
+    "rowIndex": 517,
     "docNumber": "5181",
     "receiveDate": "27 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4005,7 +5677,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 17:43:40 น."
   },
   {
-    "rowIndex": 366,
+    "rowIndex": 518,
     "docNumber": "5148",
     "receiveDate": "27 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4016,7 +5688,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 17:46:58 น."
   },
   {
-    "rowIndex": 367,
+    "rowIndex": 519,
     "docNumber": "5269",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4027,7 +5699,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 17:52:05 น."
   },
   {
-    "rowIndex": 368,
+    "rowIndex": 520,
     "docNumber": "5268",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4038,7 +5710,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 17:56:57 น."
   },
   {
-    "rowIndex": 369,
+    "rowIndex": 521,
     "docNumber": "5270",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4049,7 +5721,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 18:09:02 น."
   },
   {
-    "rowIndex": 370,
+    "rowIndex": 522,
     "docNumber": "5259",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4060,7 +5732,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 18:13:39 น."
   },
   {
-    "rowIndex": 371,
+    "rowIndex": 523,
     "docNumber": "5258",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4071,7 +5743,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 18:19:19 น."
   },
   {
-    "rowIndex": 372,
+    "rowIndex": 524,
     "docNumber": "5263",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4082,7 +5754,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 เมษายน 2569 เวลา 18:27:53 น."
   },
   {
-    "rowIndex": 373,
+    "rowIndex": 525,
     "docNumber": "5260",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4093,7 +5765,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 08:32:38 น."
   },
   {
-    "rowIndex": 374,
+    "rowIndex": 526,
     "docNumber": "5271",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4104,7 +5776,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 08:43:47 น."
   },
   {
-    "rowIndex": 375,
+    "rowIndex": 527,
     "docNumber": "5252",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4115,7 +5787,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 08:51:44 น."
   },
   {
-    "rowIndex": 376,
+    "rowIndex": 528,
     "docNumber": "5266",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4126,7 +5798,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 08:58:36 น."
   },
   {
-    "rowIndex": 377,
+    "rowIndex": 529,
     "docNumber": "5374",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4137,7 +5809,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 11:27:16 น."
   },
   {
-    "rowIndex": 378,
+    "rowIndex": 530,
     "docNumber": "5332",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4148,7 +5820,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 11:52:19 น."
   },
   {
-    "rowIndex": 379,
+    "rowIndex": 531,
     "docNumber": "5370",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4159,7 +5831,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 11:57:47 น."
   },
   {
-    "rowIndex": 380,
+    "rowIndex": 532,
     "docNumber": "5364",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4170,7 +5842,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 12:00:42 น."
   },
   {
-    "rowIndex": 381,
+    "rowIndex": 533,
     "docNumber": "5373",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4181,7 +5853,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 16:29:10 น."
   },
   {
-    "rowIndex": 382,
+    "rowIndex": 534,
     "docNumber": "5281",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4192,7 +5864,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 พฤษภาคม 2569 เวลา 10:12:28 น."
   },
   {
-    "rowIndex": 383,
+    "rowIndex": 535,
     "docNumber": "5301",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4203,7 +5875,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 13:13:13 น."
   },
   {
-    "rowIndex": 384,
+    "rowIndex": 536,
     "docNumber": "5302",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4214,7 +5886,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 13:14:02 น."
   },
   {
-    "rowIndex": 385,
+    "rowIndex": 537,
     "docNumber": "5303",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4225,7 +5897,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 13:14:36 น."
   },
   {
-    "rowIndex": 386,
+    "rowIndex": 538,
     "docNumber": "5304",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4236,7 +5908,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 13:15:00 น."
   },
   {
-    "rowIndex": 387,
+    "rowIndex": 539,
     "docNumber": "5305",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4247,7 +5919,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 13:15:42 น."
   },
   {
-    "rowIndex": 388,
+    "rowIndex": 540,
     "docNumber": "5305",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4258,7 +5930,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 13:16:01 น."
   },
   {
-    "rowIndex": 389,
+    "rowIndex": 541,
     "docNumber": "5283",
     "receiveDate": "30 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4269,7 +5941,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 14:06:48 น."
   },
   {
-    "rowIndex": 390,
+    "rowIndex": 542,
     "docNumber": "5343",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4280,7 +5952,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 13:24:36 น."
   },
   {
-    "rowIndex": 391,
+    "rowIndex": 543,
     "docNumber": "5344",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4291,7 +5963,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 พฤษภาคม 2569 เวลา 10:10:22 น."
   },
   {
-    "rowIndex": 392,
+    "rowIndex": 544,
     "docNumber": "5318",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4302,7 +5974,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 15:04:31 น."
   },
   {
-    "rowIndex": 393,
+    "rowIndex": 545,
     "docNumber": "5313",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4313,7 +5985,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 15:12:17 น."
   },
   {
-    "rowIndex": 394,
+    "rowIndex": 546,
     "docNumber": "5317",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4324,7 +5996,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 15:16:33 น."
   },
   {
-    "rowIndex": 395,
+    "rowIndex": 547,
     "docNumber": "5316",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4335,7 +6007,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 15:19:33 น."
   },
   {
-    "rowIndex": 396,
+    "rowIndex": 548,
     "docNumber": "5315",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4346,7 +6018,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 15:23:16 น."
   },
   {
-    "rowIndex": 397,
+    "rowIndex": 549,
     "docNumber": "5319",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4357,7 +6029,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 พฤษภาคม 2569 เวลา 10:11:42 น."
   },
   {
-    "rowIndex": 398,
+    "rowIndex": 550,
     "docNumber": "5324",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4368,7 +6040,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 เมษายน 2569 เวลา 15:53:02 น."
   },
   {
-    "rowIndex": 399,
+    "rowIndex": 551,
     "docNumber": "5456",
     "receiveDate": "1 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4379,7 +6051,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 เมษายน 2569 เวลา 14:33:01 น."
   },
   {
-    "rowIndex": 400,
+    "rowIndex": 552,
     "docNumber": "5323",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4390,7 +6062,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 เมษายน 2569 เวลา 14:50:01 น."
   },
   {
-    "rowIndex": 401,
+    "rowIndex": 553,
     "docNumber": "5322",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4401,7 +6073,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 เมษายน 2569 เวลา 14:51:00 น."
   },
   {
-    "rowIndex": 402,
+    "rowIndex": 554,
     "docNumber": "5401",
     "receiveDate": "1 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4412,7 +6084,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 เมษายน 2569 เวลา 14:52:00 น."
   },
   {
-    "rowIndex": 403,
+    "rowIndex": 555,
     "docNumber": "5418",
     "receiveDate": "1 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4423,7 +6095,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 เมษายน 2569 เวลา 14:53:02 น."
   },
   {
-    "rowIndex": 404,
+    "rowIndex": 556,
     "docNumber": "5380",
     "receiveDate": "1 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4434,7 +6106,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มิถุนายน 2569 เวลา 09:06:33 น."
   },
   {
-    "rowIndex": 405,
+    "rowIndex": 557,
     "docNumber": "5455",
     "receiveDate": "1 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4445,7 +6117,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 มิถุนายน 2569 เวลา 09:03:34 น."
   },
   {
-    "rowIndex": 406,
+    "rowIndex": 558,
     "docNumber": "5375",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4456,7 +6128,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "6 กรกฎาคม 2569 เวลา 09:43:24 น."
   },
   {
-    "rowIndex": 407,
+    "rowIndex": 559,
     "docNumber": "5378",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4467,7 +6139,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 เมษายน 2569 เวลา 15:10:45 น."
   },
   {
-    "rowIndex": 408,
+    "rowIndex": 560,
     "docNumber": "5379",
     "receiveDate": "31 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4478,7 +6150,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 เมษายน 2569 เวลา 15:27:27 น."
   },
   {
-    "rowIndex": 409,
+    "rowIndex": 561,
     "docNumber": "5459",
     "receiveDate": "1 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4489,7 +6161,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 เมษายน 2569 เวลา 16:31:29 น."
   },
   {
-    "rowIndex": 410,
+    "rowIndex": 562,
     "docNumber": "5429",
     "receiveDate": "1 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4500,7 +6172,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 เมษายน 2569 เวลา 16:33:15 น."
   },
   {
-    "rowIndex": 411,
+    "rowIndex": 563,
     "docNumber": "5432",
     "receiveDate": "1 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4511,7 +6183,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 เมษายน 2569 เวลา 16:34:05 น."
   },
   {
-    "rowIndex": 412,
+    "rowIndex": 564,
     "docNumber": "5576",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4522,7 +6194,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 16:21:03 น."
   },
   {
-    "rowIndex": 413,
+    "rowIndex": 565,
     "docNumber": "5517",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4533,7 +6205,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 16:33:49 น."
   },
   {
-    "rowIndex": 414,
+    "rowIndex": 566,
     "docNumber": "5573",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4544,7 +6216,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 เมษายน 2569 เวลา 17:08:21 น."
   },
   {
-    "rowIndex": 415,
+    "rowIndex": 567,
     "docNumber": "5577",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4555,7 +6227,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 เมษายน 2569 เวลา 17:09:20 น."
   },
   {
-    "rowIndex": 416,
+    "rowIndex": 568,
     "docNumber": "5575",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4566,7 +6238,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 16:17:13 น."
   },
   {
-    "rowIndex": 417,
+    "rowIndex": 569,
     "docNumber": "5578",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4577,7 +6249,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 เมษายน 2569 เวลา 17:11:43 น."
   },
   {
-    "rowIndex": 418,
+    "rowIndex": 570,
     "docNumber": "5545",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4588,7 +6260,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 16:43:52 น."
   },
   {
-    "rowIndex": 419,
+    "rowIndex": 571,
     "docNumber": "5580",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4599,7 +6271,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 16:54:06 น."
   },
   {
-    "rowIndex": 420,
+    "rowIndex": 572,
     "docNumber": "5544",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4610,7 +6282,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 16:57:25 น."
   },
   {
-    "rowIndex": 421,
+    "rowIndex": 573,
     "docNumber": "5605",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4621,7 +6293,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 17:01:52 น."
   },
   {
-    "rowIndex": 422,
+    "rowIndex": 574,
     "docNumber": "5582",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4632,7 +6304,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 17:03:12 น."
   },
   {
-    "rowIndex": 423,
+    "rowIndex": 575,
     "docNumber": "5583",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4643,7 +6315,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 17:11:19 น."
   },
   {
-    "rowIndex": 424,
+    "rowIndex": 576,
     "docNumber": "5584",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4654,7 +6326,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 17:19:39 น."
   },
   {
-    "rowIndex": 425,
+    "rowIndex": 577,
     "docNumber": "5501",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4665,7 +6337,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 17:20:30 น."
   },
   {
-    "rowIndex": 426,
+    "rowIndex": 578,
     "docNumber": "5503",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4676,7 +6348,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 17:22:12 น."
   },
   {
-    "rowIndex": 427,
+    "rowIndex": 579,
     "docNumber": "5581",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4687,7 +6359,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 17:24:32 น."
   },
   {
-    "rowIndex": 428,
+    "rowIndex": 580,
     "docNumber": "5579",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4698,7 +6370,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 17:26:46 น."
   },
   {
-    "rowIndex": 429,
+    "rowIndex": 581,
     "docNumber": "5502",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4709,7 +6381,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 17:29:38 น."
   },
   {
-    "rowIndex": 430,
+    "rowIndex": 582,
     "docNumber": "5589",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4720,7 +6392,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 17:34:34 น."
   },
   {
-    "rowIndex": 431,
+    "rowIndex": 583,
     "docNumber": "5600",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4731,7 +6403,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 17:36:06 น."
   },
   {
-    "rowIndex": 432,
+    "rowIndex": 584,
     "docNumber": "5599",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4742,7 +6414,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 17:42:01 น."
   },
   {
-    "rowIndex": 433,
+    "rowIndex": 585,
     "docNumber": "5601",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4753,7 +6425,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 17:48:55 น."
   },
   {
-    "rowIndex": 434,
+    "rowIndex": 586,
     "docNumber": "5504",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4764,7 +6436,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 18:00:43 น."
   },
   {
-    "rowIndex": 435,
+    "rowIndex": 587,
     "docNumber": "5546",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4775,7 +6447,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 เมษายน 2569 เวลา 18:01:43 น."
   },
   {
-    "rowIndex": 436,
+    "rowIndex": 588,
     "docNumber": "5659",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4786,7 +6458,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "8 เมษายน 2569 เวลา 15:09:41 น."
   },
   {
-    "rowIndex": 437,
+    "rowIndex": 589,
     "docNumber": "5525",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4797,7 +6469,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "8 เมษายน 2569 เวลา 15:28:27 น."
   },
   {
-    "rowIndex": 438,
+    "rowIndex": 590,
     "docNumber": "5556",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4808,7 +6480,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "9 เมษายน 2569 เวลา 14:44:38 น."
   },
   {
-    "rowIndex": 439,
+    "rowIndex": 591,
     "docNumber": "5570",
     "receiveDate": "2 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4819,7 +6491,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "28 เมษายน 2569 เวลา 12:01:50 น."
   },
   {
-    "rowIndex": 440,
+    "rowIndex": 592,
     "docNumber": "6135",
     "receiveDate": "7 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4830,7 +6502,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "10 เมษายน 2569 เวลา 09:16:21 น."
   },
   {
-    "rowIndex": 441,
+    "rowIndex": 593,
     "docNumber": "5149",
     "receiveDate": "27 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4841,7 +6513,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 พฤษภาคม 2569 เวลา 10:41:06 น."
   },
   {
-    "rowIndex": 442,
+    "rowIndex": 594,
     "docNumber": "6124",
     "receiveDate": "7 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4852,7 +6524,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "10 เมษายน 2569 เวลา 15:24:36 น."
   },
   {
-    "rowIndex": 443,
+    "rowIndex": 595,
     "docNumber": "6367",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4863,7 +6535,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 พฤษภาคม 2569 เวลา 09:55:20 น."
   },
   {
-    "rowIndex": 444,
+    "rowIndex": 596,
     "docNumber": "3574",
     "receiveDate": "27 กุมภาพันธ์ 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4874,7 +6546,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "20 เมษายน 2569 เวลา 14:37:58 น."
   },
   {
-    "rowIndex": 445,
+    "rowIndex": 597,
     "docNumber": "6683",
     "receiveDate": "16 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4885,7 +6557,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "20 เมษายน 2569 เวลา 14:39:05 น."
   },
   {
-    "rowIndex": 446,
+    "rowIndex": 598,
     "docNumber": "6566",
     "receiveDate": "10 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4896,7 +6568,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 มิถุนายน 2569 เวลา 11:18:07 น."
   },
   {
-    "rowIndex": 447,
+    "rowIndex": 599,
     "docNumber": "4924",
     "receiveDate": "23 มีนาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4907,7 +6579,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "28 เมษายน 2569 เวลา 15:06:04 น."
   },
   {
-    "rowIndex": 448,
+    "rowIndex": 600,
     "docNumber": "6861",
     "receiveDate": "17 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4918,7 +6590,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:13:28 น."
   },
   {
-    "rowIndex": 449,
+    "rowIndex": 601,
     "docNumber": "6848",
     "receiveDate": "17 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4929,7 +6601,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "22 เมษายน 2569 เวลา 08:37:09 น."
   },
   {
-    "rowIndex": 450,
+    "rowIndex": 602,
     "docNumber": "7214",
     "receiveDate": "23 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4940,7 +6612,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 เมษายน 2569 เวลา 15:45:39 น."
   },
   {
-    "rowIndex": 451,
+    "rowIndex": 603,
     "docNumber": "6150",
     "receiveDate": "7 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4951,7 +6623,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 เมษายน 2569 เวลา 15:49:44 น."
   },
   {
-    "rowIndex": 452,
+    "rowIndex": 604,
     "docNumber": "6085",
     "receiveDate": "7 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4962,7 +6634,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "29 เมษายน 2569 เวลา 10:34:50 น."
   },
   {
-    "rowIndex": 453,
+    "rowIndex": 605,
     "docNumber": "6109",
     "receiveDate": "7 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4973,7 +6645,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "29 เมษายน 2569 เวลา 11:14:51 น."
   },
   {
-    "rowIndex": 454,
+    "rowIndex": 606,
     "docNumber": "6455",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4984,7 +6656,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "29 เมษายน 2569 เวลา 13:49:54 น."
   },
   {
-    "rowIndex": 455,
+    "rowIndex": 607,
     "docNumber": "7373",
     "receiveDate": "27 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -4995,7 +6667,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 พฤษภาคม 2569 เวลา 09:47:53 น."
   },
   {
-    "rowIndex": 456,
+    "rowIndex": 608,
     "docNumber": "6423",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5006,7 +6678,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 เมษายน 2569 เวลา 11:20:50 น."
   },
   {
-    "rowIndex": 457,
+    "rowIndex": 609,
     "docNumber": "6435",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5017,7 +6689,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:27:18 น."
   },
   {
-    "rowIndex": 458,
+    "rowIndex": 610,
     "docNumber": "6434",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5028,7 +6700,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:29:16 น."
   },
   {
-    "rowIndex": 459,
+    "rowIndex": 611,
     "docNumber": "6433",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5039,7 +6711,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:30:00 น."
   },
   {
-    "rowIndex": 460,
+    "rowIndex": 612,
     "docNumber": "6432",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5050,7 +6722,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:30:44 น."
   },
   {
-    "rowIndex": 461,
+    "rowIndex": 613,
     "docNumber": "6439",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5061,7 +6733,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:31:32 น."
   },
   {
-    "rowIndex": 462,
+    "rowIndex": 614,
     "docNumber": "6428",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5072,7 +6744,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 เมษายน 2569 เวลา 13:51:17 น."
   },
   {
-    "rowIndex": 463,
+    "rowIndex": 615,
     "docNumber": "6420",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5083,7 +6755,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 เมษายน 2569 เวลา 13:55:25 น."
   },
   {
-    "rowIndex": 464,
+    "rowIndex": 616,
     "docNumber": "6422",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5094,7 +6766,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 เมษายน 2569 เวลา 13:57:37 น."
   },
   {
-    "rowIndex": 465,
+    "rowIndex": 617,
     "docNumber": "6421",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5105,7 +6777,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 เมษายน 2569 เวลา 13:59:45 น."
   },
   {
-    "rowIndex": 466,
+    "rowIndex": 618,
     "docNumber": "6419",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5116,7 +6788,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 เมษายน 2569 เวลา 14:01:44 น."
   },
   {
-    "rowIndex": 467,
+    "rowIndex": 619,
     "docNumber": "6431",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5127,7 +6799,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:32:27 น."
   },
   {
-    "rowIndex": 468,
+    "rowIndex": 620,
     "docNumber": "6436",
     "receiveDate": "30 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5138,7 +6810,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 พฤษภาคม 2569 เวลา 09:50:34 น."
   },
   {
-    "rowIndex": 469,
+    "rowIndex": 621,
     "docNumber": "6437",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5149,7 +6821,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:33:07 น."
   },
   {
-    "rowIndex": 470,
+    "rowIndex": 622,
     "docNumber": "6438",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5160,7 +6832,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:33:36 น."
   },
   {
-    "rowIndex": 471,
+    "rowIndex": 623,
     "docNumber": "6391",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5171,7 +6843,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 เมษายน 2569 เวลา 14:52:40 น."
   },
   {
-    "rowIndex": 472,
+    "rowIndex": 624,
     "docNumber": "6497",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5182,7 +6854,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 เมษายน 2569 เวลา 14:57:19 น."
   },
   {
-    "rowIndex": 473,
+    "rowIndex": 625,
     "docNumber": "6483",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5193,7 +6865,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 เมษายน 2569 เวลา 15:13:16 น."
   },
   {
-    "rowIndex": 474,
+    "rowIndex": 626,
     "docNumber": "6487",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5204,7 +6876,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 เมษายน 2569 เวลา 15:19:53 น."
   },
   {
-    "rowIndex": 475,
+    "rowIndex": 627,
     "docNumber": "6486",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5215,7 +6887,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 เมษายน 2569 เวลา 15:24:14 น."
   },
   {
-    "rowIndex": 476,
+    "rowIndex": 628,
     "docNumber": "6485",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5226,7 +6898,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 เมษายน 2569 เวลา 15:29:51 น."
   },
   {
-    "rowIndex": 477,
+    "rowIndex": 629,
     "docNumber": "6484",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5237,7 +6909,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 เมษายน 2569 เวลา 15:30:59 น."
   },
   {
-    "rowIndex": 478,
+    "rowIndex": 630,
     "docNumber": "6390",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5248,7 +6920,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 เมษายน 2569 เวลา 15:32:35 น."
   },
   {
-    "rowIndex": 479,
+    "rowIndex": 631,
     "docNumber": "6401",
     "receiveDate": "9 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5259,7 +6931,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 เมษายน 2569 เวลา 15:36:10 น."
   },
   {
-    "rowIndex": 480,
+    "rowIndex": 632,
     "docNumber": "7692",
     "receiveDate": "30 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5270,7 +6942,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "6 พฤษภาคม 2569 เวลา 10:44:04 น."
   },
   {
-    "rowIndex": 481,
+    "rowIndex": 633,
     "docNumber": "6579",
     "receiveDate": "10 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5281,7 +6953,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:36:00 น."
   },
   {
-    "rowIndex": 482,
+    "rowIndex": 634,
     "docNumber": "6533",
     "receiveDate": "10 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5292,7 +6964,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:36:54 น."
   },
   {
-    "rowIndex": 483,
+    "rowIndex": 635,
     "docNumber": "6532",
     "receiveDate": "10 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5303,7 +6975,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:37:45 น."
   },
   {
-    "rowIndex": 484,
+    "rowIndex": 636,
     "docNumber": "6582",
     "receiveDate": "10 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5314,7 +6986,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "6 พฤษภาคม 2569 เวลา 16:21:59 น."
   },
   {
-    "rowIndex": 485,
+    "rowIndex": 637,
     "docNumber": "7921",
     "receiveDate": "5 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5325,7 +6997,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 พฤษภาคม 2569 เวลา 09:42:58 น."
   },
   {
-    "rowIndex": 486,
+    "rowIndex": 638,
     "docNumber": "7209",
     "receiveDate": "22 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5336,7 +7008,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 พฤษภาคม 2569 เวลา 10:47:16 น."
   },
   {
-    "rowIndex": 487,
+    "rowIndex": 639,
     "docNumber": "7174",
     "receiveDate": "22 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5347,7 +7019,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 พฤษภาคม 2569 เวลา 10:55:52 น."
   },
   {
-    "rowIndex": 488,
+    "rowIndex": 640,
     "docNumber": "7992",
     "receiveDate": "5 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5358,7 +7030,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 พฤษภาคม 2569 เวลา 11:05:15 น."
   },
   {
-    "rowIndex": 489,
+    "rowIndex": 641,
     "docNumber": "7991",
     "receiveDate": "5 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5369,7 +7041,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 พฤษภาคม 2569 เวลา 16:50:39 น."
   },
   {
-    "rowIndex": 490,
+    "rowIndex": 642,
     "docNumber": "8310",
     "receiveDate": "7 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5380,7 +7052,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 พฤษภาคม 2569 เวลา 16:52:06 น."
   },
   {
-    "rowIndex": 491,
+    "rowIndex": 643,
     "docNumber": "7990",
     "receiveDate": "5 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5391,7 +7063,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 พฤษภาคม 2569 เวลา 17:01:06 น."
   },
   {
-    "rowIndex": 492,
+    "rowIndex": 644,
     "docNumber": "7472",
     "receiveDate": "28 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5402,7 +7074,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "12 พฤษภาคม 2569 เวลา 08:22:45 น."
   },
   {
-    "rowIndex": 493,
+    "rowIndex": 645,
     "docNumber": "7503",
     "receiveDate": "28 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5413,7 +7085,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:38:38 น."
   },
   {
-    "rowIndex": 494,
+    "rowIndex": 646,
     "docNumber": "7489",
     "receiveDate": "28 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5424,7 +7096,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:40:23 น."
   },
   {
-    "rowIndex": 495,
+    "rowIndex": 647,
     "docNumber": "8490",
     "receiveDate": "8 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5435,7 +7107,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "12 พฤษภาคม 2569 เวลา 16:04:47 น."
   },
   {
-    "rowIndex": 496,
+    "rowIndex": 648,
     "docNumber": "7303",
     "receiveDate": "23 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5446,7 +7118,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "12 พฤษภาคม 2569 เวลา 16:53:25 น."
   },
   {
-    "rowIndex": 497,
+    "rowIndex": 649,
     "docNumber": "7618",
     "receiveDate": "29 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5457,7 +7129,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 11:31:21 น."
   },
   {
-    "rowIndex": 498,
+    "rowIndex": 650,
     "docNumber": "8724",
     "receiveDate": "11 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5468,7 +7140,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "15 พฤษภาคม 2569 เวลา 11:07:19 น."
   },
   {
-    "rowIndex": 499,
+    "rowIndex": 651,
     "docNumber": "8721",
     "receiveDate": "11 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5479,7 +7151,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กรกฎาคม 2569 เวลา 09:36:29 น."
   },
   {
-    "rowIndex": 500,
+    "rowIndex": 652,
     "docNumber": "7191",
     "receiveDate": "22 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5490,7 +7162,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:48:33 น."
   },
   {
-    "rowIndex": 501,
+    "rowIndex": 653,
     "docNumber": "8551",
     "receiveDate": "11 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5501,7 +7173,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "18 พฤษภาคม 2569 เวลา 14:55:32 น."
   },
   {
-    "rowIndex": 502,
+    "rowIndex": 654,
     "docNumber": "8556",
     "receiveDate": "11 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5512,7 +7184,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "18 พฤษภาคม 2569 เวลา 14:57:23 น."
   },
   {
-    "rowIndex": 503,
+    "rowIndex": 655,
     "docNumber": "8553",
     "receiveDate": "11 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5523,7 +7195,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "18 พฤษภาคม 2569 เวลา 14:58:52 น."
   },
   {
-    "rowIndex": 504,
+    "rowIndex": 656,
     "docNumber": "8856",
     "receiveDate": "12 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5534,7 +7206,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "19 พฤษภาคม 2569 เวลา 08:38:14 น."
   },
   {
-    "rowIndex": 505,
+    "rowIndex": 657,
     "docNumber": "9304",
     "receiveDate": "15 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5545,7 +7217,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "20 พฤษภาคม 2569 เวลา 13:42:29 น."
   },
   {
-    "rowIndex": 506,
+    "rowIndex": 658,
     "docNumber": "9399",
     "receiveDate": "18 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5556,7 +7228,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "20 พฤษภาคม 2569 เวลา 16:51:48 น."
   },
   {
-    "rowIndex": 507,
+    "rowIndex": 659,
     "docNumber": "9424",
     "receiveDate": "18 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5567,7 +7239,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "20 พฤษภาคม 2569 เวลา 16:53:51 น."
   },
   {
-    "rowIndex": 508,
+    "rowIndex": 660,
     "docNumber": "9423",
     "receiveDate": "18 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5578,7 +7250,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 08:40:04 น."
   },
   {
-    "rowIndex": 509,
+    "rowIndex": 661,
     "docNumber": "9400",
     "receiveDate": "18 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5589,7 +7261,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "20 พฤษภาคม 2569 เวลา 17:33:13 น."
   },
   {
-    "rowIndex": 510,
+    "rowIndex": 662,
     "docNumber": "7843",
     "receiveDate": "1 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5600,7 +7272,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 08:59:28 น."
   },
   {
-    "rowIndex": 511,
+    "rowIndex": 663,
     "docNumber": "7844",
     "receiveDate": "1 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5611,7 +7283,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 08:59:43 น."
   },
   {
-    "rowIndex": 512,
+    "rowIndex": 664,
     "docNumber": "7848",
     "receiveDate": "1 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5622,7 +7294,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 09:00:00 น."
   },
   {
-    "rowIndex": 513,
+    "rowIndex": 665,
     "docNumber": "7913",
     "receiveDate": "1 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5633,7 +7305,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 08:58:12 น."
   },
   {
-    "rowIndex": 514,
+    "rowIndex": 666,
     "docNumber": "7846",
     "receiveDate": "1 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5644,7 +7316,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 08:59:01 น."
   },
   {
-    "rowIndex": 515,
+    "rowIndex": 667,
     "docNumber": "7845",
     "receiveDate": "1 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5655,7 +7327,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 09:00:21 น."
   },
   {
-    "rowIndex": 516,
+    "rowIndex": 668,
     "docNumber": "7847",
     "receiveDate": "1 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5666,7 +7338,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 09:00:48 น."
   },
   {
-    "rowIndex": 517,
+    "rowIndex": 669,
     "docNumber": "7988",
     "receiveDate": "5 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5677,7 +7349,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 09:06:05 น."
   },
   {
-    "rowIndex": 518,
+    "rowIndex": 670,
     "docNumber": "7970",
     "receiveDate": "5 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5688,7 +7360,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 12:56:37 น."
   },
   {
-    "rowIndex": 519,
+    "rowIndex": 671,
     "docNumber": "7975",
     "receiveDate": "5 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5699,7 +7371,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 13:04:31 น."
   },
   {
-    "rowIndex": 520,
+    "rowIndex": 672,
     "docNumber": "8268",
     "receiveDate": "7 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5710,7 +7382,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:49:38 น."
   },
   {
-    "rowIndex": 521,
+    "rowIndex": 673,
     "docNumber": "8265",
     "receiveDate": "7 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5721,7 +7393,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:50:00 น."
   },
   {
-    "rowIndex": 522,
+    "rowIndex": 674,
     "docNumber": "8229",
     "receiveDate": "7 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5732,7 +7404,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 13:15:21 น."
   },
   {
-    "rowIndex": 523,
+    "rowIndex": 675,
     "docNumber": "8226",
     "receiveDate": "7 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5743,7 +7415,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 13:15:55 น."
   },
   {
-    "rowIndex": 524,
+    "rowIndex": 676,
     "docNumber": "7667",
     "receiveDate": "30 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5754,7 +7426,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 13:17:31 น."
   },
   {
-    "rowIndex": 525,
+    "rowIndex": 677,
     "docNumber": "7799",
     "receiveDate": "30 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5765,7 +7437,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 13:18:20 น."
   },
   {
-    "rowIndex": 526,
+    "rowIndex": 678,
     "docNumber": "7802",
     "receiveDate": "30 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5776,7 +7448,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 13:19:00 น."
   },
   {
-    "rowIndex": 527,
+    "rowIndex": 679,
     "docNumber": "7798",
     "receiveDate": "30 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5787,7 +7459,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 13:19:43 น."
   },
   {
-    "rowIndex": 528,
+    "rowIndex": 680,
     "docNumber": "8951",
     "receiveDate": "12 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5798,7 +7470,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 พฤษภาคม 2569 เวลา 13:22:45 น."
   },
   {
-    "rowIndex": 529,
+    "rowIndex": 681,
     "docNumber": "9635",
     "receiveDate": "20 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5809,7 +7481,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 พฤษภาคม 2569 เวลา 14:07:03 น."
   },
   {
-    "rowIndex": 530,
+    "rowIndex": 682,
     "docNumber": "9619",
     "receiveDate": "18 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5820,7 +7492,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 กันยายน 2569 เวลา 11:07:14 น."
   },
   {
-    "rowIndex": 531,
+    "rowIndex": 683,
     "docNumber": "8285",
     "receiveDate": "7 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5831,7 +7503,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 พฤษภาคม 2569 เวลา 09:51:27 น."
   },
   {
-    "rowIndex": 532,
+    "rowIndex": 684,
     "docNumber": "8289",
     "receiveDate": "7 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5842,7 +7514,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 พฤษภาคม 2569 เวลา 09:53:34 น."
   },
   {
-    "rowIndex": 533,
+    "rowIndex": 685,
     "docNumber": "8263",
     "receiveDate": "7 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5853,7 +7525,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 พฤษภาคม 2569 เวลา 09:54:38 น."
   },
   {
-    "rowIndex": 534,
+    "rowIndex": 686,
     "docNumber": "8228",
     "receiveDate": "7 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5864,7 +7536,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 พฤษภาคม 2569 เวลา 09:57:46 น."
   },
   {
-    "rowIndex": 535,
+    "rowIndex": 687,
     "docNumber": "8225",
     "receiveDate": "25 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5875,7 +7547,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 พฤษภาคม 2569 เวลา 09:59:19 น."
   },
   {
-    "rowIndex": 536,
+    "rowIndex": 688,
     "docNumber": "8286",
     "receiveDate": "7 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5886,7 +7558,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 พฤษภาคม 2569 เวลา 10:00:11 น."
   },
   {
-    "rowIndex": 537,
+    "rowIndex": 689,
     "docNumber": "9960",
     "receiveDate": "22 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5897,7 +7569,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 พฤษภาคม 2569 เวลา 08:47:32 น."
   },
   {
-    "rowIndex": 538,
+    "rowIndex": 690,
     "docNumber": "9607",
     "receiveDate": "19 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5908,7 +7580,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 พฤษภาคม 2569 เวลา 08:49:13 น."
   },
   {
-    "rowIndex": 539,
+    "rowIndex": 691,
     "docNumber": "8389",
     "receiveDate": "8 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5919,7 +7591,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 พฤษภาคม 2569 เวลา 08:40:18 น."
   },
   {
-    "rowIndex": 540,
+    "rowIndex": 692,
     "docNumber": "8388",
     "receiveDate": "8 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5930,7 +7602,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กรกฎาคม 2569 เวลา 09:44:07 น."
   },
   {
-    "rowIndex": 541,
+    "rowIndex": 693,
     "docNumber": "8385",
     "receiveDate": "8 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5941,7 +7613,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 พฤษภาคม 2569 เวลา 08:47:55 น."
   },
   {
-    "rowIndex": 542,
+    "rowIndex": 694,
     "docNumber": "8329",
     "receiveDate": "8 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5952,7 +7624,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 พฤษภาคม 2569 เวลา 08:49:34 น."
   },
   {
-    "rowIndex": 543,
+    "rowIndex": 695,
     "docNumber": "8330",
     "receiveDate": "8 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5963,7 +7635,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 พฤษภาคม 2569 เวลา 08:50:31 น."
   },
   {
-    "rowIndex": 544,
+    "rowIndex": 696,
     "docNumber": "8390",
     "receiveDate": "8 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5974,7 +7646,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 พฤษภาคม 2569 เวลา 08:54:19 น."
   },
   {
-    "rowIndex": 545,
+    "rowIndex": 697,
     "docNumber": "8368",
     "receiveDate": "8 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5985,7 +7657,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 พฤษภาคม 2569 เวลา 09:12:07 น."
   },
   {
-    "rowIndex": 546,
+    "rowIndex": 698,
     "docNumber": "8517",
     "receiveDate": "8 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -5996,7 +7668,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "6 กรกฎาคม 2569 เวลา 09:08:39 น."
   },
   {
-    "rowIndex": 547,
+    "rowIndex": 699,
     "docNumber": "9931",
     "receiveDate": "22 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6007,7 +7679,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 พฤษภาคม 2569 เวลา 13:57:05 น."
   },
   {
-    "rowIndex": 548,
+    "rowIndex": 700,
     "docNumber": "9785",
     "receiveDate": "21 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6018,7 +7690,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 พฤษภาคม 2569 เวลา 13:49:18 น."
   },
   {
-    "rowIndex": 549,
+    "rowIndex": 701,
     "docNumber": "9930",
     "receiveDate": "22 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6029,7 +7701,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 พฤษภาคม 2569 เวลา 15:38:37 น."
   },
   {
-    "rowIndex": 550,
+    "rowIndex": 702,
     "docNumber": "9943",
     "receiveDate": "22 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6040,7 +7712,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 มิถุนายน 2569 เวลา 10:54:18 น."
   },
   {
-    "rowIndex": 551,
+    "rowIndex": 703,
     "docNumber": "10082",
     "receiveDate": "25 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6051,7 +7723,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 มิถุนายน 2569 เวลา 14:07:49 น."
   },
   {
-    "rowIndex": 552,
+    "rowIndex": 704,
     "docNumber": "10085",
     "receiveDate": "25 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6062,7 +7734,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 มิถุนายน 2569 เวลา 11:37:53 น."
   },
   {
-    "rowIndex": 553,
+    "rowIndex": 705,
     "docNumber": "10022",
     "receiveDate": "25 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6073,7 +7745,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 กันยายน 2569 เวลา 11:08:25 น."
   },
   {
-    "rowIndex": 554,
+    "rowIndex": 706,
     "docNumber": "10105",
     "receiveDate": "26 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6084,7 +7756,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "29 พฤษภาคม 2569 เวลา 08:15:34 น."
   },
   {
-    "rowIndex": 555,
+    "rowIndex": 707,
     "docNumber": "10274",
     "receiveDate": "27 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6095,7 +7767,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 มิถุนายน 2569 เวลา 10:42:54 น."
   },
   {
-    "rowIndex": 556,
+    "rowIndex": 708,
     "docNumber": "10389",
     "receiveDate": "28 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6106,7 +7778,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "20 กรกฎาคม 2569 เวลา 13:12:45 น."
   },
   {
-    "rowIndex": 557,
+    "rowIndex": 709,
     "docNumber": "9904",
     "receiveDate": "22 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6117,7 +7789,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 09:10:52 น."
   },
   {
-    "rowIndex": 558,
+    "rowIndex": 710,
     "docNumber": "10572",
     "receiveDate": "2 มิถุนายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6128,7 +7800,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "6 กรกฎาคม 2569 เวลา 09:13:54 น."
   },
   {
-    "rowIndex": 559,
+    "rowIndex": 711,
     "docNumber": "7505",
     "receiveDate": "28 เมษายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6139,7 +7811,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:39:48 น."
   },
   {
-    "rowIndex": 560,
+    "rowIndex": 712,
     "docNumber": "10095",
     "receiveDate": "28 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6150,7 +7822,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 มิถุนายน 2569 เวลา 10:56:47 น."
   },
   {
-    "rowIndex": 561,
+    "rowIndex": 713,
     "docNumber": "10886",
     "receiveDate": "5 มิถุนายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6161,7 +7833,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "9 มิถุนายน 2569 เวลา 15:09:23 น."
   },
   {
-    "rowIndex": 562,
+    "rowIndex": 714,
     "docNumber": "10948",
     "receiveDate": "8 มิถุนายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6172,7 +7844,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 มิถุนายน 2569 เวลา 09:23:22 น."
   },
   {
-    "rowIndex": 563,
+    "rowIndex": 715,
     "docNumber": "11074",
     "receiveDate": "8 มิถุนายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6183,7 +7855,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 มิถุนายน 2569 เวลา 10:10:45 น."
   },
   {
-    "rowIndex": 564,
+    "rowIndex": 716,
     "docNumber": "11043",
     "receiveDate": "8 มิถุนายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6194,7 +7866,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 มิถุนายน 2569 เวลา 10:01:22 น."
   },
   {
-    "rowIndex": 565,
+    "rowIndex": 717,
     "docNumber": "8648",
     "receiveDate": "11 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6205,7 +7877,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "16 มิถุนายน 2569 เวลา 16:15:40 น."
   },
   {
-    "rowIndex": 566,
+    "rowIndex": 718,
     "docNumber": "10781",
     "receiveDate": "4 มิถุนายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6216,7 +7888,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "19 มิถุนายน 2569 เวลา 09:05:11 น."
   },
   {
-    "rowIndex": 567,
+    "rowIndex": 719,
     "docNumber": "11307",
     "receiveDate": "10 มิถุนายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6227,7 +7899,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "6 กรกฎาคม 2569 เวลา 09:36:59 น."
   },
   {
-    "rowIndex": 568,
+    "rowIndex": 720,
     "docNumber": "11615",
     "receiveDate": "15 มิถุนายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6238,7 +7910,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "6 กรกฎาคม 2569 เวลา 09:25:18 น."
   },
   {
-    "rowIndex": 569,
+    "rowIndex": 721,
     "docNumber": "11869",
     "receiveDate": "17 มิถุนายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6249,7 +7921,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "22 มิถุนายน 2569 เวลา 10:23:09 น."
   },
   {
-    "rowIndex": 570,
+    "rowIndex": 722,
     "docNumber": "12518",
     "receiveDate": "29 มิถุนายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6260,7 +7932,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กรกฎาคม 2569 เวลา 09:33:02 น."
   },
   {
-    "rowIndex": 571,
+    "rowIndex": 723,
     "docNumber": "12589",
     "receiveDate": "29 มิถุนายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6271,7 +7943,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 กรกฎาคม 2569 เวลา 11:41:44 น."
   },
   {
-    "rowIndex": 572,
+    "rowIndex": 724,
     "docNumber": "12633",
     "receiveDate": "30 มิถุนายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6282,7 +7954,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 กรกฎาคม 2569 เวลา 16:20:09 น."
   },
   {
-    "rowIndex": 573,
+    "rowIndex": 725,
     "docNumber": "12644",
     "receiveDate": "30 มิถุนายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6293,7 +7965,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 กรกฎาคม 2569 เวลา 16:23:25 น."
   },
   {
-    "rowIndex": 574,
+    "rowIndex": 726,
     "docNumber": "12626",
     "receiveDate": "30 มิถุนายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6304,7 +7976,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 ตุลาคม 2569 เวลา 14:28:26 น."
   },
   {
-    "rowIndex": 575,
+    "rowIndex": 727,
     "docNumber": "12823",
     "receiveDate": "1 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6315,7 +7987,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 กรกฎาคม 2569 เวลา 15:59:09 น."
   },
   {
-    "rowIndex": 576,
+    "rowIndex": 728,
     "docNumber": "12818",
     "receiveDate": "1 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6326,7 +7998,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 กรกฎาคม 2569 เวลา 16:13:54 น."
   },
   {
-    "rowIndex": 577,
+    "rowIndex": 729,
     "docNumber": "12818",
     "receiveDate": "1 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6337,7 +8009,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 กรกฎาคม 2569 เวลา 16:14:15 น."
   },
   {
-    "rowIndex": 578,
+    "rowIndex": 730,
     "docNumber": "12828",
     "receiveDate": "1 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6348,7 +8020,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กรกฎาคม 2569 เวลา 09:30:28 น."
   },
   {
-    "rowIndex": 579,
+    "rowIndex": 731,
     "docNumber": "12946",
     "receiveDate": "2 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6359,7 +8031,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 ตุลาคม 2569 เวลา 14:27:57 น."
   },
   {
-    "rowIndex": 580,
+    "rowIndex": 732,
     "docNumber": "13021",
     "receiveDate": "3 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6370,7 +8042,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กรกฎาคม 2569 เวลา 09:22:09 น."
   },
   {
-    "rowIndex": 581,
+    "rowIndex": 733,
     "docNumber": "13214",
     "receiveDate": "6 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6381,7 +8053,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "9 กรกฎาคม 2569 เวลา 13:51:17 น."
   },
   {
-    "rowIndex": 582,
+    "rowIndex": 734,
     "docNumber": "13187",
     "receiveDate": "6 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6392,7 +8064,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กรกฎาคม 2569 เวลา 08:22:51 น."
   },
   {
-    "rowIndex": 583,
+    "rowIndex": 735,
     "docNumber": "13513",
     "receiveDate": "8 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6403,7 +8075,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กรกฎาคม 2569 เวลา 09:12:19 น."
   },
   {
-    "rowIndex": 584,
+    "rowIndex": 736,
     "docNumber": "13202",
     "receiveDate": "6 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6414,7 +8086,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 กรกฎาคม 2569 เวลา 14:59:10 น."
   },
   {
-    "rowIndex": 585,
+    "rowIndex": 737,
     "docNumber": "13203",
     "receiveDate": "6 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6425,7 +8097,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 กรกฎาคม 2569 เวลา 14:59:43 น."
   },
   {
-    "rowIndex": 586,
+    "rowIndex": 738,
     "docNumber": "13096",
     "receiveDate": "6 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6436,7 +8108,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 กันยายน 2569 เวลา 11:27:42 น."
   },
   {
-    "rowIndex": 587,
+    "rowIndex": 739,
     "docNumber": "9889",
     "receiveDate": "22 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6447,7 +8119,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กรกฎาคม 2569 เวลา 13:22:09 น."
   },
   {
-    "rowIndex": 588,
+    "rowIndex": 740,
     "docNumber": "10339",
     "receiveDate": "22 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6458,7 +8130,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กรกฎาคม 2569 เวลา 13:30:54 น."
   },
   {
-    "rowIndex": 589,
+    "rowIndex": 741,
     "docNumber": "10431",
     "receiveDate": "29 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6469,7 +8141,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กรกฎาคม 2569 เวลา 13:42:03 น."
   },
   {
-    "rowIndex": 590,
+    "rowIndex": 742,
     "docNumber": "10496",
     "receiveDate": "29 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6480,7 +8152,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "15 กรกฎาคม 2569 เวลา 13:32:40 น."
   },
   {
-    "rowIndex": 591,
+    "rowIndex": 743,
     "docNumber": "11274",
     "receiveDate": "10 มิถุนายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6491,7 +8163,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "15 กรกฎาคม 2569 เวลา 17:10:09 น."
   },
   {
-    "rowIndex": 592,
+    "rowIndex": 744,
     "docNumber": "13827",
     "receiveDate": "13 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6502,7 +8174,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "15 กรกฎาคม 2569 เวลา 17:13:35 น."
   },
   {
-    "rowIndex": 593,
+    "rowIndex": 745,
     "docNumber": "13945",
     "receiveDate": "14 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6513,7 +8185,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "20 กรกฎาคม 2569 เวลา 13:10:47 น."
   },
   {
-    "rowIndex": 594,
+    "rowIndex": 746,
     "docNumber": "13976",
     "receiveDate": "14 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6524,7 +8196,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 กรกฎาคม 2569 เวลา 10:45:53 น."
   },
   {
-    "rowIndex": 595,
+    "rowIndex": 747,
     "docNumber": "14075",
     "receiveDate": "15 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6535,7 +8207,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กรกฎาคม 2569 เวลา 14:17:54 น."
   },
   {
-    "rowIndex": 596,
+    "rowIndex": 748,
     "docNumber": "14372",
     "receiveDate": "20 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6546,7 +8218,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 กันยายน 2569 เวลา 11:27:12 น."
   },
   {
-    "rowIndex": 597,
+    "rowIndex": 749,
     "docNumber": "14537",
     "receiveDate": "22 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6557,7 +8229,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 กรกฎาคม 2569 เวลา 08:48:41 น."
   },
   {
-    "rowIndex": 598,
+    "rowIndex": 750,
     "docNumber": "14780",
     "receiveDate": "24 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6568,7 +8240,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "5 สิงหาคม 2569 เวลา 13:21:56 น."
   },
   {
-    "rowIndex": 599,
+    "rowIndex": 751,
     "docNumber": "14780",
     "receiveDate": "24 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6579,7 +8251,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 สิงหาคม 2569 เวลา 16:22:08 น."
   },
   {
-    "rowIndex": 600,
+    "rowIndex": 752,
     "docNumber": "15304",
     "receiveDate": "10 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6590,7 +8262,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 ตุลาคม 2569 เวลา 14:28:59 น."
   },
   {
-    "rowIndex": 601,
+    "rowIndex": 753,
     "docNumber": "15328",
     "receiveDate": "6 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6601,7 +8273,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "10 สิงหาคม 2569 เวลา 17:35:05 น."
   },
   {
-    "rowIndex": 602,
+    "rowIndex": 754,
     "docNumber": "15262",
     "receiveDate": "6 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6612,7 +8284,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 สิงหาคม 2569 เวลา 09:26:05 น."
   },
   {
-    "rowIndex": 603,
+    "rowIndex": 755,
     "docNumber": "15326",
     "receiveDate": "6 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6623,7 +8295,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "10 สิงหาคม 2569 เวลา 17:34:51 น."
   },
   {
-    "rowIndex": 604,
+    "rowIndex": 756,
     "docNumber": "15382",
     "receiveDate": "7 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6634,7 +8306,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 สิงหาคม 2569 เวลา 14:36:57 น."
   },
   {
-    "rowIndex": 605,
+    "rowIndex": 757,
     "docNumber": "13275",
     "receiveDate": "7 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6645,18 +8317,18 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 ตุลาคม 2569 เวลา 14:29:18 น."
   },
   {
-    "rowIndex": 606,
+    "rowIndex": 758,
     "docNumber": "15568",
     "receiveDate": "10 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
     "problemType": "ร้องเรียน/เสนอแนะ",
     "problemDetail": "CPF ร้องเรียนและขอข้อมูลกรณีมีผู้แอบอ้างเข้าไปเปลี่ยน e-mail ผู้ดำเนินการระบบ ewp ของบริษัท",
-    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "status": "อยู่ระหว่างประสานงาน OS",
     "remark": "",
-    "lastUpdate": "13 สิงหาคม 2569 เวลา 09:15:28 น."
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 09:29:09 น."
   },
   {
-    "rowIndex": 607,
+    "rowIndex": 759,
     "docNumber": "15585",
     "receiveDate": "11 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6667,7 +8339,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 สิงหาคม 2569 เวลา 10:05:40 น."
   },
   {
-    "rowIndex": 608,
+    "rowIndex": 760,
     "docNumber": "15585",
     "receiveDate": "11 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6678,7 +8350,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 สิงหาคม 2569 เวลา 14:27:01 น."
   },
   {
-    "rowIndex": 609,
+    "rowIndex": 761,
     "docNumber": "15647",
     "receiveDate": "11 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6689,7 +8361,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 กันยายน 2569 เวลา 11:31:44 น."
   },
   {
-    "rowIndex": 610,
+    "rowIndex": 762,
     "docNumber": "15647",
     "receiveDate": "11 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6700,7 +8372,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "13 สิงหาคม 2569 เวลา 14:32:21 น."
   },
   {
-    "rowIndex": 611,
+    "rowIndex": 763,
     "docNumber": "13467",
     "receiveDate": "8 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6711,7 +8383,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 สิงหาคม 2569 เวลา 10:12:10 น."
   },
   {
-    "rowIndex": 612,
+    "rowIndex": 764,
     "docNumber": "13403",
     "receiveDate": "8 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6722,7 +8394,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 สิงหาคม 2569 เวลา 11:20:48 น."
   },
   {
-    "rowIndex": 613,
+    "rowIndex": 765,
     "docNumber": "14528",
     "receiveDate": "22 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6733,7 +8405,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "18 สิงหาคม 2569 เวลา 11:55:25 น."
   },
   {
-    "rowIndex": 614,
+    "rowIndex": 766,
     "docNumber": "15775",
     "receiveDate": "14 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6744,7 +8416,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "18 สิงหาคม 2569 เวลา 11:35:03 น."
   },
   {
-    "rowIndex": 615,
+    "rowIndex": 767,
     "docNumber": "15909",
     "receiveDate": "17 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6755,7 +8427,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 สิงหาคม 2569 เวลา 10:08:46 น."
   },
   {
-    "rowIndex": 616,
+    "rowIndex": 768,
     "docNumber": "13803",
     "receiveDate": "13 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6766,7 +8438,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "19 สิงหาคม 2569 เวลา 13:18:14 น."
   },
   {
-    "rowIndex": 617,
+    "rowIndex": 769,
     "docNumber": "13581",
     "receiveDate": "9 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6777,7 +8449,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "19 สิงหาคม 2569 เวลา 13:28:12 น."
   },
   {
-    "rowIndex": 618,
+    "rowIndex": 770,
     "docNumber": "13876",
     "receiveDate": "14 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6788,7 +8460,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "19 สิงหาคม 2569 เวลา 13:32:39 น."
   },
   {
-    "rowIndex": 619,
+    "rowIndex": 771,
     "docNumber": "16016",
     "receiveDate": "18 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6799,7 +8471,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "20 สิงหาคม 2569 เวลา 11:41:38 น."
   },
   {
-    "rowIndex": 620,
+    "rowIndex": 772,
     "docNumber": "14300",
     "receiveDate": "20 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6810,7 +8482,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "20 สิงหาคม 2569 เวลา 16:09:14 น."
   },
   {
-    "rowIndex": 621,
+    "rowIndex": 773,
     "docNumber": "14135",
     "receiveDate": "16 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6821,7 +8493,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "20 สิงหาคม 2569 เวลา 16:11:51 น."
   },
   {
-    "rowIndex": 622,
+    "rowIndex": 774,
     "docNumber": "14218",
     "receiveDate": "17 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6832,7 +8504,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "20 สิงหาคม 2569 เวลา 16:20:38 น."
   },
   {
-    "rowIndex": 623,
+    "rowIndex": 775,
     "docNumber": "16046",
     "receiveDate": "18 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6843,7 +8515,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "28 สิงหาคม 2569 เวลา 13:21:41 น."
   },
   {
-    "rowIndex": 624,
+    "rowIndex": 776,
     "docNumber": "16147",
     "receiveDate": "19 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6854,7 +8526,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 สิงหาคม 2569 เวลา 14:06:13 น."
   },
   {
-    "rowIndex": 625,
+    "rowIndex": 777,
     "docNumber": "16133",
     "receiveDate": "19 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6865,7 +8537,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 สิงหาคม 2569 เวลา 14:13:11 น."
   },
   {
-    "rowIndex": 626,
+    "rowIndex": 778,
     "docNumber": "14399",
     "receiveDate": "21 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6876,7 +8548,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "24 สิงหาคม 2569 เวลา 10:07:27 น."
   },
   {
-    "rowIndex": 627,
+    "rowIndex": 779,
     "docNumber": "14904",
     "receiveDate": "31 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6887,7 +8559,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 ตุลาคม 2569 เวลา 14:29:48 น."
   },
   {
-    "rowIndex": 628,
+    "rowIndex": 780,
     "docNumber": "16266",
     "receiveDate": "21 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6898,7 +8570,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "24 สิงหาคม 2569 เวลา 14:25:10 น."
   },
   {
-    "rowIndex": 629,
+    "rowIndex": 781,
     "docNumber": "14502",
     "receiveDate": "22 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6909,7 +8581,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 สิงหาคม 2569 เวลา 10:45:20 น."
   },
   {
-    "rowIndex": 630,
+    "rowIndex": 782,
     "docNumber": "14507",
     "receiveDate": "22 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6920,7 +8592,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 สิงหาคม 2569 เวลา 10:21:16 น."
   },
   {
-    "rowIndex": 631,
+    "rowIndex": 783,
     "docNumber": "14514",
     "receiveDate": "22 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6931,7 +8603,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 สิงหาคม 2569 เวลา 10:31:26 น."
   },
   {
-    "rowIndex": 632,
+    "rowIndex": 784,
     "docNumber": "14510",
     "receiveDate": "22 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6942,7 +8614,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 สิงหาคม 2569 เวลา 10:37:00 น."
   },
   {
-    "rowIndex": 633,
+    "rowIndex": 785,
     "docNumber": "16259",
     "receiveDate": "21 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6953,7 +8625,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 สิงหาคม 2569 เวลา 10:41:40 น."
   },
   {
-    "rowIndex": 634,
+    "rowIndex": 786,
     "docNumber": "16263",
     "receiveDate": "21 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6964,7 +8636,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "25 สิงหาคม 2569 เวลา 11:20:02 น."
   },
   {
-    "rowIndex": 635,
+    "rowIndex": 787,
     "docNumber": "15391",
     "receiveDate": "7 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6975,7 +8647,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 สิงหาคม 2569 เวลา 09:37:40 น."
   },
   {
-    "rowIndex": 636,
+    "rowIndex": 788,
     "docNumber": "15523",
     "receiveDate": "10 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6986,7 +8658,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 สิงหาคม 2569 เวลา 16:32:28 น."
   },
   {
-    "rowIndex": 637,
+    "rowIndex": 789,
     "docNumber": "16280",
     "receiveDate": "24 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -6997,7 +8669,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 สิงหาคม 2569 เวลา 17:13:11 น."
   },
   {
-    "rowIndex": 638,
+    "rowIndex": 790,
     "docNumber": "16287",
     "receiveDate": "24 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7008,7 +8680,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 สิงหาคม 2569 เวลา 18:07:04 น."
   },
   {
-    "rowIndex": 639,
+    "rowIndex": 791,
     "docNumber": "16312",
     "receiveDate": "24 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7019,7 +8691,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 สิงหาคม 2569 เวลา 17:31:48 น."
   },
   {
-    "rowIndex": 640,
+    "rowIndex": 792,
     "docNumber": "15016",
     "receiveDate": "3 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7030,7 +8702,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 สิงหาคม 2569 เวลา 17:34:21 น."
   },
   {
-    "rowIndex": 641,
+    "rowIndex": 793,
     "docNumber": "14907",
     "receiveDate": "31 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7041,7 +8713,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 สิงหาคม 2569 เวลา 17:38:27 น."
   },
   {
-    "rowIndex": 642,
+    "rowIndex": 794,
     "docNumber": "14906",
     "receiveDate": "31 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7052,7 +8724,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 สิงหาคม 2569 เวลา 17:39:53 น."
   },
   {
-    "rowIndex": 643,
+    "rowIndex": 795,
     "docNumber": "14901",
     "receiveDate": "31 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7063,7 +8735,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 สิงหาคม 2569 เวลา 13:27:04 น."
   },
   {
-    "rowIndex": 644,
+    "rowIndex": 796,
     "docNumber": "15933",
     "receiveDate": "17 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7074,7 +8746,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 สิงหาคม 2569 เวลา 13:30:51 น."
   },
   {
-    "rowIndex": 645,
+    "rowIndex": 797,
     "docNumber": "15934",
     "receiveDate": "17 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7085,7 +8757,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 สิงหาคม 2569 เวลา 13:35:40 น."
   },
   {
-    "rowIndex": 646,
+    "rowIndex": 798,
     "docNumber": "15084",
     "receiveDate": "4 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7096,7 +8768,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 สิงหาคม 2569 เวลา 15:17:22 น."
   },
   {
-    "rowIndex": 647,
+    "rowIndex": 799,
     "docNumber": "15182",
     "receiveDate": "5 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7107,7 +8779,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 สิงหาคม 2569 เวลา 15:20:35 น."
   },
   {
-    "rowIndex": 648,
+    "rowIndex": 800,
     "docNumber": "15082",
     "receiveDate": "4 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7118,7 +8790,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 สิงหาคม 2569 เวลา 15:23:49 น."
   },
   {
-    "rowIndex": 649,
+    "rowIndex": 801,
     "docNumber": "15175",
     "receiveDate": "5 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7129,7 +8801,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 ตุลาคม 2569 เวลา 14:34:08 น."
   },
   {
-    "rowIndex": 650,
+    "rowIndex": 802,
     "docNumber": "15083",
     "receiveDate": "4 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7140,7 +8812,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 สิงหาคม 2569 เวลา 17:12:39 น."
   },
   {
-    "rowIndex": 651,
+    "rowIndex": 803,
     "docNumber": "16443",
     "receiveDate": "26 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7151,7 +8823,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "28 สิงหาคม 2569 เวลา 13:12:57 น."
   },
   {
-    "rowIndex": 652,
+    "rowIndex": 804,
     "docNumber": "15275",
     "receiveDate": "8 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7162,7 +8834,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 สิงหาคม 2569 เวลา 13:40:17 น."
   },
   {
-    "rowIndex": 653,
+    "rowIndex": 805,
     "docNumber": "15276",
     "receiveDate": "8 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7173,7 +8845,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 สิงหาคม 2569 เวลา 13:42:50 น."
   },
   {
-    "rowIndex": 654,
+    "rowIndex": 806,
     "docNumber": "15313",
     "receiveDate": "6 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7184,7 +8856,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 สิงหาคม 2569 เวลา 13:45:10 น."
   },
   {
-    "rowIndex": 655,
+    "rowIndex": 807,
     "docNumber": "15312",
     "receiveDate": "6 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7195,7 +8867,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 สิงหาคม 2569 เวลา 13:47:51 น."
   },
   {
-    "rowIndex": 656,
+    "rowIndex": 808,
     "docNumber": "15458",
     "receiveDate": "10 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7206,7 +8878,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "31 สิงหาคม 2569 เวลา 13:50:08 น."
   },
   {
-    "rowIndex": 657,
+    "rowIndex": 809,
     "docNumber": "16628",
     "receiveDate": "28 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7217,7 +8889,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "1 กันยายน 2569 เวลา 11:14:41 น."
   },
   {
-    "rowIndex": 658,
+    "rowIndex": 810,
     "docNumber": "15124",
     "receiveDate": "4 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7228,18 +8900,18 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 กันยายน 2569 เวลา 16:11:24 น."
   },
   {
-    "rowIndex": 659,
+    "rowIndex": 811,
     "docNumber": "16674",
     "receiveDate": "2 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
     "problemType": "ข้อมูลแก้ไขข้อมูล",
     "problemDetail": "ขอแก้ไขวัตถุประสงค์ บนจ.",
-    "status": "อยู่ระหว่างประสานงาน OS",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
     "remark": "",
-    "lastUpdate": "2 กันยายน 2569 เวลา 16:18:08 น."
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 09:33:03 น."
   },
   {
-    "rowIndex": 660,
+    "rowIndex": 812,
     "docNumber": "13700",
     "receiveDate": "10 กรกฎาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7250,7 +8922,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "2 กันยายน 2569 เวลา 16:20:59 น."
   },
   {
-    "rowIndex": 661,
+    "rowIndex": 813,
     "docNumber": "15356",
     "receiveDate": "7 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7261,7 +8933,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 ตุลาคม 2569 เวลา 14:33:14 น."
   },
   {
-    "rowIndex": 662,
+    "rowIndex": 814,
     "docNumber": "15386",
     "receiveDate": "7 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7272,7 +8944,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 กันยายน 2569 เวลา 08:59:25 น."
   },
   {
-    "rowIndex": 663,
+    "rowIndex": 815,
     "docNumber": "16755",
     "receiveDate": "1 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7283,7 +8955,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "3 กันยายน 2569 เวลา 15:39:42 น."
   },
   {
-    "rowIndex": 664,
+    "rowIndex": 816,
     "docNumber": "15862",
     "receiveDate": "14 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7294,7 +8966,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 กันยายน 2569 เวลา 11:02:28 น."
   },
   {
-    "rowIndex": 665,
+    "rowIndex": 817,
     "docNumber": "15861",
     "receiveDate": "14 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7305,7 +8977,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "9 กันยายน 2569 เวลา 14:14:58 น."
   },
   {
-    "rowIndex": 666,
+    "rowIndex": 818,
     "docNumber": "15620",
     "receiveDate": "11 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7316,7 +8988,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 กันยายน 2569 เวลา 08:58:15 น."
   },
   {
-    "rowIndex": 667,
+    "rowIndex": 819,
     "docNumber": "16290",
     "receiveDate": "24 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7327,7 +8999,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 กันยายน 2569 เวลา 09:00:38 น."
   },
   {
-    "rowIndex": 668,
+    "rowIndex": 820,
     "docNumber": "16289",
     "receiveDate": "24 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7338,7 +9010,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 กันยายน 2569 เวลา 09:04:46 น."
   },
   {
-    "rowIndex": 669,
+    "rowIndex": 821,
     "docNumber": "16304",
     "receiveDate": "24 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7349,7 +9021,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 กันยายน 2569 เวลา 09:06:23 น."
   },
   {
-    "rowIndex": 670,
+    "rowIndex": 822,
     "docNumber": "16332",
     "receiveDate": "24 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7360,7 +9032,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 กันยายน 2569 เวลา 09:09:32 น."
   },
   {
-    "rowIndex": 671,
+    "rowIndex": 823,
     "docNumber": "16338",
     "receiveDate": "24 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7371,7 +9043,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 กันยายน 2569 เวลา 09:10:50 น."
   },
   {
-    "rowIndex": 672,
+    "rowIndex": 824,
     "docNumber": "16342",
     "receiveDate": "24 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7382,7 +9054,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 กันยายน 2569 เวลา 09:28:53 น."
   },
   {
-    "rowIndex": 673,
+    "rowIndex": 825,
     "docNumber": "16340",
     "receiveDate": "24 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7393,7 +9065,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 กันยายน 2569 เวลา 10:47:27 น."
   },
   {
-    "rowIndex": 674,
+    "rowIndex": 826,
     "docNumber": "231724",
     "receiveDate": "1 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7404,7 +9076,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 กันยายน 2569 เวลา 09:51:56 น."
   },
   {
-    "rowIndex": 675,
+    "rowIndex": 827,
     "docNumber": "16768",
     "receiveDate": "1 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7415,7 +9087,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 กันยายน 2569 เวลา 11:04:14 น."
   },
   {
-    "rowIndex": 676,
+    "rowIndex": 828,
     "docNumber": "9166",
     "receiveDate": "14 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7426,7 +9098,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 กันยายน 2569 เวลา 13:16:35 น."
   },
   {
-    "rowIndex": 677,
+    "rowIndex": 829,
     "docNumber": "9167",
     "receiveDate": "14 พฤษภาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7437,7 +9109,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "4 กันยายน 2569 เวลา 13:17:40 น."
   },
   {
-    "rowIndex": 678,
+    "rowIndex": 830,
     "docNumber": "16505",
     "receiveDate": "27 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7448,7 +9120,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "8 กันยายน 2569 เวลา 08:32:56 น."
   },
   {
-    "rowIndex": 679,
+    "rowIndex": 831,
     "docNumber": "16701",
     "receiveDate": "31 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7459,7 +9131,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 ตุลาคม 2569 เวลา 14:33:48 น."
   },
   {
-    "rowIndex": 680,
+    "rowIndex": 832,
     "docNumber": "16875",
     "receiveDate": "3 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7470,7 +9142,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "10 กันยายน 2569 เวลา 11:37:14 น."
   },
   {
-    "rowIndex": 681,
+    "rowIndex": 833,
     "docNumber": "17228",
     "receiveDate": "9 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7481,7 +9153,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 กันยายน 2569 เวลา 11:39:26 น."
   },
   {
-    "rowIndex": 682,
+    "rowIndex": 834,
     "docNumber": "17236",
     "receiveDate": "9 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7492,7 +9164,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "11 กันยายน 2569 เวลา 13:59:34 น."
   },
   {
-    "rowIndex": 683,
+    "rowIndex": 835,
     "docNumber": "16474",
     "receiveDate": "26 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7503,7 +9175,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 08:43:12 น."
   },
   {
-    "rowIndex": 684,
+    "rowIndex": 836,
     "docNumber": "16470",
     "receiveDate": "26 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7514,7 +9186,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 16:05:20 น."
   },
   {
-    "rowIndex": 685,
+    "rowIndex": 837,
     "docNumber": "16473",
     "receiveDate": "26 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7525,7 +9197,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 08:59:56 น."
   },
   {
-    "rowIndex": 686,
+    "rowIndex": 838,
     "docNumber": "16472",
     "receiveDate": "26 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7536,7 +9208,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 ตุลาคม 2569 เวลา 14:34:35 น."
   },
   {
-    "rowIndex": 687,
+    "rowIndex": 839,
     "docNumber": "16248",
     "receiveDate": "21 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7547,7 +9219,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 09:12:31 น."
   },
   {
-    "rowIndex": 688,
+    "rowIndex": 840,
     "docNumber": "16247",
     "receiveDate": "21 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7558,7 +9230,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 09:16:16 น."
   },
   {
-    "rowIndex": 689,
+    "rowIndex": 841,
     "docNumber": "16234",
     "receiveDate": "21 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7569,7 +9241,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 09:23:16 น."
   },
   {
-    "rowIndex": 690,
+    "rowIndex": 842,
     "docNumber": "16261",
     "receiveDate": "21 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7580,7 +9252,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 09:26:43 น."
   },
   {
-    "rowIndex": 691,
+    "rowIndex": 843,
     "docNumber": "16262",
     "receiveDate": "21 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7591,7 +9263,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 09:27:44 น."
   },
   {
-    "rowIndex": 692,
+    "rowIndex": 844,
     "docNumber": "16262",
     "receiveDate": "21 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7602,7 +9274,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 09:28:16 น."
   },
   {
-    "rowIndex": 693,
+    "rowIndex": 845,
     "docNumber": "16262",
     "receiveDate": "21 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7613,7 +9285,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 09:28:23 น."
   },
   {
-    "rowIndex": 694,
+    "rowIndex": 846,
     "docNumber": "16232",
     "receiveDate": "21 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7624,7 +9296,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 09:30:00 น."
   },
   {
-    "rowIndex": 695,
+    "rowIndex": 847,
     "docNumber": "16492",
     "receiveDate": "26 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7635,7 +9307,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 09:33:39 น."
   },
   {
-    "rowIndex": 696,
+    "rowIndex": 848,
     "docNumber": "16713",
     "receiveDate": "14 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7646,7 +9318,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 11:23:23 น."
   },
   {
-    "rowIndex": 697,
+    "rowIndex": 849,
     "docNumber": "16720",
     "receiveDate": "1 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7657,7 +9329,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 16:16:24 น."
   },
   {
-    "rowIndex": 698,
+    "rowIndex": 850,
     "docNumber": "16714",
     "receiveDate": "1 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7668,7 +9340,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 11:24:00 น."
   },
   {
-    "rowIndex": 699,
+    "rowIndex": 851,
     "docNumber": "16730",
     "receiveDate": "1 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7679,7 +9351,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 13:32:18 น."
   },
   {
-    "rowIndex": 700,
+    "rowIndex": 852,
     "docNumber": "16731",
     "receiveDate": "1 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7690,7 +9362,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 11:26:30 น."
   },
   {
-    "rowIndex": 701,
+    "rowIndex": 853,
     "docNumber": "16614",
     "receiveDate": "28 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7701,7 +9373,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 กันยายน 2569 เวลา 10:01:13 น."
   },
   {
-    "rowIndex": 702,
+    "rowIndex": 854,
     "docNumber": "16734",
     "receiveDate": "1 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7712,7 +9384,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 ตุลาคม 2569 เวลา 14:35:27 น."
   },
   {
-    "rowIndex": 703,
+    "rowIndex": 855,
     "docNumber": "16711",
     "receiveDate": "1 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7723,7 +9395,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "15 กันยายน 2569 เวลา 09:07:31 น."
   },
   {
-    "rowIndex": 704,
+    "rowIndex": 856,
     "docNumber": "16604",
     "receiveDate": "28 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7734,7 +9406,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "15 กันยายน 2569 เวลา 09:39:30 น."
   },
   {
-    "rowIndex": 705,
+    "rowIndex": 857,
     "docNumber": "16601",
     "receiveDate": "28 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7745,7 +9417,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "15 กันยายน 2569 เวลา 09:44:02 น."
   },
   {
-    "rowIndex": 706,
+    "rowIndex": 858,
     "docNumber": "17342",
     "receiveDate": "10 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7756,7 +9428,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 09:17:39 น."
   },
   {
-    "rowIndex": 707,
+    "rowIndex": 859,
     "docNumber": "15798",
     "receiveDate": "13 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7767,7 +9439,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 09:39:05 น."
   },
   {
-    "rowIndex": 708,
+    "rowIndex": 860,
     "docNumber": "15798",
     "receiveDate": "13 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7778,7 +9450,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 09:39:20 น."
   },
   {
-    "rowIndex": 709,
+    "rowIndex": 861,
     "docNumber": "16524",
     "receiveDate": "27 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7789,7 +9461,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 11:28:17 น."
   },
   {
-    "rowIndex": 710,
+    "rowIndex": 862,
     "docNumber": "16523",
     "receiveDate": "27 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7800,7 +9472,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 11:29:33 น."
   },
   {
-    "rowIndex": 711,
+    "rowIndex": 863,
     "docNumber": "16563",
     "receiveDate": "27 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7811,7 +9483,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 11:33:07 น."
   },
   {
-    "rowIndex": 712,
+    "rowIndex": 864,
     "docNumber": "16525",
     "receiveDate": "27 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7822,7 +9494,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 11:36:31 น."
   },
   {
-    "rowIndex": 713,
+    "rowIndex": 865,
     "docNumber": "16535",
     "receiveDate": "27 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7833,7 +9505,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 11:37:29 น."
   },
   {
-    "rowIndex": 714,
+    "rowIndex": 866,
     "docNumber": "16534",
     "receiveDate": "27 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7844,7 +9516,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 11:38:22 น."
   },
   {
-    "rowIndex": 715,
+    "rowIndex": 867,
     "docNumber": "16533",
     "receiveDate": "27 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7855,7 +9527,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 11:38:49 น."
   },
   {
-    "rowIndex": 716,
+    "rowIndex": 868,
     "docNumber": "16532",
     "receiveDate": "27 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7866,7 +9538,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 11:39:14 น."
   },
   {
-    "rowIndex": 717,
+    "rowIndex": 869,
     "docNumber": "16531",
     "receiveDate": "27 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7877,7 +9549,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 11:39:38 น."
   },
   {
-    "rowIndex": 718,
+    "rowIndex": 870,
     "docNumber": "16530",
     "receiveDate": "27 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7888,7 +9560,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 11:40:13 น."
   },
   {
-    "rowIndex": 719,
+    "rowIndex": 871,
     "docNumber": "16529",
     "receiveDate": "27 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7899,7 +9571,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 11:42:53 น."
   },
   {
-    "rowIndex": 720,
+    "rowIndex": 872,
     "docNumber": "16528",
     "receiveDate": "27 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7910,7 +9582,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 11:43:26 น."
   },
   {
-    "rowIndex": 721,
+    "rowIndex": 873,
     "docNumber": "16527",
     "receiveDate": "27 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7921,7 +9593,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 11:43:53 น."
   },
   {
-    "rowIndex": 722,
+    "rowIndex": 874,
     "docNumber": "16526",
     "receiveDate": "27 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7932,7 +9604,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 11:44:18 น."
   },
   {
-    "rowIndex": 723,
+    "rowIndex": 875,
     "docNumber": "16507",
     "receiveDate": "27 สิงหาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7943,7 +9615,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 13:22:43 น."
   },
   {
-    "rowIndex": 724,
+    "rowIndex": 876,
     "docNumber": "17049",
     "receiveDate": "7 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7954,7 +9626,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "17 กันยายน 2569 เวลา 13:31:08 น."
   },
   {
-    "rowIndex": 725,
+    "rowIndex": 877,
     "docNumber": "17239",
     "receiveDate": "9 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7965,18 +9637,18 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "18 กันยายน 2569 เวลา 10:49:11 น."
   },
   {
-    "rowIndex": 726,
+    "rowIndex": 878,
     "docNumber": "17307",
     "receiveDate": "10 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
     "problemType": "ระบบ eworkpermit",
     "problemDetail": "ยกเลิกนัดหมาย 2 รอบแล้ว จะนัดหมายใหม่ ไม่สามารถดำเนินการได้",
-    "status": "อยู่ระหว่างประสานงาน OS",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
     "remark": "",
-    "lastUpdate": "18 กันยายน 2569 เวลา 10:18:06 น."
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 14:09:49 น."
   },
   {
-    "rowIndex": 727,
+    "rowIndex": 879,
     "docNumber": "17734",
     "receiveDate": "17 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7987,7 +9659,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 ตุลาคม 2569 เวลา 14:38:36 น."
   },
   {
-    "rowIndex": 728,
+    "rowIndex": 880,
     "docNumber": "17411",
     "receiveDate": "11 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -7998,7 +9670,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 กันยายน 2569 เวลา 11:14:13 น."
   },
   {
-    "rowIndex": 729,
+    "rowIndex": 881,
     "docNumber": "17410",
     "receiveDate": "11 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8009,7 +9681,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 กันยายน 2569 เวลา 11:21:39 น."
   },
   {
-    "rowIndex": 730,
+    "rowIndex": 882,
     "docNumber": "17430",
     "receiveDate": "11 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8020,7 +9692,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 กันยายน 2569 เวลา 11:23:27 น."
   },
   {
-    "rowIndex": 731,
+    "rowIndex": 883,
     "docNumber": "17405",
     "receiveDate": "10 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8031,7 +9703,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "21 กันยายน 2569 เวลา 11:27:29 น."
   },
   {
-    "rowIndex": 732,
+    "rowIndex": 884,
     "docNumber": "17498",
     "receiveDate": "14 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8042,7 +9714,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 ตุลาคม 2569 เวลา 14:38:10 น."
   },
   {
-    "rowIndex": 733,
+    "rowIndex": 885,
     "docNumber": "17709",
     "receiveDate": "16 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8053,7 +9725,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "22 กันยายน 2569 เวลา 09:29:54 น."
   },
   {
-    "rowIndex": 734,
+    "rowIndex": 886,
     "docNumber": "17675",
     "receiveDate": "16 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8064,7 +9736,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 ตุลาคม 2569 เวลา 14:26:45 น."
   },
   {
-    "rowIndex": 735,
+    "rowIndex": 887,
     "docNumber": "17673",
     "receiveDate": "16 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8075,7 +9747,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "22 กันยายน 2569 เวลา 09:38:05 น."
   },
   {
-    "rowIndex": 736,
+    "rowIndex": 888,
     "docNumber": "17665",
     "receiveDate": "16 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8086,7 +9758,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "22 กันยายน 2569 เวลา 09:39:48 น."
   },
   {
-    "rowIndex": 737,
+    "rowIndex": 889,
     "docNumber": "17412",
     "receiveDate": "11 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8097,7 +9769,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "22 กันยายน 2569 เวลา 09:41:27 น."
   },
   {
-    "rowIndex": 738,
+    "rowIndex": 890,
     "docNumber": "18123",
     "receiveDate": "23 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8108,7 +9780,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 กันยายน 2569 เวลา 10:27:32 น."
   },
   {
-    "rowIndex": 739,
+    "rowIndex": 891,
     "docNumber": "17911",
     "receiveDate": "21 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8119,7 +9791,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 ตุลาคม 2569 เวลา 14:43:07 น."
   },
   {
-    "rowIndex": 740,
+    "rowIndex": 892,
     "docNumber": "17774",
     "receiveDate": "17 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8130,7 +9802,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 กันยายน 2569 เวลา 10:52:05 น."
   },
   {
-    "rowIndex": 741,
+    "rowIndex": 893,
     "docNumber": "17822",
     "receiveDate": "18 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8141,7 +9813,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 กันยายน 2569 เวลา 10:58:25 น."
   },
   {
-    "rowIndex": 742,
+    "rowIndex": 894,
     "docNumber": "17835",
     "receiveDate": "18 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8152,7 +9824,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 กันยายน 2569 เวลา 11:06:00 น."
   },
   {
-    "rowIndex": 743,
+    "rowIndex": 895,
     "docNumber": "17834",
     "receiveDate": "18 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8163,7 +9835,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 กันยายน 2569 เวลา 11:20:22 น."
   },
   {
-    "rowIndex": 744,
+    "rowIndex": 896,
     "docNumber": "17834",
     "receiveDate": "18 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8174,7 +9846,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 กันยายน 2569 เวลา 11:20:48 น."
   },
   {
-    "rowIndex": 745,
+    "rowIndex": 897,
     "docNumber": "17834",
     "receiveDate": "18 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8185,7 +9857,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 กันยายน 2569 เวลา 11:21:22 น."
   },
   {
-    "rowIndex": 746,
+    "rowIndex": 898,
     "docNumber": "17834",
     "receiveDate": "18 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8196,7 +9868,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 กันยายน 2569 เวลา 11:21:23 น."
   },
   {
-    "rowIndex": 747,
+    "rowIndex": 899,
     "docNumber": "17834",
     "receiveDate": "18 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8207,7 +9879,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 กันยายน 2569 เวลา 11:21:56 น."
   },
   {
-    "rowIndex": 748,
+    "rowIndex": 900,
     "docNumber": "17832",
     "receiveDate": "18 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8218,7 +9890,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 กันยายน 2569 เวลา 11:31:31 น."
   },
   {
-    "rowIndex": 749,
+    "rowIndex": 901,
     "docNumber": "17833",
     "receiveDate": "18 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8229,7 +9901,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 กันยายน 2569 เวลา 11:32:46 น."
   },
   {
-    "rowIndex": 750,
+    "rowIndex": 902,
     "docNumber": "17747",
     "receiveDate": "17 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8240,7 +9912,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 กันยายน 2569 เวลา 13:45:41 น."
   },
   {
-    "rowIndex": 751,
+    "rowIndex": 903,
     "docNumber": "17747",
     "receiveDate": "17 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8251,7 +9923,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 กันยายน 2569 เวลา 11:49:54 น."
   },
   {
-    "rowIndex": 752,
+    "rowIndex": 904,
     "docNumber": "17790",
     "receiveDate": "17 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8262,7 +9934,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 กันยายน 2569 เวลา 13:31:38 น."
   },
   {
-    "rowIndex": 753,
+    "rowIndex": 905,
     "docNumber": "17953",
     "receiveDate": "21 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8273,7 +9945,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 กันยายน 2569 เวลา 13:42:25 น."
   },
   {
-    "rowIndex": 754,
+    "rowIndex": 906,
     "docNumber": "17841",
     "receiveDate": "18 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8284,7 +9956,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "30 กันยายน 2569 เวลา 13:44:40 น."
   },
   {
-    "rowIndex": 755,
+    "rowIndex": 907,
     "docNumber": "18111",
     "receiveDate": "23 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8295,7 +9967,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "14 ตุลาคม 2569 เวลา 14:40:25 น."
   },
   {
-    "rowIndex": 756,
+    "rowIndex": 908,
     "docNumber": "18247",
     "receiveDate": "25 กันยายน 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8306,7 +9978,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "6 ตุลาคม 2569 เวลา 08:49:06 น."
   },
   {
-    "rowIndex": 757,
+    "rowIndex": 909,
     "docNumber": "18369",
     "receiveDate": "1 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8317,7 +9989,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "6 ตุลาคม 2569 เวลา 09:01:21 น."
   },
   {
-    "rowIndex": 758,
+    "rowIndex": 910,
     "docNumber": "18369",
     "receiveDate": "1 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8328,7 +10000,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "6 ตุลาคม 2569 เวลา 09:02:05 น."
   },
   {
-    "rowIndex": 759,
+    "rowIndex": 911,
     "docNumber": "18223",
     "receiveDate": "5 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8339,7 +10011,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "7 ตุลาคม 2569 เวลา 10:11:11 น."
   },
   {
-    "rowIndex": 760,
+    "rowIndex": 912,
     "docNumber": "18457",
     "receiveDate": "2 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8350,7 +10022,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 10:10:26 น."
   },
   {
-    "rowIndex": 761,
+    "rowIndex": 913,
     "docNumber": "18480",
     "receiveDate": "2 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8361,7 +10033,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 10:12:42 น."
   },
   {
-    "rowIndex": 762,
+    "rowIndex": 914,
     "docNumber": "18416",
     "receiveDate": "1 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8372,7 +10044,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 10:20:49 น."
   },
   {
-    "rowIndex": 763,
+    "rowIndex": 915,
     "docNumber": "18546",
     "receiveDate": "5 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8383,7 +10055,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 10:44:34 น."
   },
   {
-    "rowIndex": 764,
+    "rowIndex": 916,
     "docNumber": "18772",
     "receiveDate": "7 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8394,7 +10066,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 10:48:39 น."
   },
   {
-    "rowIndex": 765,
+    "rowIndex": 917,
     "docNumber": "18878",
     "receiveDate": "8 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8405,7 +10077,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 11:46:59 น."
   },
   {
-    "rowIndex": 766,
+    "rowIndex": 918,
     "docNumber": "18855",
     "receiveDate": "8 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8416,7 +10088,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 12:03:40 น."
   },
   {
-    "rowIndex": 767,
+    "rowIndex": 919,
     "docNumber": "18832",
     "receiveDate": "8 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8427,7 +10099,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 13:51:07 น."
   },
   {
-    "rowIndex": 768,
+    "rowIndex": 920,
     "docNumber": "18842",
     "receiveDate": "8 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8438,7 +10110,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 13:52:29 น."
   },
   {
-    "rowIndex": 769,
+    "rowIndex": 921,
     "docNumber": "18830",
     "receiveDate": "8 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8449,7 +10121,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 14:03:59 น."
   },
   {
-    "rowIndex": 770,
+    "rowIndex": 922,
     "docNumber": "18973",
     "receiveDate": "9 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8460,7 +10132,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 14:09:03 น."
   },
   {
-    "rowIndex": 771,
+    "rowIndex": 923,
     "docNumber": "18972",
     "receiveDate": "9 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8471,7 +10143,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 14:27:54 น."
   },
   {
-    "rowIndex": 772,
+    "rowIndex": 924,
     "docNumber": "18983",
     "receiveDate": "9 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8482,18 +10154,18 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 14:29:05 น."
   },
   {
-    "rowIndex": 773,
+    "rowIndex": 925,
     "docNumber": "18999",
     "receiveDate": "9 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
     "problemType": "ข้อมูลแก้ไขข้อมูล",
     "problemDetail": "แก้ไขสัญชาติจาก \"กัมพูชา\" เป็น \"เมียนมา\"",
-    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
     "remark": "",
-    "lastUpdate": "26 ตุลาคม 2569 เวลา 14:32:38 น."
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 14:23:25 น."
   },
   {
-    "rowIndex": 774,
+    "rowIndex": 926,
     "docNumber": "18978",
     "receiveDate": "9 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8504,7 +10176,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 14:36:22 น."
   },
   {
-    "rowIndex": 775,
+    "rowIndex": 927,
     "docNumber": "18970",
     "receiveDate": "9 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8515,18 +10187,18 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 14:38:50 น."
   },
   {
-    "rowIndex": 776,
+    "rowIndex": 928,
     "docNumber": "19072",
     "receiveDate": "9 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
     "problemType": "ข้อมูลแก้ไขข้อมูล",
     "problemDetail": "ขอแก้ไขสัญชาติ (รอระบบแก้ไขสัญชาติของเจ้าหน้าที่เปิด)",
-    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
     "remark": "",
-    "lastUpdate": "26 ตุลาคม 2569 เวลา 14:48:12 น."
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 14:40:45 น."
   },
   {
-    "rowIndex": 777,
+    "rowIndex": 929,
     "docNumber": "19083",
     "receiveDate": "12 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8537,18 +10209,18 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 14:52:30 น."
   },
   {
-    "rowIndex": 778,
+    "rowIndex": 930,
     "docNumber": "19139",
     "receiveDate": "12 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
     "problemType": "ข้อมูลแก้ไขข้อมูล",
     "problemDetail": "ขอแก้ไขสัญชาติจาก \"ลาว\" เป็น \"เมียนมา\"",
-    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
     "remark": "",
-    "lastUpdate": "26 ตุลาคม 2569 เวลา 15:00:05 น."
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 14:44:58 น."
   },
   {
-    "rowIndex": 779,
+    "rowIndex": 931,
     "docNumber": "19183",
     "receiveDate": "14 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8559,7 +10231,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 15:02:33 น."
   },
   {
-    "rowIndex": 780,
+    "rowIndex": 932,
     "docNumber": "19181",
     "receiveDate": "14 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8570,7 +10242,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 15:03:05 น."
   },
   {
-    "rowIndex": 781,
+    "rowIndex": 933,
     "docNumber": "19202",
     "receiveDate": "14 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8581,7 +10253,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 15:56:42 น."
   },
   {
-    "rowIndex": 782,
+    "rowIndex": 934,
     "docNumber": "19212",
     "receiveDate": "14 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8592,7 +10264,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 15:26:38 น."
   },
   {
-    "rowIndex": 783,
+    "rowIndex": 935,
     "docNumber": "19241",
     "receiveDate": "14 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8603,7 +10275,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 15:28:17 น."
   },
   {
-    "rowIndex": 784,
+    "rowIndex": 936,
     "docNumber": "19182",
     "receiveDate": "14 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8614,18 +10286,18 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 15:29:34 น."
   },
   {
-    "rowIndex": 785,
+    "rowIndex": 937,
     "docNumber": "19210",
     "receiveDate": "14 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
     "problemType": "ข้อมูลแก้ไขข้อมูล",
     "problemDetail": "ใบอนุญาตทำงานยังไม่หมดอายุ แต่สถาะนะขึ้นว่า หมดอายุ แล้ว",
-    "status": "อยู่ระหว่างประสานงาน OS",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
     "remark": "",
-    "lastUpdate": "26 ตุลาคม 2569 เวลา 15:38:19 น."
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 08:53:25 น."
   },
   {
-    "rowIndex": 786,
+    "rowIndex": 938,
     "docNumber": "19313",
     "receiveDate": "15 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8636,7 +10308,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 15:52:03 น."
   },
   {
-    "rowIndex": 787,
+    "rowIndex": 939,
     "docNumber": "19373",
     "receiveDate": "19 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8647,7 +10319,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 15:56:31 น."
   },
   {
-    "rowIndex": 788,
+    "rowIndex": 940,
     "docNumber": "19519",
     "receiveDate": "20 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8658,7 +10330,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 16:09:17 น."
   },
   {
-    "rowIndex": 789,
+    "rowIndex": 941,
     "docNumber": "19452",
     "receiveDate": "19 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8669,7 +10341,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 16:11:29 น."
   },
   {
-    "rowIndex": 790,
+    "rowIndex": 942,
     "docNumber": "19452",
     "receiveDate": "19 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8680,7 +10352,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 16:15:58 น."
   },
   {
-    "rowIndex": 791,
+    "rowIndex": 943,
     "docNumber": "19498",
     "receiveDate": "19 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8691,7 +10363,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 16:16:37 น."
   },
   {
-    "rowIndex": 792,
+    "rowIndex": 944,
     "docNumber": "19511",
     "receiveDate": "19 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8702,7 +10374,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 16:17:33 น."
   },
   {
-    "rowIndex": 793,
+    "rowIndex": 945,
     "docNumber": "19505",
     "receiveDate": "19 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8713,7 +10385,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 16:19:48 น."
   },
   {
-    "rowIndex": 794,
+    "rowIndex": 946,
     "docNumber": "19566",
     "receiveDate": "20 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8724,7 +10396,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 16:46:04 น."
   },
   {
-    "rowIndex": 795,
+    "rowIndex": 947,
     "docNumber": "19617",
     "receiveDate": "21 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8735,7 +10407,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "26 ตุลาคม 2569 เวลา 16:51:22 น."
   },
   {
-    "rowIndex": 796,
+    "rowIndex": 948,
     "docNumber": "19292",
     "receiveDate": "15 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8746,7 +10418,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 14:43:34 น."
   },
   {
-    "rowIndex": 797,
+    "rowIndex": 949,
     "docNumber": "19291",
     "receiveDate": "15 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8757,7 +10429,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 14:44:08 น."
   },
   {
-    "rowIndex": 798,
+    "rowIndex": 950,
     "docNumber": "19290",
     "receiveDate": "15 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8768,7 +10440,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 14:44:40 น."
   },
   {
-    "rowIndex": 799,
+    "rowIndex": 951,
     "docNumber": "19289",
     "receiveDate": "15 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8779,7 +10451,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 14:45:08 น."
   },
   {
-    "rowIndex": 800,
+    "rowIndex": 952,
     "docNumber": "19302",
     "receiveDate": "15 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8790,7 +10462,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 14:47:23 น."
   },
   {
-    "rowIndex": 801,
+    "rowIndex": 953,
     "docNumber": "19293",
     "receiveDate": "15 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8801,7 +10473,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 14:47:53 น."
   },
   {
-    "rowIndex": 802,
+    "rowIndex": 954,
     "docNumber": "19294",
     "receiveDate": "15 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8812,7 +10484,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 14:48:18 น."
   },
   {
-    "rowIndex": 803,
+    "rowIndex": 955,
     "docNumber": "19317",
     "receiveDate": "15 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8823,7 +10495,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 14:55:51 น."
   },
   {
-    "rowIndex": 804,
+    "rowIndex": 956,
     "docNumber": "19312",
     "receiveDate": "15 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8834,7 +10506,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 15:28:00 น."
   },
   {
-    "rowIndex": 805,
+    "rowIndex": 957,
     "docNumber": "19369",
     "receiveDate": "19 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8845,7 +10517,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 15:33:11 น."
   },
   {
-    "rowIndex": 806,
+    "rowIndex": 958,
     "docNumber": "19236",
     "receiveDate": "14 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8856,7 +10528,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 15:36:30 น."
   },
   {
-    "rowIndex": 807,
+    "rowIndex": 959,
     "docNumber": "19193",
     "receiveDate": "14 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8867,7 +10539,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 15:36:58 น."
   },
   {
-    "rowIndex": 808,
+    "rowIndex": 960,
     "docNumber": "19306",
     "receiveDate": "15 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8878,7 +10550,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 15:45:11 น."
   },
   {
-    "rowIndex": 809,
+    "rowIndex": 961,
     "docNumber": "19668",
     "receiveDate": "22 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8889,7 +10561,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 16:36:11 น."
   },
   {
-    "rowIndex": 810,
+    "rowIndex": 962,
     "docNumber": "19191",
     "receiveDate": "14 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8900,7 +10572,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 16:36:43 น."
   },
   {
-    "rowIndex": 811,
+    "rowIndex": 963,
     "docNumber": "19288",
     "receiveDate": "15 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8911,7 +10583,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 16:37:20 น."
   },
   {
-    "rowIndex": 812,
+    "rowIndex": 964,
     "docNumber": "19427",
     "receiveDate": "19 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8922,7 +10594,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 16:38:01 น."
   },
   {
-    "rowIndex": 813,
+    "rowIndex": 965,
     "docNumber": "19359",
     "receiveDate": "19 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8933,7 +10605,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 16:38:32 น."
   },
   {
-    "rowIndex": 814,
+    "rowIndex": 966,
     "docNumber": "19357",
     "receiveDate": "19 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8944,7 +10616,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 16:39:22 น."
   },
   {
-    "rowIndex": 815,
+    "rowIndex": 967,
     "docNumber": "19420",
     "receiveDate": "19 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8955,18 +10627,18 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 16:39:59 น."
   },
   {
-    "rowIndex": 816,
+    "rowIndex": 968,
     "docNumber": "19412",
     "receiveDate": "19 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
     "problemType": "ระบบ eworkpermit",
     "problemDetail": "คนไทยที่รับยื่น ทิ้งงาน คำขอไม่เสร็จ ไปต่อไม่ได้ เบื้องต้นโทรอธิบายกับผู้แจ้งแล้ว มีทางเดียวที่จะไปต่อได้คือ ต้องติดต่อให้ผู้ยื่นคำขอไปดำเนินการต่อจนเสร็จ",
-    "status": "อยู่ระหว่างประสานงานผู้แจ้ง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
     "remark": "",
-    "lastUpdate": "27 ตุลาคม 2569 เวลา 16:49:20 น."
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 13:52:40 น."
   },
   {
-    "rowIndex": 817,
+    "rowIndex": 969,
     "docNumber": "19415",
     "receiveDate": "19 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8977,7 +10649,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 16:50:14 น."
   },
   {
-    "rowIndex": 818,
+    "rowIndex": 970,
     "docNumber": "19417",
     "receiveDate": "19 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8988,7 +10660,7 @@ export const INITIAL_DB_RECORDS = [
     "lastUpdate": "27 ตุลาคม 2569 เวลา 16:52:22 น."
   },
   {
-    "rowIndex": 819,
+    "rowIndex": 971,
     "docNumber": "19353",
     "receiveDate": "19 ตุลาคม 2569",
     "staffName": "นายศุภกิตติ์ บุญแก้ว",
@@ -8997,5 +10669,621 @@ export const INITIAL_DB_RECORDS = [
     "status": "อยู่ระหว่างประสานงานผู้แจ้ง",
     "remark": "",
     "lastUpdate": "27 ตุลาคม 2569 เวลา 16:59:38 น."
+  },
+  {
+    "rowIndex": 972,
+    "docNumber": "18805",
+    "receiveDate": "7 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ร้องเรียน/เสนอแนะ",
+    "problemDetail": "บนจ. แอ็ดวานซ์ ซํพพลาย แอนด์ ซับคอนแทรก ถูกเปลี่ยนคิวนัดหมายในคำขอ",
+    "status": "อยู่ระหว่างเสนอหนังสือพิจารณา/อนุมัติ",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 09:32:33 น."
+  },
+  {
+    "rowIndex": 973,
+    "docNumber": "17280",
+    "receiveDate": "9 กันยายน 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ไม่สามารถเพิ่มบัญชีนิติบุคคลได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 14:08:36 น."
+  },
+  {
+    "rowIndex": 974,
+    "docNumber": "19777",
+    "receiveDate": "26 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขสัญชาติจากเมียนมาเป็นลาว",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "28 ตุลาคม 2569 เวลา 16:23:18 น."
+  },
+  {
+    "rowIndex": 975,
+    "docNumber": "19729",
+    "receiveDate": "26 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขเลข Pass",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 08:53:58 น."
+  },
+  {
+    "rowIndex": 976,
+    "docNumber": "19731",
+    "receiveDate": "26 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขเลขหนังสือเดินทาง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 08:54:29 น."
+  },
+  {
+    "rowIndex": 977,
+    "docNumber": "19730",
+    "receiveDate": "26 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขเลขหนังสือเดินทาง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 08:54:53 น."
+  },
+  {
+    "rowIndex": 978,
+    "docNumber": "19735",
+    "receiveDate": "26 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขเลขหนังสือเดินทาง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 08:55:17 น."
+  },
+  {
+    "rowIndex": 979,
+    "docNumber": "19757",
+    "receiveDate": "26 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "อื่น ๆ",
+    "problemDetail": "ขอยกเลิกบัญชีนายจ้าง และบัญชีคนต่างด้าว (ซึ่งดำเนินการไม่ได้ เนื่องจากผู้แจ้งไม่ใช้เจ้าของบัญชี)",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 08:57:12 น."
+  },
+  {
+    "rowIndex": 980,
+    "docNumber": "19743",
+    "receiveDate": "26 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขที่อยู่ในระบบ และสถานที่ทำงานให้ตรงกับหนังสือรับรองบริษัท",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 09:00:15 น."
+  },
+  {
+    "rowIndex": 981,
+    "docNumber": "19732",
+    "receiveDate": "26 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขเลขหนังสือเดินทาง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 09:01:46 น."
+  },
+  {
+    "rowIndex": 982,
+    "docNumber": "19733",
+    "receiveDate": "26 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขเลขหนังสือเดินทาง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 09:03:16 น."
+  },
+  {
+    "rowIndex": 983,
+    "docNumber": "19569",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขชื่อ, วันเกิด และหนังสือเดินทางของคนต่างด้าว 80 ราย",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 14:31:14 น."
+  },
+  {
+    "rowIndex": 984,
+    "docNumber": "19658",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขเลขหนังสือเดินทาง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 14:32:21 น."
+  },
+  {
+    "rowIndex": 985,
+    "docNumber": "19603",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ขอคืนสถานะ แต่ไม่ระบุรายละเอียดอะไร แนบมาแต่ Name Lists คนกัมพูชา และสำเนาหน้าหนังสือเดินทาง ซึ่งค้นไม่พบข้อมูลในระบบ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "ดำเนินการไม่ได้ ข้อมูลไม่เพียงพอ",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 14:36:41 น."
+  },
+  {
+    "rowIndex": 986,
+    "docNumber": "19570",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ชำระเงินไม่ทัน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 14:37:17 น."
+  },
+  {
+    "rowIndex": 987,
+    "docNumber": "19527",
+    "receiveDate": "20 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขชื่อคนต่างด้าว",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 14:37:58 น."
+  },
+  {
+    "rowIndex": 988,
+    "docNumber": "19529",
+    "receiveDate": "20 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขวันเกิดคนต่างด้าว",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 14:38:37 น."
+  },
+  {
+    "rowIndex": 989,
+    "docNumber": "19659",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ต้องการเปลี่ยนวันนัดหมาย เนื่องจากเดิมจ้างเอเจนซี่",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "รอระบบนัดหมายของเจ้าหน้าที่เปิด",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 15:34:09 น."
+  },
+  {
+    "rowIndex": 990,
+    "docNumber": "19662",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "นัดหมายไม่ได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "รอระบบนัดหมายของเจ้าหน้าที่เปิด",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 15:52:48 น."
+  },
+  {
+    "rowIndex": 991,
+    "docNumber": "19661",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "นัดหมายไม่ได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "รอระบบนัดหมายของเจ้าหน้าที่เปิด",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 15:52:20 น."
+  },
+  {
+    "rowIndex": 992,
+    "docNumber": "19660",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ขอย้อนสถานะ มติ 8 ก.ค. ที่กดยกเลิก",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "ไม่สามารถคืนได้ ไม่มีแนวทางรองรับ",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 15:40:48 น."
+  },
+  {
+    "rowIndex": 993,
+    "docNumber": "19645",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขข้อมูลในใบอนุญาตทำงาน+ข้อมูลนายจ้าง+ บต.25",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 15:53:43 น."
+  },
+  {
+    "rowIndex": 994,
+    "docNumber": "19669",
+    "receiveDate": "22 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "แจ้งออกมาเกิน 60 วัน นายจ้างใหม่จะแจ้งเข้าแจ้งไม่ได้ (รอขอหลักฐานการเข้าทำงานของคนต่างด้าวที่ไม่เกิน 60 วันหลังจากแจ้งออก)",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 09:19:23 น."
+  },
+  {
+    "rowIndex": 995,
+    "docNumber": "19585",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขที่อยู่",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 16:06:26 น."
+  },
+  {
+    "rowIndex": 996,
+    "docNumber": "19602",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ร้องเรียน/เสนอแนะ",
+    "problemDetail": "ยื่นเปลี่ยนนายจ้าง แต่ผู้ตรวจเอกสารร้องขอใบแจ้งออกจากนายจ้างเดิม",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "ประสานแจ้งเจ้าหน้าที่ สจจ.นนทบุรีแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 16:23:05 น."
+  },
+  {
+    "rowIndex": 997,
+    "docNumber": "19610",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ข้อมูลที่อยู่ของคนต่างด้าวใน บต.55 ผิด จากการตรวจสอบพบว่า ข้อมูลผิดตั้งแต่ใน Profile ของคนต่างด้าว เบื้องต้นประสาน บนจ. เจ้าของเรื่องให้เข้าไปแก้ไขให้ถูกต้องแล้ว",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "รอติดตาม",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 09:17:58 น."
+  },
+  {
+    "rowIndex": 998,
+    "docNumber": "19608",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขเลขหนังสือเดินทาง",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 16:47:25 น."
+  },
+  {
+    "rowIndex": 999,
+    "docNumber": "19809",
+    "receiveDate": "27 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสัญชาติเป็น \"ไม่ระบุ\"",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 09:59:26 น."
+  },
+  {
+    "rowIndex": 1000,
+    "docNumber": "23084",
+    "receiveDate": "26 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขสัญชาติ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 10:00:09 น."
+  },
+  {
+    "rowIndex": 1001,
+    "docNumber": "20154",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ร้องเรียน/เสนอแนะ",
+    "problemDetail": "บนจ. ไทยอินเตอร์ซิตี้ ขอให้ตรวจสอบและแก้ไขปัญหาระบบจองคิวนัดหมาย",
+    "status": "อยู่ระหว่างเสนอหนังสือพิจารณา/อนุมัติ",
+    "remark": "",
+    "lastUpdate": "30 ตุลาคม 2569 เวลา 11:31:15 น."
+  },
+  {
+    "rowIndex": 1002,
+    "docNumber": "20213",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขที่อยู่สถานที่ทำงาน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "2 พฤศจิกายน 2569 เวลา 08:38:20 น."
+  },
+  {
+    "rowIndex": 1003,
+    "docNumber": "20210",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "ไม่พบข้อมูลคนต่างด้าว ไม่สามารถลงทะเบียนได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 10:12:22 น."
+  },
+  {
+    "rowIndex": 1004,
+    "docNumber": "20207",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "นายจ้างกดรับคนต่างด้าวเข้าทำงานไม่ได้",
+    "status": "อยู่ระหว่างประสานงาน OS",
+    "remark": "",
+    "lastUpdate": "2 พฤศจิกายน 2569 เวลา 10:38:39 น."
+  },
+  {
+    "rowIndex": 1005,
+    "docNumber": "20442",
+    "receiveDate": "29 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "แจ้งออกไม่ได้",
+    "status": "อยู่ระหว่างประสานงาน OS",
+    "remark": "ให้ลองค้นหาด้วยเลข RA...",
+    "lastUpdate": "4 พฤศจิกายน 2569 เวลา 13:13:18 น."
+  },
+  {
+    "rowIndex": 1006,
+    "docNumber": "20485",
+    "receiveDate": "29 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขประเภทกิจการ (แต่ไม่แนบหลักฐานส่วนตัวของนายจ้างมาเลย)",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "ไม่แก้ไข หลักฐานไม่ครบ",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 09:11:24 น."
+  },
+  {
+    "rowIndex": 1007,
+    "docNumber": "20205",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขคำนำหน้าชื่อคนต่างด้าว จำนวน 23 ราย",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 09:41:23 น."
+  },
+  {
+    "rowIndex": 1008,
+    "docNumber": "20204",
+    "receiveDate": "28 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ลักษณะงานไม่ถูกต้อง จำนวน 10 ราย แก้ไขเป็น \"ยก แบก หาม\"",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 10:00:43 น."
+  },
+  {
+    "rowIndex": 1009,
+    "docNumber": "20471",
+    "receiveDate": "29 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสัญชาติเป็น \"สวิส\"",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "3 พฤศจิกายน 2569 เวลา 10:07:41 น."
+  },
+  {
+    "rowIndex": 1010,
+    "docNumber": "19128",
+    "receiveDate": "12 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "หนังสือจาก สจก.3 สอบถามประเด็นมติ 8 ยื่นมือยังเปลี่ยนนายจ้างไม่ได้",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "รอเปิดระบบนัดหมายของเจ้าหน้าที่",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 09:13:59 น."
+  },
+  {
+    "rowIndex": 1011,
+    "docNumber": "20911",
+    "receiveDate": "3 พฤศจิกายน 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขสัญชาติจาก \"ไม่ระบุ\" เป็น \"ลัตเวีย\"",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 09:37:11 น."
+  },
+  {
+    "rowIndex": 1012,
+    "docNumber": "20892",
+    "receiveDate": "3 พฤศจิกายน 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "อื่น ๆ",
+    "problemDetail": "หนังสือขอยกเลิกคำขออนุญาตทำงานจาก สจจ.เชียงใหม่",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "ยกเลิกแล้ว",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 09:41:16 น."
+  },
+  {
+    "rowIndex": 1013,
+    "docNumber": "20896",
+    "receiveDate": "3 พฤศจิกายน 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขเลขหนังสือเดินทางในคำขอ จาก สจจ.กระบี่",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 09:43:26 น."
+  },
+  {
+    "rowIndex": 1014,
+    "docNumber": "20960",
+    "receiveDate": "3 พฤศจิกายน 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขสัญชาติเป็น \"จีน(ไต้หวัน\" ในคำขอ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 09:45:42 น."
+  },
+  {
+    "rowIndex": 1015,
+    "docNumber": "20585",
+    "receiveDate": "2 พฤศจิกายน 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสัญชาติ จาก สจจ.กระบี่",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 09:49:28 น."
+  },
+  {
+    "rowIndex": 1016,
+    "docNumber": "20523",
+    "receiveDate": "30 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสัญชาติ จากสจจ.เชียงใหม่",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 09:51:46 น."
+  },
+  {
+    "rowIndex": 1017,
+    "docNumber": "20514",
+    "receiveDate": "30 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสัญชาติ จากสจก.4",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 10:04:37 น."
+  },
+  {
+    "rowIndex": 1018,
+    "docNumber": "20569",
+    "receiveDate": "30 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขสัญชาติ จากสจจ.สุราษฎร์ธานี",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 10:08:47 น."
+  },
+  {
+    "rowIndex": 1019,
+    "docNumber": "20907",
+    "receiveDate": "3 พฤศจิกายน 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขสัญชาติ จากสจจ.ภูเก็ต",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 14:50:39 น."
+  },
+  {
+    "rowIndex": 1020,
+    "docNumber": "20904",
+    "receiveDate": "3 พฤศจิกายน 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสัญชาติ จากสจจ.ภูเก็ต",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 14:52:26 น."
+  },
+  {
+    "rowIndex": 1021,
+    "docNumber": "20908",
+    "receiveDate": "3 พฤศจิกายน 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "แก้ไขสัญชาติ จากสจจ.ภูเก็ต",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 15:00:15 น."
+  },
+  {
+    "rowIndex": 1022,
+    "docNumber": "20894",
+    "receiveDate": "3 พฤศจิกายน 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสัญชาติ จากสจจ.ภูเก็ต",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "5 พฤศจิกายน 2569 เวลา 15:03:08 น."
+  },
+  {
+    "rowIndex": 1023,
+    "docNumber": "21054",
+    "receiveDate": "4 พฤศจิกายน 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "สจก.9 ขอแก้ไขชื่อคนต่างด้าวมติ 11 พ.ย. 68 (จากอีกชื่อเป็นอีกชื่อ ไม่มีความคล้ายกันเลย) แก้ไขวันเดือนปีเกิด (จากวันเดือนปี เป็น อีกวันเดือนปีเลย) (สบต.สงสัยอาจเป็นการสมสิทธิ์) และขอแก้ไขรูปคนต่างด้าวอีกคำขอ ซึ่งไม่ใช่กรณีรูปสลับ",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "ไม่แก้ไข",
+    "lastUpdate": "6 พฤศจิกายน 2569 เวลา 10:19:24 น."
+  },
+  {
+    "rowIndex": 1024,
+    "docNumber": "20535",
+    "receiveDate": "30 ตุลาคม 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ระบบ eworkpermit",
+    "problemDetail": "แจ้งเข้าไม่ได้ (จากการตรวจสอบพบว่า คำขอเปลี่ยนนายจ้างของคนต่างด้าวยังไม่ได้รับการอนุมัติ นายจ้างใหม่จึงยังแจ้งเข้าไม่ได้)",
+    "status": "อยู่ระหว่างตรวจสอบข้อมูล",
+    "remark": "",
+    "lastUpdate": "6 พฤศจิกายน 2569 เวลา 10:30:05 น."
+  },
+  {
+    "rowIndex": 1025,
+    "docNumber": "21053",
+    "receiveDate": "4 พฤศจิกายน 2569",
+    "staffName": "นายศุภกิตติ์ บุญแก้ว",
+    "problemType": "ข้อมูลแก้ไขข้อมูล",
+    "problemDetail": "ขอแก้ไขสัญชาติ จากสจจ.สุราษฏร์",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "6 พฤศจิกายน 2569 เวลา 10:32:16 น."
+  },
+  {
+    "rowIndex": 1026,
+    "docNumber": "19595",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นายสุเมธ ยิ้มพงษ์",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ชำระเงินไม่ทัน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 16:23:40 น."
+  },
+  {
+    "rowIndex": 1027,
+    "docNumber": "19601",
+    "receiveDate": "21 ตุลาคม 2569",
+    "staffName": "นายสุเมธ ยิ้มพงษ์",
+    "problemType": "ขอคืนสถานะ",
+    "problemDetail": "ชำระเงินไม่ทัน",
+    "status": "ดำเนินการเสร็จสิ้น/ปิดเคส",
+    "remark": "แก้ไขแล้ว",
+    "lastUpdate": "29 ตุลาคม 2569 เวลา 16:24:09 น."
   }
 ];
