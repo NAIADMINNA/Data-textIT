@@ -88,6 +88,54 @@ const THAI_MONTHS = [
   'ธันวาคม',
 ];
 
+function canonicalizeThaiName(name: string): string {
+  return (name || '')
+    .replace(/[\u200B-\u200D\uFEFF]/g, '')
+    .trim()
+    .replace(/^น\.ส\.?\s*/, 'นางสาว')
+    .replace(/^(นางสาว|นาย|นาง)\s+/, '$1')
+    .replace(/\s+/g, '');
+}
+
+export function normalizeStaffName(rawName: string, knownStaffList: string[] = DEFAULT_STAFF_LIST): string {
+  const cleaned = (rawName || '')
+    .replace(/[\u200B-\u200D\uFEFF]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!cleaned || cleaned === '-') return '-';
+
+  if (knownStaffList.includes(cleaned)) return cleaned;
+
+  const targetCanon = canonicalizeThaiName(cleaned);
+  for (const known of knownStaffList) {
+    if (canonicalizeThaiName(known) === targetCanon) {
+      return known;
+    }
+  }
+  return cleaned;
+}
+
+function getThaiInitial(name: string): string {
+  const withoutPrefix = (name || '')
+    .replace(/^(นางสาว|น\.ส\.|นาย|นาง)\s*/, '')
+    .trim();
+  const match = withoutPrefix.match(/[ก-ฮ]/);
+  return match ? match[0] : (withoutPrefix.charAt(0) || 'ส');
+}
+
+function getWorkflowStepIndex(status: string): number {
+  if (status === 'ดำเนินการเสร็จสิ้น/ปิดเคส') return 3;
+  if (status === 'นำส่งผู้อำนวยการ' || status === 'อยู่ระหว่างเสนอหนังสือพิจารณา/อนุมัติ') return 2;
+  if (
+    status === 'อยู่ระหว่างประสานงานผู้แจ้ง' ||
+    status === 'อยู่ระหว่างประสานงาน OS' ||
+    status === 'ส่งต่อกลุ่มงานอื่นๆ ที่เกี่ยวข้อง'
+  ) {
+    return 1;
+  }
+  return 0;
+}
+
 function sortRecordsByStaffName(records: CaseRecord[]): CaseRecord[] {
   return [...records].sort((a, b) => {
     const cmp = (a.staffName || '').localeCompare(b.staffName || '', 'th');
@@ -398,16 +446,107 @@ function sendJsonp<T = any>(url: string, data: Record<string, string>): Promise<
   });
 }
 
+function extractSpreadsheetId(urlOrId: string): string | null {
+  const trimmed = (urlOrId || '').trim();
+  if (!trimmed) return null;
+  const match = trimmed.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
+  if (match && match[1]) return match[1];
+  if (/^[a-zA-Z0-9-_]{20,}$/.test(trimmed)) return trimmed;
+  return null;
+}
+
+function fetchGoogleSheetGvizJsonp(sheetUrlOrId: string, knownStaff: string[]): Promise<CaseRecord[]> {
+  const sheetId = extractSpreadsheetId(sheetUrlOrId);
+  if (!sheetId) {
+    return Promise.reject(new Error('รูปแบบลิงก์ Google Sheet ไม่ถูกต้อง'));
+  }
+
+  return new Promise((resolve, reject) => {
+    const callbackName = `gvizCallback_${Date.now()}_${jsonpCounter++}`;
+    const timeout = window.setTimeout(() => {
+      cleanup();
+      reject(new Error('หมดเวลาการดึงข้อมูลจาก Google Sheet'));
+    }, 20000);
+
+    function cleanup() {
+      window.clearTimeout(timeout);
+      delete (window as any)[callbackName];
+      const script = document.getElementById(callbackName);
+      if (script) script.remove();
+    }
+
+    (window as any)[callbackName] = (response: any) => {
+      cleanup();
+      if (!response || response.status === 'error' || !response.table || !Array.isArray(response.table.rows)) {
+        reject(new Error('ไม่สามารถอ่านชีต Case Data ได้ (ตรวจสอบว่าตั้งค่าแชร์เป็น "ทุกคนที่มีลิงก์ดูได้" แล้ว)'));
+        return;
+      }
+
+      const rows = response.table.rows;
+      const parsed: CaseRecord[] = [];
+
+      rows.forEach((r: any, idx: number) => {
+        const c = r?.c;
+        if (!Array.isArray(c)) return;
+        const getCell = (colIdx: number): string => {
+          const cell = c[colIdx];
+          if (!cell) return '';
+          if (typeof cell.f === 'string' && cell.f.trim() !== '') return cell.f.trim();
+          if (cell.v !== null && typeof cell.v !== 'undefined') return String(cell.v).trim();
+          return '';
+        };
+
+        const docNumber = getCell(0);
+        const receiveDate = getCell(1);
+        const rawStaff = getCell(2);
+        const problemType = getCell(3);
+        const problemDetail = getCell(4);
+        const status = getCell(5);
+        const remark = getCell(6);
+        const lastUpdate = getCell(7);
+
+        // Skip header row if returned inside rows
+        if (docNumber === 'เลขหนังสือ' && rawStaff.includes('ผู้รับผิดชอบ')) return;
+        if (!docNumber && !rawStaff && !problemDetail) return;
+
+        parsed.push({
+          rowIndex: idx + 2,
+          docNumber: docNumber || '-',
+          receiveDate: formatThaiDate(receiveDate || '-'),
+          staffName: normalizeStaffName(rawStaff || '-', knownStaff),
+          problemType: problemType || '-',
+          problemDetail: problemDetail || '-',
+          status: status || 'อยู่ระหว่างตรวจสอบข้อมูล',
+          remark: remark || '',
+          lastUpdate: formatThaiDate(lastUpdate || '-'),
+        });
+      });
+
+      resolve(parsed);
+    };
+
+    const script = document.createElement('script');
+    script.id = callbackName;
+    script.src = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=responseHandler:${callbackName}&sheet=${encodeURIComponent('Case Data')}`;
+    script.onerror = () => {
+      cleanup();
+      reject(new Error('ไม่สามารถเชื่อมต่อ Google Sheet ได้ (กรุณาตั้งค่าแชร์ไฟล์เป็น "ทุกคนที่มีลิงก์สามารถดูได้")'));
+    };
+
+    document.body.appendChild(script);
+  });
+}
+
 const STORAGE_KEY = 'korphai_recent_doc_numbers_v1';
 const SETTINGS_STORAGE_KEY = 'korphai_custom_options_v1';
 const RECORDS_STORAGE_KEY = 'korphai_saved_records_v2';
 
-function getInitialMergedRecords(): CaseRecord[] {
+function getInitialMergedRecords(knownStaff: string[] = DEFAULT_STAFF_LIST): CaseRecord[] {
   const baseRecords: CaseRecord[] = INITIAL_DB_RECORDS.map((r, idx) => ({
     rowIndex: r.rowIndex || idx + 2,
     docNumber: String(r.docNumber || '').trim(),
     receiveDate: formatThaiDate(String(r.receiveDate || '-')),
-    staffName: String(r.staffName || '-').trim(),
+    staffName: normalizeStaffName(String(r.staffName || '-'), knownStaff),
     problemType: String(r.problemType || '-').trim(),
     problemDetail: String(r.problemDetail || '-').trim(),
     status: String(r.status || 'อยู่ระหว่างตรวจสอบข้อมูล').trim(),
@@ -420,7 +559,11 @@ function getInitialMergedRecords(): CaseRecord[] {
     if (savedRaw) {
       const savedParsed = JSON.parse(savedRaw);
       if (Array.isArray(savedParsed) && savedParsed.length >= baseRecords.length) {
-        return sortRecordsByStaffName(savedParsed);
+        const normalizedSaved = savedParsed.map((r: CaseRecord) => ({
+          ...r,
+          staffName: normalizeStaffName(r.staffName, knownStaff),
+        }));
+        return sortRecordsByStaffName(normalizedSaved);
       }
     }
   } catch {
@@ -449,6 +592,23 @@ export default function App() {
     return DEFAULT_SCRIPT_URL;
   });
   const [scriptUrlInput, setScriptUrlInput] = useState<string>(scriptUrl);
+
+  // Optional Direct Google Sheet URL for instant live read without needing Apps Script redeploy
+  const [sheetUrl, setSheetUrl] = useState<string>(() => {
+    try {
+      const raw = localStorage.getItem(SETTINGS_STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (typeof parsed.sheetUrl === 'string' && parsed.sheetUrl.trim()) {
+          return parsed.sheetUrl.trim();
+        }
+      }
+    } catch {
+      // ignore
+    }
+    return '';
+  });
+  const [sheetUrlInput, setSheetUrlInput] = useState<string>(sheetUrl);
 
   // Configurable lists (Staff, Problem Types, Status Options) persisted in localStorage
   const [staffList, setStaffList] = useState<string[]>(() => {
@@ -563,16 +723,18 @@ export default function App() {
     setIsSyncingLive(true);
     if (showNotice) setNotification(null);
     try {
+      // 1. Try Apps Script action=list first
       const res = await sendJsonp<{ success: boolean; records?: any[]; error?: string }>(
         scriptUrl,
         { action: 'list' }
-      );
+      ).catch(() => null);
+
       if (res && res.success && Array.isArray(res.records) && res.records.length > 0) {
         const liveParsed: CaseRecord[] = res.records.map((item, idx) => ({
           rowIndex: item.rowIndex || idx + 2,
           docNumber: String(item.docNumber || '').trim(),
           receiveDate: formatThaiDate(String(item.receiveDate || '-')),
-          staffName: String(item.staffName || '-').trim(),
+          staffName: normalizeStaffName(String(item.staffName || '-'), staffList),
           problemType: String(item.problemType || '-').trim(),
           problemDetail: String(item.problemDetail || '-').trim(),
           status: String(item.status || 'อยู่ระหว่างตรวจสอบข้อมูล').trim(),
@@ -586,28 +748,40 @@ export default function App() {
           setNotification({
             type: 'success',
             title: 'ซิงค์ข้อมูลสดจาก Google Sheet สำเร็จ!',
-            message: `ดึงข้อมูลจากชีต 'Case Data' ครบถ้วนทั้งหมด ${sorted.length.toLocaleString()} รายการแล้ว`,
+            message: `ดึงข้อมูลจากชีต 'Case Data' ครบถ้วนทั้งหมด ${sorted.length.toLocaleString()} รายการ พร้อมจับคู่ยอดงานของผู้รับผิดชอบทุกท่านเรียบร้อยแล้ว`,
           });
         }
-      } else {
-        const sorted = sortRecordsByStaffName(dbRecords);
-        setDbRecords(sorted);
-        if (showNotice) {
-          setNotification({
-            type: 'success',
-            title: 'อัปเดตและจัดเรียงข้อมูลฐานข้อมูลเรียบร้อยแล้ว',
-            message: `แสดงข้อมูลฐานข้อมูลครบถ้วนทั้งหมด ${sorted.length.toLocaleString()} รายการ (เรียงตามชื่อ-นามสกุลผู้รับผิดชอบ ก–ฮ)`,
-          });
+        return;
+      }
+
+      // 2. If Apps Script doesn't have action=list yet, try direct Google Sheet URL (gviz) if configured
+      if (sheetUrl.trim()) {
+        const gvizRecords = await fetchGoogleSheetGvizJsonp(sheetUrl, staffList);
+        if (gvizRecords.length > 0) {
+          const sorted = sortRecordsByStaffName(gvizRecords);
+          setDbRecords(sorted);
+          setLiveSyncSource('live');
+          if (showNotice) {
+            setNotification({
+              type: 'success',
+              title: 'ดึงข้อมูลสดจากลิงก์ Google Sheet สำเร็จ!',
+              message: `ซิงค์ข้อมูลจากชีต 'Case Data' ทั้งหมด ${sorted.length.toLocaleString()} รายการ พร้อมอัปเดตตัวเลขงานของผู้รับผิดชอบทุกท่านแล้ว`,
+            });
+          }
+          return;
         }
       }
-    } catch {
-      const sorted = sortRecordsByStaffName(dbRecords);
-      setDbRecords(sorted);
+
+      // 3. If neither is set up yet and user clicked sync, open the connection modal to help them connect in 1 click
+      if (showNotice) {
+        setShowScriptModal(true);
+      }
+    } catch (err: any) {
       if (showNotice) {
         setNotification({
-          type: 'success',
-          title: 'แสดงผลข้อมูลฐานข้อมูลเรียบร้อยแล้ว',
-          message: `แสดงข้อมูลฐานข้อมูลครบถ้วนทั้งหมด ${sorted.length.toLocaleString()} รายการ`,
+          type: 'error',
+          title: 'ไม่สามารถดึงข้อมูลสดจาก Google Sheet ได้',
+          message: err?.message || 'กรุณาตรวจสอบการตั้งค่าลิงก์ Google Sheet หรืออัปเดตโค้ด Apps Script',
         });
       }
     } finally {
@@ -615,36 +789,58 @@ export default function App() {
     }
   };
 
-  // Sync with live Google Sheet on mount if action=list is enabled
+  // Sync with live Google Sheet on mount (via Apps Script action=list or direct Sheet URL)
   useEffect(() => {
     let mounted = true;
     sendJsonp<{ success: boolean; records?: any[] }>(scriptUrl, { action: 'list' })
-      .then((res) => {
-        if (!mounted || !res?.success || !Array.isArray(res.records) || res.records.length === 0) {
+      .then(async (res) => {
+        if (!mounted) return;
+        if (res?.success && Array.isArray(res.records) && res.records.length > 0) {
+          const liveParsed: CaseRecord[] = res.records.map((item, idx) => ({
+            rowIndex: item.rowIndex || idx + 2,
+            docNumber: String(item.docNumber || '').trim(),
+            receiveDate: formatThaiDate(String(item.receiveDate || '-')),
+            staffName: normalizeStaffName(String(item.staffName || '-'), staffList),
+            problemType: String(item.problemType || '-').trim(),
+            problemDetail: String(item.problemDetail || '-').trim(),
+            status: String(item.status || 'อยู่ระหว่างตรวจสอบข้อมูล').trim(),
+            remark: String(item.remark || '').trim(),
+            lastUpdate: formatThaiDate(String(item.lastUpdate || '-')),
+          }));
+          setDbRecords(sortRecordsByStaffName(liveParsed));
+          setLiveSyncSource('live');
           return;
         }
-        const liveParsed: CaseRecord[] = res.records.map((item, idx) => ({
-          rowIndex: item.rowIndex || idx + 2,
-          docNumber: String(item.docNumber || '').trim(),
-          receiveDate: formatThaiDate(String(item.receiveDate || '-')),
-          staffName: String(item.staffName || '-').trim(),
-          problemType: String(item.problemType || '-').trim(),
-          problemDetail: String(item.problemDetail || '-').trim(),
-          status: String(item.status || 'อยู่ระหว่างตรวจสอบข้อมูล').trim(),
-          remark: String(item.remark || '').trim(),
-          lastUpdate: formatThaiDate(String(item.lastUpdate || '-')),
-        }));
-        setDbRecords(sortRecordsByStaffName(liveParsed));
-        setLiveSyncSource('live');
+        // Fallback to direct Google Sheet URL if configured
+        if (sheetUrl.trim()) {
+          try {
+            const gvizRecords = await fetchGoogleSheetGvizJsonp(sheetUrl, staffList);
+            if (mounted && gvizRecords.length > 0) {
+              setDbRecords(sortRecordsByStaffName(gvizRecords));
+              setLiveSyncSource('live');
+            }
+          } catch {
+            // ignore
+          }
+        }
       })
-      .catch(() => {
-        // Fallback to bundled 818 records + local updates
+      .catch(async () => {
+        if (!mounted || !sheetUrl.trim()) return;
+        try {
+          const gvizRecords = await fetchGoogleSheetGvizJsonp(sheetUrl, staffList);
+          if (mounted && gvizRecords.length > 0) {
+            setDbRecords(sortRecordsByStaffName(gvizRecords));
+            setLiveSyncSource('live');
+          }
+        } catch {
+          // ignore
+        }
       });
 
     return () => {
       mounted = false;
     };
-  }, [scriptUrl]);
+  }, [scriptUrl, sheetUrl, staffList]);
 
   useEffect(() => {
     if (activeTab !== 'settings') {
@@ -679,12 +875,13 @@ export default function App() {
           problemTypes,
           statusOptions,
           scriptUrl,
+          sheetUrl,
         })
       );
     } catch {
       // ignore storage errors
     }
-  }, [staffList, problemTypes, statusOptions, scriptUrl]);
+  }, [staffList, problemTypes, statusOptions, scriptUrl, sheetUrl]);
 
   // Dashboard Computed Analytics (Sorted automatically by staffName by default)
   const filteredDashboardRecords = useMemo(() => {
@@ -752,7 +949,8 @@ export default function App() {
     dbRecords.forEach((r) => {
       if (dashStatusFilter !== 'ALL' && r.status !== dashStatusFilter) return;
       if (dashTypeFilter !== 'ALL' && r.problemType !== dashTypeFilter) return;
-      const current = staffStatsMap.get(r.staffName) || {
+      const matchedName = normalizeStaffName(r.staffName, staffList);
+      const current = staffStatsMap.get(matchedName) || {
         total: 0,
         completed: 0,
         pending: 0,
@@ -763,7 +961,7 @@ export default function App() {
       } else {
         current.pending += 1;
       }
-      staffStatsMap.set(r.staffName, current);
+      staffStatsMap.set(matchedName, current);
     });
 
     const byStaff = Array.from(staffStatsMap.entries())
@@ -1461,61 +1659,92 @@ export default function App() {
 
             {/* 4 Key KPI Summary Strip */}
             <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="bg-white border border-emerald-900/10 rounded-xl p-5 shadow-xs">
-                <div className="flex items-center justify-between text-xs font-semibold text-slate-500">
-                  <span>จำนวนเรื่องทั้งหมด</span>
-                  <FileText className="w-4 h-4 text-slate-400" />
+              <div className="bg-white border border-emerald-900/10 rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col">
+                <div className="h-1 w-full bg-gradient-to-r from-slate-600 to-slate-800" />
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div className="flex items-center justify-between text-xs font-semibold text-slate-600">
+                    <span>จำนวนเรื่องทั้งหมด</span>
+                    <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700">
+                      <FileText className="w-4 h-4" />
+                    </div>
+                  </div>
+                  <div className="mt-3">
+                    <p className="text-3xl font-bold text-slate-900 font-mono tabular-nums">
+                      {dashboardMetrics.total.toLocaleString()}
+                    </p>
+                    <span className="text-xs text-slate-500 mt-1 block">
+                      รายการในฐานข้อมูลตามตัวกรอง
+                    </span>
+                  </div>
                 </div>
-                <p className="text-3xl font-bold text-slate-900 font-mono tabular-nums mt-2">
-                  {dashboardMetrics.total.toLocaleString()}
-                </p>
-                <span className="text-xs text-slate-500 mt-1 block">
-                  รายการที่ตรงตามเงื่อนไขตัวกรอง
-                </span>
               </div>
 
-              <div className="bg-gradient-to-br from-white to-emerald-50/60 border border-emerald-200/80 rounded-xl p-5 shadow-xs">
-                <div className="flex items-center justify-between text-xs font-semibold text-emerald-800">
-                  <span>ดำเนินการเสร็จสิ้น / ปิดเคส</span>
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <div className="bg-gradient-to-br from-white via-white to-emerald-50/70 border border-emerald-200/80 rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col">
+                <div className="h-1 w-full bg-gradient-to-r from-emerald-500 to-teal-600" />
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div className="flex items-center justify-between text-xs font-semibold text-emerald-900">
+                    <span>ดำเนินการเสร็จสิ้น / ปิดเคส</span>
+                    <div className="w-8 h-8 rounded-lg bg-emerald-100/80 flex items-center justify-center text-emerald-700">
+                      <CheckCircle2 className="w-4 h-4" />
+                    </div>
+                  </div>
+                  <div className="mt-3">
+                    <div className="flex items-baseline gap-2">
+                      <p className="text-3xl font-bold text-emerald-700 font-mono tabular-nums">
+                        {dashboardMetrics.completed.toLocaleString()}
+                      </p>
+                      <span className="text-xs font-mono font-bold text-emerald-700 tabular-nums">
+                        ({dashboardMetrics.completionRate}%)
+                      </span>
+                    </div>
+                    <div className="w-full h-1.5 bg-emerald-100 rounded-sm overflow-hidden mt-2">
+                      <div
+                        className="h-full bg-gradient-to-r from-emerald-500 to-teal-600 transition-all"
+                        style={{ width: `${dashboardMetrics.completionRate}%` }}
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-baseline gap-2 mt-2">
-                  <p className="text-3xl font-bold text-emerald-700 font-mono tabular-nums">
-                    {dashboardMetrics.completed.toLocaleString()}
-                  </p>
-                  <span className="text-xs font-mono font-bold text-emerald-700 tabular-nums">
-                    ({dashboardMetrics.completionRate}%)
-                  </span>
-                </div>
-                <span className="text-xs text-emerald-800/70 mt-1 block">
-                  อัตราความสำเร็จของการปิดเคส
-                </span>
               </div>
 
-              <div className="bg-gradient-to-br from-white to-amber-50/60 border border-amber-200/80 rounded-xl p-5 shadow-xs">
-                <div className="flex items-center justify-between text-xs font-semibold text-amber-900">
-                  <span>อยู่ระหว่างดำเนินการ</span>
-                  <Clock className="w-4 h-4 text-amber-600" />
+              <div className="bg-gradient-to-br from-white via-white to-amber-50/70 border border-amber-200/80 rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col">
+                <div className="h-1 w-full bg-gradient-to-r from-amber-400 to-orange-500" />
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div className="flex items-center justify-between text-xs font-semibold text-amber-950">
+                    <span>อยู่ระหว่างดำเนินการ</span>
+                    <div className="w-8 h-8 rounded-lg bg-amber-100/80 flex items-center justify-center text-amber-700">
+                      <Clock className="w-4 h-4" />
+                    </div>
+                  </div>
+                  <div className="mt-3">
+                    <p className="text-3xl font-bold text-amber-700 font-mono tabular-nums">
+                      {dashboardMetrics.inProgress.toLocaleString()}
+                    </p>
+                    <span className="text-xs text-amber-900/75 mt-1 block">
+                      รอตรวจสอบ / ประสานงานผู้แจ้งและ OS
+                    </span>
+                  </div>
                 </div>
-                <p className="text-3xl font-bold text-amber-700 font-mono tabular-nums mt-2">
-                  {dashboardMetrics.inProgress.toLocaleString()}
-                </p>
-                <span className="text-xs text-amber-900/70 mt-1 block">
-                  รอตรวจสอบ / ประสานงานผู้แจ้งและ OS
-                </span>
               </div>
 
-              <div className="bg-gradient-to-br from-white to-teal-50/60 border border-teal-200/80 rounded-xl p-5 shadow-xs">
-                <div className="flex items-center justify-between text-xs font-semibold text-teal-900">
-                  <span>เสนอพิจารณา / นำส่ง ผอ.</span>
-                  <FolderKanban className="w-4 h-4 text-teal-600" />
+              <div className="bg-gradient-to-br from-white via-white to-teal-50/70 border border-teal-200/80 rounded-xl overflow-hidden shadow-xs hover:shadow-md transition-shadow flex flex-col">
+                <div className="h-1 w-full bg-gradient-to-r from-teal-500 to-cyan-600" />
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div className="flex items-center justify-between text-xs font-semibold text-teal-950">
+                    <span>เสนอพิจารณา / นำส่ง ผอ.</span>
+                    <div className="w-8 h-8 rounded-lg bg-teal-100/80 flex items-center justify-center text-teal-700">
+                      <FolderKanban className="w-4 h-4" />
+                    </div>
+                  </div>
+                  <div className="mt-3">
+                    <p className="text-3xl font-bold text-teal-700 font-mono tabular-nums">
+                      {dashboardMetrics.executive.toLocaleString()}
+                    </p>
+                    <span className="text-xs text-teal-900/75 mt-1 block">
+                      อยู่ระหว่างเสนอหนังสือและนำส่งผู้อำนวยการ
+                    </span>
+                  </div>
                 </div>
-                <p className="text-3xl font-bold text-teal-700 font-mono tabular-nums mt-2">
-                  {dashboardMetrics.executive.toLocaleString()}
-                </p>
-                <span className="text-xs text-teal-900/70 mt-1 block">
-                  อยู่ระหว่างเสนอหนังสือและนำส่งผู้อำนวยการ
-                </span>
               </div>
             </section>
 
@@ -1677,17 +1906,18 @@ export default function App() {
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse text-sm">
                   <thead>
-                    <tr className="border-b border-slate-200 text-xs text-slate-500 bg-slate-50/60">
-                      <th className="py-3 px-6 font-semibold">ชื่อ-นามสกุล ผู้รับผิดชอบ</th>
-                      <th className="py-3 px-4 font-semibold text-right">ทั้งหมด (เรื่อง)</th>
-                      <th className="py-3 px-4 font-semibold text-right">ดำเนินการเสร็จสิ้น</th>
-                      <th className="py-3 px-4 font-semibold text-right">อยู่ระหว่างดำเนินการ</th>
-                      <th className="py-3 px-6 font-semibold text-right w-44">อัตราปิดเคส</th>
+                    <tr className="border-b border-slate-200 text-xs text-slate-500 bg-slate-50/70">
+                      <th className="py-3.5 px-6 font-semibold">ชื่อ-นามสกุล ผู้รับผิดชอบ</th>
+                      <th className="py-3.5 px-4 font-semibold text-right">ทั้งหมด (เรื่อง)</th>
+                      <th className="py-3.5 px-4 font-semibold text-right">ดำเนินการเสร็จสิ้น</th>
+                      <th className="py-3.5 px-4 font-semibold text-right">อยู่ระหว่างดำเนินการ</th>
+                      <th className="py-3.5 px-6 font-semibold text-right w-52">สัดส่วนความคืบหน้า</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
                     {dashboardMetrics.byStaff.map((person) => {
                       const isSelected = dashStaffFilter === person.name;
+                      const pendingPct = person.total > 0 ? 100 - person.rateNum : 0;
                       return (
                         <tr
                           key={person.name}
@@ -1698,32 +1928,51 @@ export default function App() {
                             isSelected ? 'bg-emerald-50/80' : 'hover:bg-slate-50/90'
                           }`}
                         >
-                          <td className="py-3 px-6 font-medium text-slate-900 whitespace-nowrap">
-                            <span>{person.name}</span>
-                            {!person.isCurrentTeam && (
-                              <span className="ml-2 text-xs text-slate-400">
-                                (ข้อมูลเดิม)
-                              </span>
-                            )}
+                          <td className="py-3.5 px-6 font-medium text-slate-900 whitespace-nowrap">
+                            <div className="flex items-center gap-3">
+                              <div
+                                className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold shrink-0 ${
+                                  person.isCurrentTeam
+                                    ? 'bg-gradient-to-br from-emerald-600 to-teal-700 text-white shadow-2xs'
+                                    : 'bg-slate-200 text-slate-700'
+                                }`}
+                              >
+                                {getThaiInitial(person.name)}
+                              </div>
+                              <div>
+                                <span className="font-semibold text-slate-900">{person.name}</span>
+                                {!person.isCurrentTeam && (
+                                  <span className="ml-2 text-xs text-slate-400">
+                                    (ข้อมูลเดิม)
+                                  </span>
+                                )}
+                              </div>
+                            </div>
                           </td>
-                          <td className="py-3 px-4 text-right font-mono font-bold text-slate-900 tabular-nums">
+                          <td className="py-3.5 px-4 text-right font-mono font-bold text-slate-900 tabular-nums">
                             {person.total.toLocaleString()}
                           </td>
-                          <td className="py-3 px-4 text-right font-mono text-emerald-700 font-semibold tabular-nums">
+                          <td className="py-3.5 px-4 text-right font-mono text-emerald-700 font-semibold tabular-nums">
                             {person.completed.toLocaleString()}
                           </td>
-                          <td className="py-3 px-4 text-right font-mono text-amber-700 font-semibold tabular-nums">
+                          <td className="py-3.5 px-4 text-right font-mono text-amber-700 font-semibold tabular-nums">
                             {person.pending.toLocaleString()}
                           </td>
-                          <td className="py-3 px-6">
-                            <div className="flex items-center justify-end gap-2.5">
-                              <div className="w-20 h-2 bg-slate-100 rounded-full overflow-hidden hidden sm:block">
+                          <td className="py-3.5 px-6">
+                            <div className="flex items-center justify-end gap-3">
+                              <div className="w-24 h-2.5 bg-slate-100 rounded-sm overflow-hidden hidden sm:flex">
                                 <div
-                                  className="h-full bg-emerald-600 rounded-full"
+                                  className="h-full bg-emerald-600 transition-all"
                                   style={{ width: `${person.rateNum}%` }}
+                                  title={`เสร็จสิ้น ${person.completed} เรื่อง`}
+                                />
+                                <div
+                                  className="h-full bg-amber-400 transition-all"
+                                  style={{ width: `${pendingPct}%` }}
+                                  title={`รอดำเนินการ ${person.pending} เรื่อง`}
                                 />
                               </div>
-                              <span className="font-mono text-xs font-semibold text-slate-700 tabular-nums w-12 text-right">
+                              <span className="font-mono text-xs font-bold text-slate-700 tabular-nums w-12 text-right">
                                 {person.rate}%
                               </span>
                             </div>
@@ -2168,6 +2417,60 @@ export default function App() {
 
                 {/* Document Details Grid */}
                 <div className="p-6 sm:p-8 space-y-6">
+                  {/* 4-Step Workflow Progress Tracker */}
+                  {(() => {
+                    const activeStep = getWorkflowStepIndex(searchResult.status);
+                    const steps = [
+                      'ตรวจสอบข้อมูล',
+                      'ประสานงาน / ส่งต่อ',
+                      'เสนอพิจารณา / นำส่ง ผอ.',
+                      'ดำเนินการเสร็จสิ้น / ปิดเคส',
+                    ];
+                    return (
+                      <div className="p-4 bg-slate-50/80 border border-slate-200/80 rounded-xl space-y-2.5">
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="font-semibold text-slate-600">ลำดับความคืบหน้าของเคส</span>
+                          <span className="font-mono font-bold text-emerald-700 tabular-nums">
+                            ขั้นตอนที่ {activeStep + 1} / {steps.length}
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                          {steps.map((label, idx) => {
+                            const isDone = idx <= activeStep;
+                            const isCurrent = idx === activeStep;
+                            return (
+                              <div
+                                key={label}
+                                className={`p-2.5 rounded-lg border text-xs transition-colors ${
+                                  isCurrent
+                                    ? 'bg-emerald-50 border-emerald-400 text-emerald-950 font-bold'
+                                    : isDone
+                                    ? 'bg-white border-emerald-200 text-emerald-800 font-medium'
+                                    : 'bg-white/60 border-slate-200 text-slate-400'
+                                }`}
+                              >
+                                <div className="flex items-center gap-1.5">
+                                  <span
+                                    className={`w-5 h-5 rounded-md font-mono text-[11px] flex items-center justify-center shrink-0 ${
+                                      isCurrent
+                                        ? 'bg-emerald-600 text-white font-bold'
+                                        : isDone
+                                        ? 'bg-emerald-100 text-emerald-800 font-bold'
+                                        : 'bg-slate-100 text-slate-400'
+                                    }`}
+                                  >
+                                    {idx + 1}
+                                  </span>
+                                  <span className="truncate">{label}</span>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    );
+                  })()}
+
                   <div className="grid sm:grid-cols-2 gap-6 pb-6 border-b border-slate-100">
                     <div>
                       <span className="text-xs text-slate-500 block mb-1">เลขหนังสือ สบต.</span>
@@ -2458,6 +2761,78 @@ export default function App() {
                   </button>
                 </div>
               </div>
+
+              {/* Direct Google Sheet Link Configuration (Fastest way to pull live rows without Apps Script redeploy) */}
+              <form
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  const trimmed = sheetUrlInput.trim();
+                  if (!trimmed) {
+                    setSheetUrl('');
+                    setNotification({
+                      type: 'success',
+                      title: 'ล้างลิงก์ Google Sheet แล้ว',
+                      message: 'ยกเลิกการดึงข้อมูลผ่านลิงก์ไฟล์ Google Sheet เรียบร้อยแล้ว',
+                    });
+                    return;
+                  }
+                  if (!extractSpreadsheetId(trimmed)) {
+                    setNotification({
+                      type: 'error',
+                      title: 'รูปแบบลิงก์ Google Sheet ไม่ถูกต้อง',
+                      message: 'กรุณาวางลิงก์ไฟล์ Google Sheet เช่น https://docs.google.com/spreadsheets/d/.../edit',
+                    });
+                    return;
+                  }
+                  setSheetUrl(trimmed);
+                  setIsSyncingLive(true);
+                  try {
+                    const liveRows = await fetchGoogleSheetGvizJsonp(trimmed, staffList);
+                    if (liveRows.length > 0) {
+                      const sorted = sortRecordsByStaffName(liveRows);
+                      setDbRecords(sorted);
+                      setLiveSyncSource('live');
+                      setNotification({
+                        type: 'success',
+                        title: 'เชื่อมต่อและดึงข้อมูลสดจาก Google Sheet สำเร็จ!',
+                        message: `ดึงข้อมูลจากชีต 'Case Data' ครบถ้วนทั้งหมด ${sorted.length.toLocaleString()} รายการ พร้อมอัปเดตตัวเลขงานของผู้รับผิดชอบทุกท่านเรียบร้อยแล้ว`,
+                      });
+                    }
+                  } catch (err: any) {
+                    setNotification({
+                      type: 'error',
+                      title: 'ไม่สามารถอ่านข้อมูลจากลิงก์ Google Sheet ได้',
+                      message: err?.message || 'กรุณาตรวจสอบว่าตั้งค่าแชร์ไฟล์ Google Sheet เป็น "ทุกคนที่มีลิงก์สามารถดูได้ (Anyone with the link can view)" แล้ว',
+                    });
+                  } finally {
+                    setIsSyncingLive(false);
+                  }
+                }}
+                className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-end gap-3"
+              >
+                <div className="flex-1">
+                  <label htmlFor="gsheet-url-input" className="block text-xs font-semibold text-slate-700 mb-1">
+                    ลิงก์ไฟล์ Google Sheet (ชีต Case Data) — สำหรับดึงยอดงานผู้รับผิดชอบแบบเรียลไทม์โดยตรง
+                  </label>
+                  <input
+                    id="gsheet-url-input"
+                    type="text"
+                    value={sheetUrlInput}
+                    onChange={(e) => setSheetUrlInput(e.target.value)}
+                    placeholder="วางลิงก์ https://docs.google.com/spreadsheets/d/.../edit (แชร์เป็น ทุกคนที่มีลิงก์ดูได้)"
+                    className="w-full px-3.5 py-2 bg-slate-50/70 focus:bg-white border border-slate-300 rounded-lg text-xs font-mono text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                  />
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
+                  <button
+                    type="submit"
+                    disabled={isSyncingLive}
+                    className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white text-xs font-semibold rounded-lg transition-colors cursor-pointer"
+                  >
+                    {isSyncingLive ? 'กำลังดึงข้อมูล...' : 'บันทึกและดึงข้อมูลทันที'}
+                  </button>
+                </div>
+              </form>
 
               {/* Google Apps Script URL Configuration (in case New Deployment created a new URL) */}
               <form
@@ -2814,7 +3189,7 @@ export default function App() {
         )}
       </main>
 
-      {/* Modal for Google Apps Script Auto-Sort Setup */}
+      {/* Modal for Live Google Sheet Connection & Apps Script Setup */}
       {showScriptModal && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-4"
@@ -2826,10 +3201,10 @@ export default function App() {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h3 id="script-modal-title" className="text-lg font-bold text-slate-900">
-                  โค้ดจัดเรียงข้อมูลตาม "ชื่อ-นามสกุลผู้รับผิดชอบ" อัตโนมัติใน Google Sheet
+                  เชื่อมต่อดึงข้อมูลสดจาก Google Sheet และโค้ด Apps Script
                 </h3>
                 <p className="text-xs text-slate-600 mt-1">
-                  ในหน้าเว็บระบบได้จัดเรียงตามชื่อผู้รับผิดชอบให้อัตโนมัติแล้ว ส่วนในไฟล์ Google Sheet หากต้องการให้แถวเรียงตามคอลัมน์ C (ผู้รับผิดชอบ) อัตโนมัติทุกครั้งที่กดบันทึก สามารถนำคำสั่ง <code className="font-mono text-emerald-700">.sort(&#123; column: 3, ascending: true &#125;)</code> นี้ไปใส่ในเมนู <strong>ส่วนขยาย (Extensions) &gt; Apps Script</strong> ได้เลยครับ
+                  สาเหตุที่ผู้รับผิดชอบบางท่านยังไม่แสดงจำนวนงานที่เพิ่งบันทึกใหม่ใน Google Sheet เนื่องจากลิงก์ Apps Script ปัจจุบันยังเป็นเวอร์ชันเดิมที่ไม่มีคำสั่งดึงตารางทั้งหมด (<code className="font-mono text-emerald-700">action=list</code>) คุณสามารถเลือกใช้วิธีที่ 1 (วางลิงก์ Google Sheet โดยตรง) หรือวิธีที่ 2 (อัปเดตโค้ด Apps Script) ได้เลยครับ
                 </p>
               </div>
               <button
@@ -2841,9 +3216,83 @@ export default function App() {
               </button>
             </div>
 
+            {/* Method 1: Paste Google Sheet Link directly */}
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const trimmed = sheetUrlInput.trim();
+                if (!extractSpreadsheetId(trimmed)) {
+                  setNotification({
+                    type: 'error',
+                    title: 'รูปแบบลิงก์ Google Sheet ไม่ถูกต้อง',
+                    message: 'กรุณาวางลิงก์ไฟล์ Google Sheet เช่น https://docs.google.com/spreadsheets/d/.../edit',
+                  });
+                  return;
+                }
+                setSheetUrl(trimmed);
+                setIsSyncingLive(true);
+                try {
+                  const liveRows = await fetchGoogleSheetGvizJsonp(trimmed, staffList);
+                  if (liveRows.length > 0) {
+                    const sorted = sortRecordsByStaffName(liveRows);
+                    setDbRecords(sorted);
+                    setLiveSyncSource('live');
+                    setShowScriptModal(false);
+                    setNotification({
+                      type: 'success',
+                      title: 'ดึงข้อมูลสดจาก Google Sheet สำเร็จ!',
+                      message: `ซิงค์ข้อมูลจากชีต 'Case Data' ทั้งหมด ${sorted.length.toLocaleString()} รายการ พร้อมแสดงตัวเลขงานของผู้รับผิดชอบทุกท่านเรียบร้อยแล้ว`,
+                    });
+                  }
+                } catch (err: any) {
+                  setNotification({
+                    type: 'error',
+                    title: 'ไม่สามารถอ่านข้อมูลจากลิงก์ Google Sheet ได้',
+                    message: err?.message || 'กรุณาตั้งค่าแชร์ไฟล์ Google Sheet เป็น "ทุกคนที่มีลิงก์สามารถดูได้"',
+                  });
+                } finally {
+                  setIsSyncingLive(false);
+                }
+              }}
+              className="p-4 bg-emerald-50/70 border border-emerald-200/80 rounded-xl space-y-2.5"
+            >
+              <div className="text-xs font-bold text-emerald-950">
+                วิธีที่ 1 (แนะนำ — เร็วที่สุด ไม่ต้องแก้โค้ด): วางลิงก์ไฟล์ Google Sheet ของคุณโดยตรง
+              </div>
+              <p className="text-xs text-slate-600">
+                เปิดไฟล์ Google Sheet ของคุณ &gt; กดปุ่ม <strong>แชร์ (Share)</strong> มุมขวาบน &gt; ตั้งค่าเป็น <strong>"ทุกคนที่มีลิงก์สามารถดูได้ (Anyone with the link: Viewer)"</strong> แล้วคัดลอกลิงก์มาวางด้านล่างนี้:
+              </p>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <input
+                  type="text"
+                  value={sheetUrlInput}
+                  onChange={(e) => setSheetUrlInput(e.target.value)}
+                  placeholder="https://docs.google.com/spreadsheets/d/.../edit"
+                  className="flex-1 px-3 py-2 bg-white border border-emerald-300 rounded-lg text-xs font-mono text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                />
+                <button
+                  type="submit"
+                  disabled={isSyncingLive}
+                  className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white text-xs font-semibold rounded-lg transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+                >
+                  {isSyncingLive ? 'กำลังซิงค์...' : 'ดึงข้อมูลจาก Google Sheet ทันที'}
+                </button>
+              </div>
+            </form>
+
+            {/* Method 2: Update Apps Script Code */}
+            <div className="text-xs text-slate-600 space-y-1">
+              <p className="font-bold text-slate-900">
+                วิธีที่ 2: อัปเดตโค้ดใน Google Apps Script ให้เป็นเวอร์ชันใหม่ (New version)
+              </p>
+              <p>
+                คัดลอกโค้ดด้านล่างไปวางทับใน <strong>Extensions &gt; Apps Script</strong> แล้วกดปุ่ม <strong>Deploy &gt; Manage deployments &gt; Edit (รูปดินสอ) &gt; เลือก Version: New version &gt; กด Deploy</strong>
+              </p>
+            </div>
+
             <div className="bg-slate-900 text-slate-100 rounded-lg p-4 overflow-y-auto flex-1 font-mono text-xs leading-relaxed">
               <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-800 text-emerald-400">
-                <span>Code.gs (รองรับเรียงตามผู้รับผิดชอบอัตโนมัติ + บันทึกหมายเหตุ)</span>
+                <span>Code.gs (รองรับดึงข้อมูลทั้งหมด action=list + เรียงตามผู้รับผิดชอบอัตโนมัติ)</span>
                 <button
                   type="button"
                   onClick={handleCopyGasScript}
