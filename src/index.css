@@ -1,18 +1,57 @@
+
+/*
+ * Data-textIT — Apple Glass / Azure Light Theme
+ * Replace src/index.css with this file.
+ * Designed for existing React + Tailwind v4 App.tsx.
+ * UI-only overrides; data operations, navigation,
+ * and Google Sheet integration untouched.
+ */
+
 @import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --ui-bg: #f5f8fe;
+  --ui-ink: #142541;
+  --ui-muted: #64748b;
+  --ui-blue: #2965e8;
+  --ui-blue-dark: #164bc4;
+  --ui-border: #e5ebf6;
+  --ui-glass: rgba(255,255,255,.88);
+  --ui-shadow: 0 8px 32px rgba(29,62,120,.065),
+               0 1px 2px rgba(29,62,120,.025);
+}
+
+/* Base */
 
 @layer base {
   body {
-    font-family: 'Plus Jakarta Sans', 'IBM Plex Sans Thai', sans-serif;
-    color: #0f172a;
-    background-color: #f3f7f5;
-    background-image: radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.06) 0px, transparent 50%),
-                      radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.06) 0px, transparent 50%);
+    font-family: 'Plus Jakarta Sans',
+                 'IBM Plex Sans Thai', sans-serif;
+    background: var(--ui-bg);
+    color: var(--ui-ink);
+    background-image:
+      radial-gradient(
+        ellipse 60% 38% at 0% 0%,
+        rgba(112,167,255,.13),
+        transparent 72%
+      ),
+      radial-gradient(
+        ellipse 56% 28% at 98% 2%,
+        rgba(151,208,250,.11),
+        transparent 72%
+      );
     background-attachment: fixed;
+    font-feature-settings: "ss01" on;
   }
 
   code, pre, .font-mono {
     font-family: 'JetBrains Mono', monospace;
     font-variant-numeric: tabular-nums;
+  }
+
+  button, input, select, textarea {
+    font: inherit;
   }
 }
 
@@ -20,4 +59,388 @@
   font-variant-numeric: tabular-nums;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
 
+::selection {
+  background: #dceafe;
+  color: #14396f;
+}
+
+/* Apple Glass Navigation */
+
+#root > div > header {
+  background: rgba(255,255,255,.80) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  backdrop-filter: blur(22px) saturate(150%);
+  border-bottom: 1px solid rgba(220,231,246,.94) !important;
+  box-shadow: 0 1px 18px rgba(48,81,132,.035);
+}
+
+#root > div > header > div {
+  max-width: 1340px;
+  min-height: 73px;
+}
+
+#root > div > header a {
+  color: #183563 !important;
+  letter-spacing: -.045em;
+  font-size: clamp(14px,1.35vw,19px);
+}
+
+#root > div > header nav {
+  gap: 20px;
+}
+
+#root > div > header nav button {
+  font-weight: 600;
+  color: #63718a;
+  transition: color .15s ease;
+}
+
+#root > div > header nav button:hover {
+  color: #285cd1 !important;
+}
+
+#root > div > header nav button[class*="underline"] {
+  color: var(--ui-blue) !important;
+  text-decoration: none !important;
+  position: relative;
+}
+
+#root > div > header nav button[class*="underline"]:after {
+  content: "";
+  height: 3px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: -22px;
+  left: 8%;
+  right: 8%;
+  background: var(--ui-blue);
+}
+
+#root > div > header button[class*="from-emerald-600"] {
+  background: linear-gradient(
+    135deg,#3981f4,#2461e1
+  ) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 16px rgba(47,104,228,.19) !important;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+/* Main Layout */
+
+#root > div > main {
+  max-width: 1340px !important;
+  padding-top: 30px;
+  padding-bottom: 54px;
+}
+
+/* Hero Banner */
+
+#root > div > main > section:first-child {
+  isolation: isolate;
+  border-radius: 26px !important;
+  color: var(--ui-ink) !important;
+  background:
+    radial-gradient(
+      circle at 87% 24%,
+      rgba(129,182,255,.26),
+      transparent 31%
+    ),
+    radial-gradient(
+      circle at 58% 110%,
+      rgba(207,230,255,.55),
+      transparent 46%
+    ),
+    linear-gradient(
+      115deg,#ffffff 2%,#eff6ff 55%,#e5f1ff 100%
+    ) !important;
+  border: 1px solid rgba(213,229,251,.95) !important;
+  box-shadow:
+    0 12px 45px rgba(73,116,185,.09),
+    inset 0 1px 0 #fff !important;
+  padding: 32px 36px !important;
+}
+
+#root > div > main > section:first-child > svg {
+  color: #3276e4 !important;
+  opacity: .17 !important;
+}
+
+#root > div > main > section:first-child h1 {
+  color: #12325e !important;
+  letter-spacing: -.035em;
+  line-height: 1.3;
+}
+
+#root > div > main > section:first-child p {
+  color: #697e9b !important;
+  line-height: 1.8;
+}
+
+#root > div > main > section:first-child
+.text-xs[class*="text-emerald-200"] {
+  color: #51749f !important;
+}
+
+#root > div > main > section:first-child
+[class*="text-amber-300"] {
+  color: #2662cc !important;
+  font-weight: 700;
+}
+
+/* Hero Segmented Navigation */
+
+#root > div > main > section:first-child
+div[class*="bg-emerald-950"] {
+  background: rgba(255,255,255,.78) !important;
+  border: 1px solid rgba(216,229,246,.96) !important;
+  box-shadow: 0 4px 18px rgba(75,109,157,.075) !important;
+  border-radius: 16px !important;
+}
+
+#root > div > main > section:first-child
+div[class*="bg-emerald-950"] button {
+  border-radius: 12px !important;
+  color: #5a6f90 !important;
+  font-weight: 600;
+}
+
+#root > div > main > section:first-child
+div[class*="bg-emerald-950"] button:hover {
+  background: rgba(230,240,255,.9) !important;
+  color: var(--ui-blue) !important;
+}
+
+#root > div > main > section:first-child
+div[class*="bg-emerald-950"] button.bg-white {
+  color: white !important;
+  background: linear-gradient(
+    135deg,#387bf0,#245fd7
+  ) !important;
+  box-shadow: 0 5px 12px rgba(38,99,216,.2) !important;
+}
+
+#root > div > main > section:first-child
+div[class*="bg-emerald-950"] button.bg-white svg {
+  color: white !important;
+}
+
+#root > div > main > section:first-child
+div[class*="bg-emerald-950"] button:not(.bg-white) svg {
+  color: #5a83cb !important;
+}
+
+/* Glass Cards and Panels */
+
+#root > div > main section[class*="bg-white"],
+#root > div > main section[class*="from-white"],
+#root > div > main section[class*="bg-gradient-to-br"][class*="from-white"] {
+  background: var(--ui-glass) !important;
+  border: 1px solid var(--ui-border) !important;
+  box-shadow: var(--ui-shadow) !important;
+  border-radius: 20px !important;
+}
+
+#root > div > main
+section > div[class*="bg-gradient-to-r"][class*="from-emerald-50"],
+#root > div > main
+section > div[class*="bg-gradient-to-r"][class*="from-teal-50"] {
+  background: linear-gradient(
+    90deg,
+    rgba(244,248,255,.93),
+    rgba(255,255,255,0)
+  ) !important;
+  border-bottom-color: var(--ui-border) !important;
+}
+
+/* Dashboard KPI Cards */
+
+#root > div > main section[class*="lg:grid-cols-4"] > div {
+  border-radius: 20px !important;
+  border: 1px solid var(--ui-border) !important;
+  background: rgba(255,255,255,.92) !important;
+  box-shadow: var(--ui-shadow) !important;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+#root > div > main section[class*="lg:grid-cols-4"] > div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 36px rgba(29,62,120,.1) !important;
+}
+
+#root > div > main
+section[class*="lg:grid-cols-4"] > div:first-child > div:first-child {
+  background: linear-gradient(
+    90deg,#3c81ee,#83b4fc
+  ) !important;
+}
+
+#root > div > main
+section[class*="lg:grid-cols-4"] > div > div:first-child {
+  height: 3px;
+}
+
+#root > div > main
+section[class*="lg:grid-cols-4"] p[class*="text-3xl"] {
+  letter-spacing: -.04em;
+}
+
+/* Form Inputs */
+
+#root > div > main
+:is(input:not([type="checkbox"]),select,textarea) {
+  background: #fafdff !important;
+  border: 1px solid #dce5f3 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 1px 2px rgba(26,52,92,.025);
+  min-height: 42px;
+  transition:
+    background .16s,
+    border-color .16s,
+    box-shadow .16s;
+}
+
+#root > div > main
+:is(input:not([type="checkbox"]),select,textarea):focus {
+  border-color: #5d94ed !important;
+  outline: 0 !important;
+  box-shadow: 0 0 0 4px rgba(71,136,238,.13) !important;
+  background: #fff !important;
+}
+
+/* Primary Buttons */
+
+#root > div > main button[class*="from-emerald-600"],
+#root > div > main button.bg-emerald-600 {
+  background: linear-gradient(
+    135deg,#377cf0,#235fd9
+  ) !important;
+  border: 1px solid transparent !important;
+  color: white !important;
+  border-radius: 12px !important;
+  box-shadow: 0 5px 14px rgba(44,104,226,.17) !important;
+}
+
+/* Secondary Buttons */
+
+#root > div > main button[class*="bg-emerald-50"] {
+  background: #edf5ff !important;
+  color: #215cc7 !important;
+  border-color: #d9e8ff !important;
+  border-radius: 11px !important;
+}
+
+#root > div > main button[class*="bg-emerald-50"]:hover {
+  background: #e2efff !important;
+}
+
+#root > div > main button.bg-slate-100 {
+  background: #eff3f9 !important;
+  border-radius: 11px !important;
+}
+
+/* Tables */
+
+#root > div > main table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+#root > div > main thead tr {
+  background: #f2f7fd !important;
+}
+
+#root > div > main thead th {
+  color: #60748e !important;
+  font-size: 11px;
+  letter-spacing: .015em;
+}
+
+#root > div > main tbody tr {
+  transition: background .15s ease;
+}
+
+#root > div > main tbody tr:hover {
+  background: #f5f9ff !important;
+}
+
+#root > div > main tbody td {
+  border-bottom-color: #edf1f7 !important;
+}
+
+#root > div > main [class*="rounded-xl"] {
+  scroll-margin-top: 95px;
+}
+
+/* Responsive Design */
+
+@media (max-width: 1190px) {
+  #root > div > header nav {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #root > div > header > div {
+    padding: 15px 16px;
+    min-height: 64px;
+    gap: 8px;
+  }
+
+  #root > div > header a {
+    font-size: 13px;
+    white-space: normal;
+    line-height: 1.4;
+    max-width: 58%;
+  }
+
+  #root > div > header button {
+    font-size: 11px;
+    padding: 9px 11px;
+  }
+
+  #root > div > main {
+    padding: 17px 12px 30px;
+  }
+
+  #root > div > main > section:first-child {
+    padding: 22px 18px !important;
+    border-radius: 21px !important;
+  }
+
+  #root > div > main > section:first-child h1 {
+    font-size: 22px !important;
+  }
+
+  #root > div > main > section:first-child
+  div[class*="bg-emerald-950"] {
+    width: 100%;
+  }
+
+  #root > div > main > section:first-child
+  div[class*="bg-emerald-950"] button {
+    white-space: normal !important;
+    line-height: 1.3;
+    padding: 10px 6px;
+  }
+
+  #root > div > main section[class*="bg-white"] {
+    border-radius: 17px !important;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
