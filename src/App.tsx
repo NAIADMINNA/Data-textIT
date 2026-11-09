@@ -907,14 +907,18 @@ export default function App() {
   // Dashboard Computed Analytics (Sorted automatically by staffName by default)
   const filteredDashboardRecords = useMemo(() => {
     const filtered = dbRecords.filter((r) => {
-      if (dashStaffFilter !== 'ALL' && r.staffName !== dashStaffFilter) return false;
+      if (dashStaffFilter !== 'ALL') {
+        const matchedName = normalizeStaffName(r.staffName, staffList);
+        const groupName = staffList.includes(matchedName) ? matchedName : 'ข้อมูลเดิม';
+        if (groupName !== dashStaffFilter) return false;
+      }
       if (dashStatusFilter !== 'ALL' && r.status !== dashStatusFilter) return false;
       if (dashTypeFilter !== 'ALL' && r.problemType !== dashTypeFilter) return false;
       return true;
     });
 
     return sortRecordsByStaffName(filtered);
-  }, [dbRecords, dashStaffFilter, dashStatusFilter, dashTypeFilter]);
+  }, [dbRecords, dashStaffFilter, dashStatusFilter, dashTypeFilter, staffList]);
 
   const dashboardMetrics = useMemo(() => {
     const total = filteredDashboardRecords.length;
@@ -960,18 +964,20 @@ export default function App() {
       }))
       .sort((a, b) => b.count - a.count);
 
-    // Staff workload matrix (sorted alphabetically by Thai name)
+    // Staff workload matrix (sorted alphabetically by Thai name, with legacy names grouped into 'ข้อมูลเดิม')
     const staffStatsMap = new Map<
       string,
       { total: number; completed: number; pending: number }
     >();
     staffList.forEach((s) => staffStatsMap.set(s, { total: 0, completed: 0, pending: 0 }));
+    staffStatsMap.set('ข้อมูลเดิม', { total: 0, completed: 0, pending: 0 });
 
     dbRecords.forEach((r) => {
       if (dashStatusFilter !== 'ALL' && r.status !== dashStatusFilter) return;
       if (dashTypeFilter !== 'ALL' && r.problemType !== dashTypeFilter) return;
       const matchedName = normalizeStaffName(r.staffName, staffList);
-      const current = staffStatsMap.get(matchedName) || {
+      const targetKey = staffList.includes(matchedName) ? matchedName : 'ข้อมูลเดิม';
+      const current = staffStatsMap.get(targetKey) || {
         total: 0,
         completed: 0,
         pending: 0,
@@ -982,18 +988,23 @@ export default function App() {
       } else {
         current.pending += 1;
       }
-      staffStatsMap.set(matchedName, current);
+      staffStatsMap.set(targetKey, current);
     });
 
     const byStaff = Array.from(staffStatsMap.entries())
+      .filter(([name, stat]) => name !== 'ข้อมูลเดิม' || stat.total > 0)
       .map(([name, stat]) => ({
         name,
         ...stat,
-        isCurrentTeam: staffList.includes(name),
+        isCurrentTeam: name !== 'ข้อมูลเดิม' && staffList.includes(name),
         rateNum: stat.total > 0 ? (stat.completed / stat.total) * 100 : 0,
         rate: stat.total > 0 ? ((stat.completed / stat.total) * 100).toFixed(1) : '0.0',
       }))
-      .sort((a, b) => a.name.localeCompare(b.name, 'th'));
+      .sort((a, b) => {
+        if (a.name === 'ข้อมูลเดิม') return 1;
+        if (b.name === 'ข้อมูลเดิม') return -1;
+        return a.name.localeCompare(b.name, 'th');
+      });
 
     return {
       total,
@@ -1006,14 +1017,6 @@ export default function App() {
       byStaff,
     };
   }, [filteredDashboardRecords, dbRecords, dashStatusFilter, dashTypeFilter, staffList, problemTypes, statusOptions]);
-
-  const allDistinctStaff = useMemo(() => {
-    const set = new Set<string>(staffList);
-    dbRecords.forEach((r) => {
-      if (r.staffName && r.staffName !== '-') set.add(r.staffName);
-    });
-    return Array.from(set).sort((a, b) => a.localeCompare(b, 'th'));
-  }, [dbRecords, staffList]);
 
   const allDistinctTypes = useMemo(() => {
     const set = new Set<string>(problemTypes);
@@ -1581,7 +1584,7 @@ export default function App() {
                       onChange={(e) => setDashStaffFilter(e.target.value)}
                       className="w-full px-3.5 py-2 bg-slate-50/70 hover:bg-white border border-slate-300 rounded-lg text-xs sm:text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-600 transition-colors"
                     >
-                      <option value="ALL">ผู้รับผิดชอบทั้งหมด ({allDistinctStaff.length} ท่าน)</option>
+                      <option value="ALL">ผู้รับผิดชอบทั้งหมด ({staffList.length} ท่าน + ข้อมูลเดิม)</option>
                       <optgroup label={`ผู้รับผิดชอบปัจจุบัน (${staffList.length} ท่าน)`}>
                         {staffList.map((s) => (
                           <option key={s} value={s}>
@@ -1589,14 +1592,8 @@ export default function App() {
                           </option>
                         ))}
                       </optgroup>
-                      <optgroup label="ผู้รับผิดชอบเดิมในฐานข้อมูล">
-                        {allDistinctStaff
-                          .filter((s) => !staffList.includes(s))
-                          .map((s) => (
-                            <option key={s} value={s}>
-                              {s}
-                            </option>
-                          ))}
+                      <optgroup label="หมวดหมู่ข้อมูลเดิม">
+                        <option value="ข้อมูลเดิม">ข้อมูลเดิม</option>
                       </optgroup>
                     </select>
                   </div>
@@ -1962,11 +1959,6 @@ export default function App() {
                               </div>
                               <div>
                                 <span className="font-semibold text-slate-900">{person.name}</span>
-                                {!person.isCurrentTeam && (
-                                  <span className="ml-2 text-xs text-slate-400">
-                                    (ข้อมูลเดิม)
-                                  </span>
-                                )}
                               </div>
                             </div>
                           </td>
